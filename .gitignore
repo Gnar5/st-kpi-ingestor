@@ -6,6 +6,9 @@ logs/
 # node stuff
 node_modules/
 
+# Build output
+dist/
+
 # OS/editor cruft
 .DS_Store
 .env
