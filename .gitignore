@@ -1,0 +1,11 @@
+# logs
+*.log
+backfill_*.log
+logs/
+
+# node stuff
+node_modules/
+
+# OS/editor cruft
+.DS_Store
+.env

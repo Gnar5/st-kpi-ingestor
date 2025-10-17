@@ -1,0 +1,103 @@
+--- /home/caleb/st-kpi-starter/src/st_client.js	2025-09-16 04:59:54.032828806 +0000
++++ /home/caleb/st-kpi-starter/src/st_client.js.new	2025-09-16 15:44:14.806569077 +0000
+@@ -15,6 +15,7 @@
+ // simple in-memory token cache
+ let cachedToken = null;
+ let tokenExpTs = 0;
++let cachedBuMap = null;
+ 
+ export async function makeStClient(cfg) {
+   const base = 'https://api.servicetitan.io';
+@@ -57,6 +58,26 @@
+     };
+   }
+ 
++  async function fetchBusinessUnits() {
++    if (cachedBuMap) return cachedBuMap;
++
++    const url = `${base}/jpm/v2/tenant/${tenantId}/business-units`;
++    const headers = await authHeaders();
++    const res = await fetch(url, { headers });
++
++    if (!res.ok) {
++      throw new Error(`Failed to fetch business units: ${res.status} ${await res.text()}`);
++    }
++
++    const bus = await res.json();
++    cachedBuMap = {};
++    for (const bu of bus) {
++      cachedBuMap[bu.name] = bu.id;
++    }
++    console.log(`Fetched and cached ${bus.length} business units.`);
++    return cachedBuMap;
++  }
++
+   // Convert parameters object to array format expected by ServiceTitan
+   function formatParameters(params) {
+     return Object.entries(params).map(([name, value]) => ({
+@@ -82,7 +103,7 @@
+         reportId,
+         categoryPath,
+         page,
+-        paramNames: body.parameters.map(p => p.name).slice(0, 5)
++        paramNames: body.parameters.map(p => p.name)
+       }));
+ 
+       let lastError = null;
+@@ -132,5 +153,5 @@
+     return res.json();
+   }
+ 
+-  return { fetchReport, fetchReportInfo };
+-}
++  return { fetchReport, fetchReportInfo, fetchBusinessUnits };
++}
+\ No newline at end of file
+--- /home/caleb/st-kpi-starter/src/index.js	2025-09-16 15:21:38.195213704 +0000
++++ /home/caleb/st-kpi-starter/src/index.js.new	2025-09-16 15:44:14.806569077 +0000
+@@ -9,6 +9,7 @@
+ const __dirname = path.dirname(__filename);
+ const cfg = JSON.parse(fs.readFileSync(path.join(__dirname,'../config/config.json'),'utf8'));
+ 
++let buNameIdMap = {};
+ const app = express();
+ app.get('/', (_req,res)=>res.send('ST KPI Ingestor up'));
+ 
+@@ -28,8 +29,21 @@
+ 
+ // Generic ingestion handler
+ async function ingest(res, categoryPath, reportId, params, mapRow, destTable) {
+-  try {
++  try { 
+     const st = await makeStClient(cfg);
++    if (cfg.bu_mapping && cfg.bu_mapping.length > 0) {
++      const buIds = [];
++      const buMapping = cfg.bu_mapping || [];
++      for (const mapping of buMapping) {
++          const allNames = [...(mapping.production_bu_names || []), ...(mapping.sales_bu_names || [])];
++          for (const name of allNames) {
++              if (buNameIdMap[name]) {
++                  buIds.push(buNameIdMap[name]);
++              }
++          }
++      }
++      if (buIds.length > 0) params.BusinessUnitIds = [...new Set(buIds)];
++    }
+     const out = await st.fetchReport(categoryPath, reportId, params);
+     const rows = (out.data || []).map(r => mapRow(r));
+     
+@@ -155,5 +169,10 @@
+   await ingest(res, categoryPath, reportId, params, mapRow, destTable);
+ });
+ 
+-const port = process.env.PORT || 8080;
+-app.listen(port, ()=>console.log(`Listening on ${port}`));
+\ No newline at end of file
++async function main() {
++  const st = await makeStClient(cfg);
++  buNameIdMap = await st.fetchBusinessUnits();
++  const port = process.env.PORT || 8080;
++  app.listen(port, ()=>console.log(`Listening on ${port}`));
++}
++main();
+\ No newline at end of file

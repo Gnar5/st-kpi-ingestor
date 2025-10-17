@@ -1,0 +1,23 @@
+FROM node:20-slim
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy application files
+COPY src/ ./src/
+COPY config/ ./config/
+
+# Set environment variable for production
+ENV NODE_ENV=production
+
+# Use ENTRYPOINT for the command and CMD for default args
+# This allows --args to properly override the arguments
+ENTRYPOINT ["node", "src/backfill.js"]
+
+# Default arguments: 365 days with 7-day windows
+CMD ["365", "--window=7"]

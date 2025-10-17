@@ -1,0 +1,251 @@
+import express from 'express';
+import { makeStClient } from './st_client.js';
+import { cfg, initBuMap, ingest, buNameIdMap } from './common.js';
+import { insertRows } from './bq.js';
+
+const app = express();
+app.get('/', (_req,res)=>res.send('ST KPI Ingestor up'));
+
+// Debug: inspect a report's parameter schema
+app.get('/debug/report/:category/:id', async (req, res) => {
+  try {
+    const cat = req.params.category;
+    const id  = req.params.id;
+    const st  = await makeStClient(cfg);
+    const info = await st.fetchReportInfo(`report-category/${cat}`, id);
+    res.json(info);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send(String(e));
+  }
+});
+
+// ----------------------- LEADS -----------------------
+app.get('/ingest/leads', async (req,res) => {
+  const reportId = cfg.servicetitan.report_ids.leads;
+  const destTable = cfg.bigquery.raw_tables.leads;
+  const days = Number(req.query.days || cfg.servicetitan.date_windows.incremental_pull_days || 3);
+  const end = new Date();
+  const start = new Date(end); start.setDate(end.getDate() - (days - 1));
+  const params = {
+  From: start.toISOString().slice(0,10),
+  To:   end.toISOString().slice(0,10),
+  DateType: 1,
+  IncludeInactiveTechnicians: true
+};
+if (Number.isFinite(buId)) {
+  params.BusinessUnitIds = [buId];
+}
+  // Only filter by BU if we truly have a numeric BU ID
+  if (Number.isFinite(buId)) {
+    params.BusinessUnitIds = [buId];
+  }
+  if (Array.isArray(cfg?.servicetitan?.job_type_ids_sales) && cfg.servicetitan.job_type_ids_sales.length) {
+    params.JobTypeIds = cfg.servicetitan.job_type_ids_sales;
+  }
+
+  const st = await makeStClient(cfg);
+  console.log('[WBR:req]', { buName, buId, reportId, params });
+  let resp;
+  try {
+    resp = await st.fetchReport(wbrCategory, reportId, params);
+  } catch (e) {
+    console.error('[WBR:fetchError]', { buName, buId, reportId, params, err: String(e) });
+    throw e;
+  }
+
+  const cols = (resp?.data?.columns || resp?.columns || []).map(c => c.name);
+  const rawItems = resp?.data?.items || resp?.items || [];
+  const items = Array.isArray(rawItems) ? rawItems : [];
+  const rowToObj = (row) => {
+    if (row && typeof row === 'object' && !Array.isArray(row)) return row;
+    if (Array.isArray(row) && cols.length === row.length) return Object.fromEntries(cols.map((n,i)=>[n,row[i]]));
+    return { _row: row };
+  };
+  console.log('[WBR:resp]', { buName, items_len: items.length, sample: items[0] || null });
+
+  const toRate = (v) => {
+    if (v == null || v === '') return null;
+    const n = Number(String(v).toString().replace('%','').trim());
+    if (!isFinite(n)) return null;
+    return n > 1 ? n / 100 : n;
+  };
+
+  const rows = items.map(row => {
+    const r = rowToObj(row);
+    const eventDateStr = (r['Date'] || r['Day'] || r['Sold On'] || r['Job Creation Date'] || '')
+      .toString().slice(0,10) || new Date().toISOString().slice(0,10);
+    const estimates = Number(r['Sales Opportunities'] ?? r.SalesOpportunities ?? 0);
+    const booked    = Number(r['Closed Opportunities'] ?? r.CompletedJob ?? r.Completed ?? 0);
+    const total     = Number(r['Total Sales'] ?? r.TotalSales ?? r.TotalRevenue ?? r.SoldAmount ?? r.BookedRevenue ?? 0);
+    const avgClosed = (booked > 0 && total) ? (total / booked) : Number(r['Average Closed Sale'] ?? r.AverageClosedSale ?? 0);
+    let cr = toRate(r['Close Rate'] ?? r.CloseRate);
+    if ((cr == null || isNaN(cr)) && estimates > 0) cr = booked / estimates;
+
+    return {
+      event_date: eventDateStr,
+      bu_name: buName,
+      estimator: r.Estimator ?? r.Technician ?? null,
+      sales_opportunities: estimates,
+      completed_jobs: booked,
+      closed_opportunities: Number(r['Closed Opportunities'] ?? r.ClosedOpportunities ?? booked ?? 0),
+      close_rate: (cr == null || isNaN(cr)) ? null : Number(cr),
+      total_sales: total,
+      avg_closed_sale: (avgClosed == null || isNaN(avgClosed)) ? null : Number(avgClosed)
+    };
+  });
+
+  if (rows.length) await insertRows('st_raw', 'raw_daily_wbr_v2', rows);
+  return { status: 'ok', items: rows.length };
+}
+
+// GET /ingest/daily_wbr?bu=<one of /debug/wbr_keys>&days=7
+      return res.json({ status: 'ok', bu: buName, days, items });
+    }
+
+    // No bu specified → run all BUs that have a report id
+    let total = 0;
+    for (const name of Object.keys(repMap)) {
+      const { items } = await ingestDailyWbrForBu(name, /* buId optional */ undefined, { days });
+      total += (items || 0);
+    }
+    return res.json({ status: 'ok', bu: 'ALL', days, items: total });
+  } catch (err) {
+    console.error('daily_wbr error:', err);
+    return res.status(500).json({ status: 'error', message: String(err) });
+  }
+});
+
+// ----------------------- FOREMAN -----------------------
+app.get('/ingest/foreman', async (req, res) => {
+  const reportId     = cfg.servicetitan.report_ids.foreman_job_cost_this_week;
+  const destTable    = cfg.bigquery.raw_tables.foreman;
+
+  // Accept explicit range + date basis; default to "Scheduled/Start" basis.
+  const qFrom    = req.query.from;
+  const qTo      = req.query.to;
+  const days     = Number(req.query.days || cfg.servicetitan.date_windows.incremental_pull_days || 3);
+  const dateType = Number(req.query.dateType || 3); // 3 works best per your probe
+
+  let params;
+  if (qFrom && qTo) {
+    params = { From: String(qFrom), To: String(qTo), DateType: dateType };
+  } else {
+    const end = new Date();
+    const start = new Date(end); start.setDate(end.getDate() - (days - 1));
+    params = { From: start.toISOString().slice(0,10), To: end.toISOString().slice(0,10), DateType: dateType };
+  }
+
+  const mapRow = (r) => ({
+    bu_key: r[1] || 'unknown',
+    job_id: String(r[6] || ''),
+    job_start: r[0] ? new Date(r[0]) : null,
+    job_type: r[4] || null,
+    job_subtotal: Math.round(Number(r[7] ?? 0) * 100) / 100,
+    job_total_costs: Math.round(Number(r[12] ?? 0) * 100) / 100,
+    job_gm_pct: Math.round(Number(r[13] ?? 0) * 10000) / 10000,
+    updated_on: new Date(),
+    raw: JSON.stringify(r),
+  });
+
+  await ingest(res, 'report-category/marketing', reportId, params, mapRow, destTable);
+});
+
+// ----------------------- COLLECTIONS -----------------------
+app.get('/ingest/collections', async (req,res) => {
+  const reportId = cfg.servicetitan.report_ids.collections;
+  const destTable = cfg.bigquery.raw_tables.collections;
+  const days = Number(req.query.days || cfg.servicetitan.date_windows.incremental_pull_days || 3);
+  const end = new Date();
+  const start = new Date(end); start.setDate(end.getDate() - (days - 1));
+  const params = { From: start.toISOString().slice(0,10), To: end.toISOString().slice(0,10), DateType: 1 };
+  const mapRow = (r) => ({
+    bu_key: r.BusinessUnitName || r.BusinessUnit || 'unknown',
+    payment_date: new Date(r.PaymentDate || r.Date || Date.now()),
+    amount: Number(r.Amount || 0),
+    job_id: String(r.JobId || ''),
+    updated_on: new Date(),
+    raw: JSON.stringify(r)
+  });
+  await ingest(res, 'report-category/operations', reportId, params, mapRow, destTable);
+});
+
+// ----------------------- A/R -----------------------
+app.get('/ingest/ar', async (req,res) => {
+  const reportId = cfg.servicetitan.report_ids.ar_report;
+  const destTable = cfg.bigquery.raw_tables.ar;
+  const days = Number(req.query.days || 1);
+  const end = new Date();
+  const start = new Date(end); start.setDate(end.getDate() - (days - 1));
+  const params = { From: start.toISOString().slice(0,10), To: end.toISOString().slice(0,10), DateType: 1 };
+  const mapRow = (r) => ({
+    bu_key: r.BusinessUnitName || r.BusinessUnit || 'unknown',
+    as_of: new Date(),
+    location_name: r.LocationName || null,
+    net_amount: Number(r.NetAmount || 0),
+    updated_on: new Date(),
+    raw: JSON.stringify(r)
+  });
+  await ingest(res, 'report-category/accounting', reportId, params, mapRow, destTable);
+});
+
+// ----------------------- DIAGNOSTICS -----------------------
+app.get('/health', (req, res) => res.json({ ok: true, rev: process.env.K_REVISION || null }));
+app.get('/debug/bus', (req, res) => res.json({ businessUnits: Object.keys(getBuMap()) }));
+// DEBUG: dump BU map + WBR report IDs + job types in config
+app.get('/debug/config', (_req, res) => {
+  res.json({
+    businessUnits: cfg.businessUnits || null,
+    fallbackBuMapPresent: !!(buNameIdMap && Object.keys(buNameIdMap || {}).length),
+    daily_wbr_report_ids_by_bu: cfg?.servicetitan?.daily_wbr_report_ids_by_bu || null,
+    job_type_ids_sales: cfg?.servicetitan?.job_type_ids_sales || null
+  });
+});
+
+// ----------------------- START -----------------------
+async function main() {
+  await initBuMap();
+  const PORT = process.env.PORT || 8080;
+  // List the WBR report labels your config has (so you know the exact keys)
+app.get('/debug/wbr_keys', (_req, res) => {
+  const repMap = (cfg?.servicetitan?.daily_wbr_report_ids_by_bu) || {};
+  res.json({ wbr_keys: Object.keys(repMap) });
+});
+
+  app.listen(PORT, () => console.log('listening on', PORT));
+}
+main();
+
+// ---- CLEAN DAILY WBR (report-id map) + debug keys ----
+app.get('/debug/wbr_keys', (_req, res) => {
+  const repMap = (cfg?.servicetitan?.daily_wbr_report_ids_by_bu) || {};
+  res.json({ wbr_keys: Object.keys(repMap) });
+});
+
+// GET /ingest/daily_wbr?bu=<one of /debug/wbr_keys>&days=7
+app.get('/ingest/daily_wbr', async (req, res) => {
+  try {
+    const buName = String(req.query.bu || '').trim();
+    const days   = Number(req.query.days || 1);
+
+    const repMap = (cfg?.servicetitan?.daily_wbr_report_ids_by_bu) || {};
+
+    if (buName) {
+      if (!repMap[buName]) {
+        return res.status(400).json({ status: 'error', message: 'Unknown BU (no report id): ' + buName });
+      }
+      const { items } = await ingestDailyWbrForBu(buName, undefined, { days });
+      return res.json({ status: 'ok', bu: buName, days, items });
+    }
+
+    let total = 0;
+    for (const name of Object.keys(repMap)) {
+      const { items } = await ingestDailyWbrForBu(name, undefined, { days });
+      total += (items || 0);
+    }
+    return res.json({ status: 'ok', bu: 'ALL', days, items: total });
+  } catch (err) {
+    console.error('daily_wbr error:', err);
+    return res.status(500).json({ status: 'error', message: String(err) });
+  }
+});

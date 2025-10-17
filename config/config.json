@@ -1,0 +1,205 @@
+{
+  "project_name": "st-kpi-pipeline",
+  "timezone": "America/Phoenix",
+  "servicetitan": {
+    "tenant_id_secret": "projects/kpi-auto-471020/secrets/ST_TENANT_ID/versions/latest",
+    "client_id_secret": "projects/kpi-auto-471020/secrets/ST_CLIENT_ID/versions/latest",
+    "client_secret_secret": "projects/kpi-auto-471020/secrets/ST_CLIENT_SECRET/versions/latest",
+    "api_key_secret": "projects/kpi-auto-471020/secrets/ST_APP_KEY/versions/latest",
+    "report_ids": {
+      "leads": "389357017",
+      "daily_wbr_cr": "130700652",
+      "foreman_job_cost_this_week": "389438975",
+      "collections": "26117979",
+      "ar_report": "235"
+    },
+    "daily_wbr_report_ids_by_bu": {
+      "Andy's Painting-Sales": 387936790,
+      "Commercial-AZ-Sales": 387930556,
+      "Guaranteed Painting-Sales": 387945629,
+      "Nevada-Sales": 387945741,
+      "Phoenix-Sales": 387935289,
+      "Tucson-Sales": 387951872,
+      "Z_DO NOT USE - West - Sales": 387950018
+    },
+    "date_windows": {
+      "incremental_pull_days": 7,
+      "backfill_days": 90,
+      "future_bookings_horizon_days": 365
+    },
+    "api_version": "v2"
+  },
+  "bigquery": {
+    "project_id": "kpi-auto-471020",
+    "dataset": "st_kpi",
+    "location": "US",
+    "raw_tables": {
+      "leads": "raw_leads",
+      "daily_wbr": "raw_daily_wbr",
+      "foreman": "raw_foreman",
+      "collections": "raw_collections",
+      "ar": "raw_ar"
+    },
+    "mart_dataset": "st_kpi_mart"
+  },
+  "scheduling": {
+    "region": "us-central1",
+    "ingest_cron": "0 * * * *",
+    "backfill_cron": "0 2 * * *"
+  },
+  "bu_mapping": [
+    {
+      "branch_key": "ANDYS",
+      "region_label": "Albuquerque",
+      "sales_bu_names": [
+        "Andy's Painting-Sales"
+      ],
+      "production_bu_names": [
+        "Andy's Painting-Production"
+      ]
+    },
+    {
+      "branch_key": "COMM_AZ",
+      "region_label": "Phoenix Commercial",
+      "sales_bu_names": [
+        "Commercial-AZ-Sales"
+      ],
+      "production_bu_names": [
+        "Commercial-AZ-Production"
+      ]
+    },
+    {
+      "branch_key": "GUAR_TX",
+      "region_label": "Texas",
+      "sales_bu_names": [
+        "Guaranteed Painting-Sales"
+      ],
+      "production_bu_names": [
+        "Guaranteed Painting-Production"
+      ]
+    },
+    {
+      "branch_key": "NEV",
+      "region_label": "Nevada",
+      "sales_bu_names": [
+        "Nevada-Sales"
+      ],
+      "production_bu_names": [
+        "Nevada-Production"
+      ]
+    },
+    {
+      "branch_key": "PHX",
+      "region_label": "Phoenix",
+      "sales_bu_names": [
+        "Phoenix-Sales"
+      ],
+      "production_bu_names": [
+        "Phoenix-Production",
+        "Z-DO NOT USE - West- Production"
+      ]
+    },
+    {
+      "branch_key": "TUC",
+      "region_label": "Tucson",
+      "sales_bu_names": [
+        "Tucson-Sales"
+      ],
+      "production_bu_names": [
+        "Tucson-Production"
+      ]
+    }
+  ],
+  "filters": {
+    "leads": {
+      "customer_name_excludes_contains": [
+        "Test"
+      ],
+      "job_type_allowlist": [
+        "ESTIMATE - WINDOW WASHING",
+        "ESTIMATE - REST-EXT-PRE 1960 HISTORIC",
+        "ESTIMATE - REST-INT/EXT-PRE 1960 HISTORIC",
+        "ESTIMATE-CABINETS",
+        "ESTIMATE-EXTERIOR PLUS INT CABINETS",
+        "ESTIMATE-INTERIOR PLUS INT CABINETS",
+        "ESTIMATE-COMM-EXT",
+        "ESTIMATE-COMM-EXT/INT",
+        "ESTIMATE-COMM-INT",
+        "ESTIMATE-COMM-PLANBID",
+        "ESTIMATE-COMM-STRIPING",
+        "ESTIMATE-FLOOR COATINGS-EPOXY",
+        "ESTIMATE-FLOOR COATINGS-H&C COATINGS",
+        "ESTIMATE-POPCORN",
+        "ESTIMATE-RES-EXT",
+        "ESTIMATE-RES-EXT/INT",
+        "ESTIMATE-RES-HOA",
+        "ESTIMATE-RES-INT",
+        "ESTIMATE-REST-INT/EXT PLUS CABINETS"
+      ]
+    },
+    "booked_estimates_success": {
+      "job_type_allowlist": [
+        "ESTIMATE- WINDOW WASHING",
+        "Estimate",
+        "Cabinets",
+        "Estimate- Exterior PLUS Int Cabinets",
+        "Estimate- Interior PLUS Cabinets",
+        "ESTIMATE -RES-EXT-PRE 1960",
+        "ESTIMATE -RES-INT/EXT-PRE 1960",
+        "ESTIMATE-COMM-EXT",
+        "ESTIMATE-COMM-EXT/INT",
+        "ESTIMATE-COMM-INT",
+        "ESTIMATE-COMM-PLANBID",
+        "ESTIMATE-COMM-Striping",
+        "ESTIMATE-FLOOR COATING-EPOXY",
+        "ESTIMATE-FLOOR COATING-H&C Coatings",
+        "ESTIMATE-POPCORN",
+        "ESTIMATE-RES-EXT",
+        "ESTIMATE-RES-EXT/INT",
+        "ESTIMATE-RES-HOA",
+        "ESTIMATE-RES-INT",
+        "Estimate-RES-INT/EXT Plus Cabinets"
+      ]
+    },
+    "produced_gpm_future": {
+      "job_type_exclude_list": [
+        "PM Inspection",
+        "Safety Inspection",
+        "Window/Solar Washing"
+      ]
+    },
+    "warranty": {
+      "job_type_include_list": [
+        "Warranty",
+        "Touchup"
+      ]
+    },
+    "ar": {
+      "location_name_not_blank": true,
+      "net_amount_min": 10
+    }
+  },
+  "kpi_logic": {
+    "segment_rules": {
+      "residential_from_bu": true,
+      "fallback_from_job_type_contains": [
+        "RES"
+      ],
+      "commercial_job_type_contains": [
+        "COMM"
+      ]
+    },
+    "gpm_method": "recalc_or_report",
+    "success_rate_method": "avg_close_rate"
+  },
+  "looker": {
+    "data_source_name": "ST KPI Mart",
+    "dashboard_title": "Company KPI (Weekly + YoY)",
+    "default_date_control": "LAST_8_WEEKS"
+  },
+  "validation": {
+    "sheet_url": "https://docs.google.com/your-current-sheet",
+    "compare_weeks": 8,
+    "tolerance_percent": 0.02
+  }
+}
