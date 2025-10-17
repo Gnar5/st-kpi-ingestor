@@ -996,7 +996,7 @@ app.get('/ingest/daily_wbr_consolidated', async (req, res) => {
     console.log('[WBR-Consolidated:req]', { reportId, params });
 
     const st = await makeStClient(cfg);
-    const resp = await st.fetchReport('report-category/operations', reportId, params);
+    const resp = await st.fetchReport('report-category/technician', reportId, params);
 
     const cols = (resp?.data?.columns || resp?.columns || []).map(c => c?.name ?? c);
     const rawItems = resp?.data?.items || resp?.items || [];
@@ -1070,7 +1070,7 @@ app.get('/debug/daily_wbr_consolidated', async (req, res) => {
     console.log('[WBR-Consolidated-Debug:req]', { reportId, params });
 
     const st = await makeStClient(cfg);
-    const resp = await st.fetchReport('report-category/operations', reportId, params);
+    const resp = await st.fetchReport('report-category/technician', reportId, params);
 
     const cols = (resp?.data?.columns || resp?.columns || []).map(c => c?.name ?? c);
     const rawItems = resp?.data?.items || resp?.items || [];
