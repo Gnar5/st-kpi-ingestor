@@ -968,6 +968,165 @@ app.get('/ingest/daily_wbr', async (req, res) => {
   }
 });
 
+// ----------------------- DAILY WBR CONSOLIDATED ENDPOINT -----------------------
+app.get('/ingest/daily_wbr_consolidated', async (req, res) => {
+  try {
+    const reportId = cfg.servicetitan.report_ids.daily_wbr_consolidated;
+    const destTable = 'raw_daily_wbr_consolidated';
+
+    // Support explicit from/to dates OR days parameter
+    let start, end;
+    if (req.query.from && req.query.to) {
+      start = new Date(`${req.query.from}T00:00:00`);
+      end = new Date(`${req.query.to}T00:00:00`);
+    } else {
+      const days = Number(req.query.days || cfg.servicetitan.date_windows.incremental_pull_days || 7);
+      const offsetDays = Number(req.query.offset_days || 0);
+      end = new Date();
+      end.setDate(end.getDate() - offsetDays);
+      start = new Date(end);
+      start.setDate(end.getDate() - (days - 1));
+    }
+
+    const params = {
+      From: start.toISOString().slice(0, 10),
+      To: end.toISOString().slice(0, 10)
+    };
+
+    console.log('[WBR-Consolidated:req]', { reportId, params });
+
+    const st = await makeStClient(cfg);
+    const resp = await st.fetchReport('report-category/operations', reportId, params);
+
+    const cols = (resp?.data?.columns || resp?.columns || []).map(c => c?.name ?? c);
+    const rawItems = resp?.data?.items || resp?.items || [];
+    const items = Array.isArray(rawItems) ? rawItems : [];
+
+    console.log('[WBR-Consolidated:resp]', { items_len: items.length, columns: cols, sample: items[0] });
+
+    const rowToObj = (row, cols) => {
+      if (row && typeof row === 'object' && !Array.isArray(row)) return row;
+      if (Array.isArray(row) && cols.length === row.length) {
+        return Object.fromEntries(cols.map((n, i) => [n, row[i]]));
+      }
+      return {};
+    };
+
+    const nowTs = new Date();
+    const rows = items.map(row => {
+      const r = rowToObj(row, cols);
+
+      // Schema: Name, Sales Opportunity, Closed Opportunities, Close rate, Completed Jobs, Total Sales, Closed Average Sale
+      const buName = r['Name'] || (Array.isArray(row) ? row[0] : 'unknown');
+      const salesOpportunities = toNumber(r['Sales Opportunity'] || (Array.isArray(row) ? row[1] : null));
+      const closedOpportunities = toNumber(r['Closed Opportunities'] || (Array.isArray(row) ? row[2] : null));
+      const closeRateRaw = r['Close rate'] || (Array.isArray(row) ? row[3] : null);
+      const completedJobs = toNumber(r['Completed Jobs'] || (Array.isArray(row) ? row[4] : null));
+      const totalSales = toNumber(r['Total Sales'] || (Array.isArray(row) ? row[5] : null));
+      const closedAvgSale = toNumber(r['Closed Average Sale'] || (Array.isArray(row) ? row[6] : null));
+
+      // Parse close rate (might be a percentage string like "45%" or decimal like 0.45)
+      let closeRate = null;
+      if (closeRateRaw !== null && closeRateRaw !== undefined) {
+        const rateStr = String(closeRateRaw).replace('%', '').trim();
+        const rateNum = Number(rateStr);
+        if (!isNaN(rateNum)) {
+          // If > 1, assume it's a percentage, convert to decimal
+          closeRate = rateNum > 1 ? rateNum / 100 : rateNum;
+        }
+      }
+
+      return {
+        event_date: params.From,
+        bu_name: buName,
+        sales_opportunities: Math.round(salesOpportunities || 0),
+        closed_opportunities: Math.round(closedOpportunities || 0),
+        close_rate: closeRate,
+        completed_jobs: Math.round(completedJobs || 0),
+        total_sales: Math.round((totalSales || 0) * 100) / 100,
+        avg_closed_sale: Math.round((closedAvgSale || 0) * 100) / 100,
+        updated_on: nowTs,
+        raw: JSON.stringify(row)
+      };
+    });
+
+    if (rows.length) await insertRows('st_raw', destTable, rows);
+    res.json({ status: 'ok', items: rows.length, date_range: params });
+  } catch (e) {
+    console.error('daily_wbr_consolidated error:', e);
+    res.status(500).json({ status: 'error', message: String(e) });
+  }
+});
+
+// ----------------------- DAILY WBR CONSOLIDATED DEBUG -----------------------
+app.get('/debug/daily_wbr_consolidated', async (req, res) => {
+  try {
+    const reportId = cfg.servicetitan.report_ids.daily_wbr_consolidated;
+    const from = req.query.from || '2024-10-06';
+    const to = req.query.to || '2024-10-12';
+
+    const params = { From: from, To: to };
+
+    console.log('[WBR-Consolidated-Debug:req]', { reportId, params });
+
+    const st = await makeStClient(cfg);
+    const resp = await st.fetchReport('report-category/operations', reportId, params);
+
+    const cols = (resp?.data?.columns || resp?.columns || []).map(c => c?.name ?? c);
+    const rawItems = resp?.data?.items || resp?.items || [];
+    const items = Array.isArray(rawItems) ? rawItems : [];
+
+    console.log('[WBR-Consolidated-Debug:resp]', { items_len: items.length, columns: cols });
+
+    const rowToObj = (row, cols) => {
+      if (row && typeof row === 'object' && !Array.isArray(row)) return row;
+      if (Array.isArray(row) && cols.length === row.length) {
+        return Object.fromEntries(cols.map((n, i) => [n, row[i]]));
+      }
+      return {};
+    };
+
+    // Parse and summarize by BU
+    const byBu = {};
+    let totalSalesSum = 0;
+
+    for (const row of items) {
+      const r = rowToObj(row, cols);
+      const buName = r['Name'] || (Array.isArray(row) ? row[0] : 'unknown');
+      const totalSales = toNumber(r['Total Sales'] || (Array.isArray(row) ? row[5] : null)) || 0;
+      const salesOpportunities = toNumber(r['Sales Opportunity'] || (Array.isArray(row) ? row[1] : null)) || 0;
+      const closedOpportunities = toNumber(r['Closed Opportunities'] || (Array.isArray(row) ? row[2] : null)) || 0;
+      const closeRateRaw = r['Close rate'] || (Array.isArray(row) ? row[3] : null);
+      const completedJobs = toNumber(r['Completed Jobs'] || (Array.isArray(row) ? row[4] : null)) || 0;
+      const closedAvgSale = toNumber(r['Closed Average Sale'] || (Array.isArray(row) ? row[6] : null)) || 0;
+
+      byBu[buName] = {
+        sales_opportunities: salesOpportunities,
+        closed_opportunities: closedOpportunities,
+        close_rate: closeRateRaw,
+        completed_jobs: completedJobs,
+        total_sales: Math.round(totalSales * 100) / 100,
+        avg_closed_sale: Math.round(closedAvgSale * 100) / 100
+      };
+
+      totalSalesSum += totalSales;
+    }
+
+    res.json({
+      date_range: { from, to },
+      total_rows: items.length,
+      columns: cols,
+      by_bu: byBu,
+      total_sales_sum: Math.round(totalSalesSum * 100) / 100,
+      sample_row: items[0] || null,
+      note: 'Consolidated WBR returns ~10 rows (one per BU) regardless of date range. No daily loops needed.'
+    });
+  } catch (e) {
+    console.error('debug/daily_wbr_consolidated error:', e);
+    res.status(500).json({ error: String(e) });
+  }
+});
+
 // ----------------------- DEDUPE ENDPOINTS -----------------------
 app.post('/dedupe/daily_wbr', async (_req, res) => {
   try {
