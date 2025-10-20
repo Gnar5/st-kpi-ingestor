@@ -1414,16 +1414,15 @@ app.post('/mart/update/wbr', async (_req, res) => {
       SELECT
         event_date as kpi_date,
         bu_name as bu_key,
-        SUM(sales_opportunities) as estimates,
-        SUM(closed_opportunities) as booked,
-        SUM(completed_est) as completed_est,
-        ROUND(SUM(closed_opportunities) / NULLIF(SUM(sales_opportunities), 0), 4) as close_rate_decimal,
-        ROUND(SUM(total_sales), 2) as total_sales,
-        ROUND(SUM(total_sales) / NULLIF(SUM(closed_opportunities), 0), 2) as avg_closed_sale
-      FROM \`kpi-auto-471020.st_raw.raw_daily_wbr_v2\`
+        sales_opportunities as estimates,
+        closed_opportunities as booked,
+        completed_est as completed_est,
+        ROUND(close_rate, 4) as close_rate_decimal,
+        ROUND(total_sales, 2) as total_sales,
+        ROUND(avg_closed_sale, 2) as avg_closed_sale
+      FROM \`kpi-auto-471020.st_raw.raw_daily_wbr_consolidated\`
       WHERE event_date IS NOT NULL
         AND bu_name IS NOT NULL
-      GROUP BY kpi_date, bu_key
     `;
 
     await query(updateSQL);
