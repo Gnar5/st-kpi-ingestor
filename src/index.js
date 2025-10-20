@@ -1420,7 +1420,7 @@ app.post('/mart/update/wbr', async (_req, res) => {
         ROUND(SUM(closed_opportunities) / NULLIF(SUM(sales_opportunities), 0), 4) as close_rate_decimal,
         ROUND(SUM(total_sales), 2) as total_sales,
         ROUND(SUM(total_sales) / NULLIF(SUM(closed_opportunities), 0), 2) as avg_closed_sale
-      FROM \`kpi-auto-471020.st_raw.raw_daily_wbr_consolidated\`
+      FROM \`kpi-auto-471020.st_raw.raw_daily_wbr_v2\`
       WHERE event_date IS NOT NULL
         AND bu_name IS NOT NULL
       GROUP BY kpi_date, bu_key
