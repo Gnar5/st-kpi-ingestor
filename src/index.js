@@ -988,9 +988,12 @@ app.get('/ingest/daily_wbr_consolidated', async (req, res) => {
       start.setDate(end.getDate() - (days - 1));
     }
 
+    const dateType = Number(req.query.dateType || 3);
+
     const params = {
       From: start.toISOString().slice(0, 10),
-      To: end.toISOString().slice(0, 10)
+      To: end.toISOString().slice(0, 10),
+      DateType: dateType
     };
 
     console.log('[WBR-Consolidated:req]', { reportId, params });
@@ -1064,8 +1067,9 @@ app.get('/debug/daily_wbr_consolidated', async (req, res) => {
     const reportId = cfg.servicetitan.report_ids.daily_wbr_consolidated;
     const from = req.query.from || '2024-10-06';
     const to = req.query.to || '2024-10-12';
+    const dateType = Number(req.query.dateType || 3);
 
-    const params = { From: from, To: to };
+    const params = { From: from, To: to, DateType: dateType };
 
     console.log('[WBR-Consolidated-Debug:req]', { reportId, params });
 
