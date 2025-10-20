@@ -924,7 +924,7 @@ async function ingestDailyWbrForBu(buName, buId, { days = 3, toStr = null, fromS
       bu_name: buName,
       estimator: r.Estimator ?? r.Technician ?? (Array.isArray(row) ? String(row[0] ?? '') : null),
       sales_opportunities: estimates ?? (Array.isArray(row) ? safeInt(row[3]) : null),
-      completed_jobs: booked ?? (Array.isArray(row) ? safeInt(row[2]) : null),
+      completed_est: booked ?? (Array.isArray(row) ? safeInt(row[2]) : null),
       closed_opportunities: safeInt(r['Closed Opportunities'] ?? r.ClosedOpportunities ?? booked ?? (Array.isArray(row) ? row[1] : null)),
       close_rate: roundScale(cr, 6),
       total_sales: roundScale(total ?? (Array.isArray(row) ? safeNum(row[5]) : null), 2),
