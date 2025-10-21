@@ -397,6 +397,75 @@ app.get('/ref-entities', (req, res) => {
 });
 
 /**
+ * ==========================================================================
+ * ASYNC BACKFILL ENDPOINT
+ * Starts a full backfill in the background and returns immediately
+ * ==========================================================================
+ */
+
+/**
+ * Start full backfill asynchronously
+ * GET /backfill-async
+ *
+ * This endpoint starts a sequential full backfill and returns immediately.
+ * The backfill continues running in the background.
+ * Use Cloud Logging or BigQuery logs to monitor progress.
+ */
+app.get('/backfill-async', async (req, res) => {
+  // Return immediately to avoid HTTP timeout
+  res.status(202).json({
+    success: true,
+    message: 'Full backfill started in background',
+    status: 'running',
+    entities: Object.keys(ingestors),
+    estimatedDuration: '30-45 minutes',
+    monitoring: {
+      cloudLogs: 'gcloud run services logs read st-v2-ingestor --region=us-central1 --limit=50',
+      bigQueryLogs: `SELECT * FROM \`${bqClient.projectId}.${bqClient.datasetLogs}.ingestion_logs\` ORDER BY start_time DESC LIMIT 50`,
+      checkStatus: 'Run check_backfill_status.sh to verify data'
+    }
+  });
+
+  // Start backfill in background (fire and forget)
+  (async () => {
+    logger.info('Starting async backfill - sequential mode');
+
+    const startTime = Date.now();
+    const results = {};
+    const errors = {};
+
+    for (const [entity, ingestor] of Object.entries(ingestors)) {
+      try {
+        logger.info(`Backfill: Starting ${entity}...`);
+        const result = await ingestor.ingest({ mode: 'full' });
+        results[entity] = result;
+        logger.info(`Backfill: Completed ${entity}`, {
+          recordsFetched: result.recordsFetched,
+          recordsInserted: result.recordsInserted
+        });
+      } catch (error) {
+        errors[entity] = error.message;
+        logger.error(`Backfill: Failed ${entity}`, {
+          entity,
+          error: error.message
+        });
+      }
+    }
+
+    const duration = Date.now() - startTime;
+    const hasErrors = Object.keys(errors).length > 0;
+
+    logger.info('Async backfill completed', {
+      durationMs: duration,
+      durationMin: Math.round(duration / 60000),
+      succeeded: Object.keys(results).length,
+      failed: Object.keys(errors).length,
+      errors: hasErrors ? errors : undefined
+    });
+  })();
+});
+
+/**
  * Start server
  */
 const PORT = process.env.PORT || 8080;
