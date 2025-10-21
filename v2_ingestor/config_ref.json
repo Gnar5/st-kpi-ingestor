@@ -1,0 +1,47 @@
+{
+  "description": "Configuration for ServiceTitan v2 Reference Dimension Ingestors",
+  "dataset": "st_ref_v2",
+  "refreshStrategy": "full",
+  "scheduleCron": "0 3 * * *",
+  "scheduleDescription": "Daily at 3 AM (after entity ingestors complete)",
+  "entities": {
+    "business_units": {
+      "enabled": true,
+      "priority": 1,
+      "description": "Business unit organizational data",
+      "estimatedRecords": 10,
+      "estimatedDuration": "5s"
+    },
+    "technicians": {
+      "enabled": true,
+      "priority": 2,
+      "description": "Technician/employee master data",
+      "estimatedRecords": 500,
+      "estimatedDuration": "10s"
+    },
+    "activity_codes": {
+      "enabled": true,
+      "priority": 3,
+      "description": "Payroll activity code lookups",
+      "estimatedRecords": 50,
+      "estimatedDuration": "5s"
+    }
+  },
+  "bigquery": {
+    "dataset": "st_ref_v2",
+    "location": "US",
+    "description": "ServiceTitan Reference Dimensions - ID to Name Lookups",
+    "labels": {
+      "system": "st-kpi-ingestor",
+      "version": "v2",
+      "layer": "reference"
+    }
+  },
+  "notes": [
+    "Reference tables use full refresh (not incremental) to ensure completeness",
+    "Small datasets (<1000 records each) so full refresh is fast and safe",
+    "Scheduled after entity ingestors to ensure latest references are available",
+    "No partitioning needed due to small table sizes",
+    "Clustering on 'active' and key fields for efficient filtering"
+  ]
+}

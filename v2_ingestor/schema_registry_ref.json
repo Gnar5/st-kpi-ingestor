@@ -1,0 +1,173 @@
+{
+  "version": "1.0.0",
+  "description": "Schema registry for ServiceTitan v2 Reference/Dimension tables",
+  "dataset": "st_ref_v2",
+  "entities": {
+    "business_units": {
+      "apiEndpoint": "settings/v2/tenant/{tenant}/business-units",
+      "primaryKey": "id",
+      "partitionField": null,
+      "clusterFields": ["active", "name"],
+      "refreshMode": "full",
+      "description": "Organizational business units for revenue/cost allocation",
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique business unit identifier"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Business unit display name"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Whether business unit is currently active"
+        },
+        "officialName": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Official legal name of business unit"
+        },
+        "phoneNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Contact phone number"
+        },
+        "email": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Contact email address"
+        },
+        "address": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Physical address (street, city, state, zip)"
+        },
+        "timezone": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Timezone name (e.g., 'America/Phoenix')"
+        }
+      }
+    },
+    "technicians": {
+      "apiEndpoint": "settings/v2/tenant/{tenant}/technicians",
+      "primaryKey": "id",
+      "partitionField": null,
+      "clusterFields": ["active", "businessUnitId"],
+      "refreshMode": "full",
+      "description": "Technician/employee master data for job assignments and payroll",
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique technician identifier"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Technician full name"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Whether technician is currently active"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Home business unit ID"
+        },
+        "businessUnitName": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Home business unit name"
+        },
+        "email": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Email address"
+        },
+        "phoneNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Phone number"
+        },
+        "employeeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated employee ID (if applicable)"
+        },
+        "role": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Job role/title"
+        },
+        "team": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Team assignment"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        }
+      }
+    },
+    "activity_codes": {
+      "apiEndpoint": "settings/v2/tenant/{tenant}/activity-codes",
+      "primaryKey": "id",
+      "partitionField": null,
+      "clusterFields": ["active", "name"],
+      "refreshMode": "full",
+      "description": "Activity codes for payroll/timesheet classification",
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique activity code identifier"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Activity name (e.g., 'Working', 'Idle', 'Travel')"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Whether activity code is currently active"
+        },
+        "description": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Detailed description of activity"
+        },
+        "code": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Short code/abbreviation"
+        },
+        "isPaid": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Whether this activity is paid time"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        }
+      }
+    }
+  }
+}

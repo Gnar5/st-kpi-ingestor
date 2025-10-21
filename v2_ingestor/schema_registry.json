@@ -1,0 +1,793 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2025-10-21T00:00:00Z",
+  "description": "Schema registry for ServiceTitan entity APIs - tracks field definitions and evolution",
+  "entities": {
+    "jobs": {
+      "apiEndpoint": "jpm/v2/tenant/{tenant}/jobs",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "businessUnitId",
+        "jobStatus"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique job identifier"
+        },
+        "jobNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Human-readable job number"
+        },
+        "projectId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated project ID"
+        },
+        "customerId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Customer ID"
+        },
+        "locationId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Service location ID"
+        },
+        "jobStatus": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Current job status"
+        },
+        "completedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Job completion timestamp"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Business unit identifier"
+        },
+        "jobTypeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Job type classification"
+        },
+        "priority": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Job priority level"
+        },
+        "campaignId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Marketing campaign ID"
+        },
+        "summary": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Job summary/description"
+        },
+        "customFields": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Custom field values"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "createdById": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Creator user ID"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "tagTypeIds": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Associated tags"
+        },
+        "leadCallId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Originating lead call"
+        },
+        "bookingId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Booking/appointment ID"
+        },
+        "soldById": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Salesperson ID"
+        }
+      }
+    },
+    "invoices": {
+      "apiEndpoint": "accounting/v2/tenant/{tenant}/invoices",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "businessUnitId",
+        "jobId",
+        "status"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique invoice identifier"
+        },
+        "syncStatus": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "QuickBooks sync status"
+        },
+        "summary": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Invoice summary"
+        },
+        "referenceNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Invoice reference number"
+        },
+        "invoiceDate": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Invoice date"
+        },
+        "dueDate": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Payment due date"
+        },
+        "subTotal": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Subtotal before tax"
+        },
+        "salesTax": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Sales tax amount"
+        },
+        "total": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Total invoice amount"
+        },
+        "balance": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Outstanding balance"
+        },
+        "invoiceTypeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Invoice type"
+        },
+        "jobId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated job ID"
+        },
+        "projectId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated project ID"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Business unit ID"
+        },
+        "locationId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Service location ID"
+        },
+        "customerId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Customer ID"
+        },
+        "depositedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Deposit date"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "adjustmentToId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Adjustment reference"
+        },
+        "status": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Invoice status"
+        },
+        "employeeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Assigned employee"
+        },
+        "commissionEligibilityDate": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Commission eligibility date"
+        },
+        "items": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Invoice line items"
+        },
+        "customFields": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Custom fields"
+        }
+      }
+    },
+    "estimates": {
+      "apiEndpoint": "sales/v2/tenant/{tenant}/estimates",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "businessUnitId",
+        "jobId",
+        "status"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique estimate identifier"
+        },
+        "jobId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated job ID"
+        },
+        "projectId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated project ID"
+        },
+        "locationId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Service location ID"
+        },
+        "customerId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Customer ID"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Estimate name"
+        },
+        "jobNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Job number"
+        },
+        "status": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Estimate status"
+        },
+        "summary": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Estimate summary"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "soldOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Sale timestamp"
+        },
+        "soldById": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Salesperson ID"
+        },
+        "estimateNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Estimate number"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Business unit ID"
+        },
+        "items": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Estimate line items"
+        },
+        "subtotal": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Subtotal"
+        },
+        "totalTax": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Total tax"
+        },
+        "total": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Total amount"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T20:45:42.500Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:45:42.501Z",
+          "source": "auto-detected"
+        }
+      }
+    },
+    "payments": {
+      "apiEndpoint": "accounting/v2/tenant/{tenant}/payments",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "invoiceId",
+        "paymentTypeId",
+        "status"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique payment identifier"
+        },
+        "invoiceId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated invoice ID"
+        },
+        "amount": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Payment amount"
+        },
+        "paymentTypeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Payment method/type"
+        },
+        "status": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Payment status"
+        },
+        "memo": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Payment memo"
+        },
+        "referenceNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Reference number"
+        },
+        "unappliedAmount": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Unapplied amount"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Business unit ID"
+        },
+        "batchId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Batch ID"
+        }
+      }
+    },
+    "customers": {
+      "apiEndpoint": "crm/v2/tenant/{tenant}/customers",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "type",
+        "active"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique customer identifier"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Active status"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Customer name"
+        },
+        "type": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Customer type"
+        },
+        "address": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Address details"
+        },
+        "email": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Email address"
+        },
+        "phoneNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Phone number"
+        },
+        "balance": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Account balance"
+        },
+        "customFields": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Custom fields"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "createdById": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Creator ID"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "mergedToId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Merged customer ID"
+        }
+      }
+    },
+    "locations": {
+      "apiEndpoint": "crm/v2/tenant/{tenant}/locations",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "customerId",
+        "active"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique location identifier"
+        },
+        "customerId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated customer ID"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Active status"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Location name"
+        },
+        "address": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Address details"
+        },
+        "taxZoneId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Tax zone ID"
+        },
+        "zoneId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Service zone ID"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "customFields": {
+          "type": "JSON",
+          "nullable": true,
+          "description": "Custom fields"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T20:36:20.155Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:36:20.156Z",
+          "source": "auto-detected"
+        }
+      }
+    },
+    "campaigns": {
+      "apiEndpoint": "marketing/v2/tenant/{tenant}/campaigns",
+      "primaryKey": "id",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "active",
+        "categoryId"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "id": {
+          "type": "INT64",
+          "nullable": false,
+          "description": "Unique campaign identifier"
+        },
+        "active": {
+          "type": "BOOL",
+          "nullable": true,
+          "description": "Active status"
+        },
+        "name": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Campaign name"
+        },
+        "categoryId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Campaign category ID"
+        },
+        "category": {
+          "type": "STRING",
+          "nullable": true,
+          "description": "Campaign category name"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T20:27:25.406Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:27:25.408Z",
+          "source": "auto-detected"
+        }
+      }
+    },
+    "payroll": {
+      "apiEndpoint": "payroll/v2/tenant/{tenant}/gross-pay-items",
+      "primaryKey": "payrollId",
+      "partitionField": "modifiedOn",
+      "clusterFields": [
+        "employeeId",
+        "date"
+      ],
+      "version": "1.0.0",
+      "lastUpdated": "2025-10-21T00:00:00Z",
+      "fields": {
+        "payrollId": {
+          "type": "INT64",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.493Z",
+          "source": "auto-detected"
+        },
+        "employeeId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Employee ID"
+        },
+        "employeeType": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.495Z",
+          "source": "auto-detected"
+        },
+        "businessUnitName": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.496Z",
+          "source": "auto-detected"
+        },
+        "date": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.497Z",
+          "source": "auto-detected"
+        },
+        "activity": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.497Z",
+          "source": "auto-detected"
+        },
+        "amount": {
+          "type": "FLOAT64",
+          "nullable": true,
+          "description": "Total amount"
+        },
+        "paidDurationHours": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.498Z",
+          "source": "auto-detected"
+        },
+        "paidTimeType": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.498Z",
+          "source": "auto-detected"
+        },
+        "jobId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated job ID"
+        },
+        "jobNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.498Z",
+          "source": "auto-detected"
+        },
+        "invoiceId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Associated invoice ID"
+        },
+        "invoiceNumber": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.499Z",
+          "source": "auto-detected"
+        },
+        "customerId": {
+          "type": "INT64",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.499Z",
+          "source": "auto-detected"
+        },
+        "locationId": {
+          "type": "INT64",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.499Z",
+          "source": "auto-detected"
+        },
+        "createdOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Creation timestamp"
+        },
+        "modifiedOn": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "description": "Last modification timestamp"
+        },
+        "businessUnitId": {
+          "type": "INT64",
+          "nullable": true,
+          "description": "Business unit ID"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.500Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T20:43:45.500Z",
+          "source": "auto-detected"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "version": "2.0.0",
+  "description": "ServiceTitan Entity API v2 Ingestor Configuration",
+  "entities": {
+    "jobs": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */2 * * *",
+      "priority": 1,
+      "description": "Job management data from JPM API"
+    },
+    "invoices": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */2 * * *",
+      "priority": 1,
+      "description": "Invoice data from Accounting API"
+    },
+    "estimates": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */2 * * *",
+      "priority": 2,
+      "description": "Estimate data from Sales API"
+    },
+    "payments": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */2 * * *",
+      "priority": 1,
+      "description": "Payment data from Accounting API"
+    },
+    "payroll": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 8 * * *",
+      "priority": 3,
+      "description": "Payroll data from Payroll API"
+    },
+    "customers": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */6 * * *",
+      "priority": 2,
+      "description": "Customer data from CRM API"
+    },
+    "locations": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 */6 * * *",
+      "priority": 2,
+      "description": "Location data from CRM API"
+    },
+    "campaigns": {
+      "enabled": true,
+      "syncMode": "incremental",
+      "schedule": "0 0 * * *",
+      "priority": 3,
+      "description": "Marketing campaign data"
+    }
+  },
+  "sync": {
+    "defaultMode": "incremental",
+    "fullSyncDay": "sunday",
+    "lookbackDays": 7,
+    "maxConcurrentJobs": 3,
+    "retryAttempts": 3,
+    "retryDelayMs": 5000
+  },
+  "bigquery": {
+    "projectId": "kpi-auto-471020",
+    "datasets": {
+      "raw": "st_raw_v2",
+      "stage": "st_stage_v2",
+      "mart": "st_mart_v2",
+      "logs": "st_logs_v2"
+    },
+    "location": "US",
+    "writeDisposition": "WRITE_APPEND",
+    "partitioning": {
+      "enabled": true,
+      "type": "DAY",
+      "field": "modifiedOn"
+    },
+    "clustering": {
+      "enabled": true,
+      "defaultFields": ["businessUnitId"]
+    }
+  },
+  "servicetitan": {
+    "baseUrl": "https://api.servicetitan.io",
+    "authUrl": "https://auth.servicetitan.io/connect/token",
+    "apiVersion": "v2",
+    "pageSize": 500,
+    "rateLimitPerSecond": 10,
+    "timeout": 30000
+  },
+  "logging": {
+    "level": "info",
+    "format": "json",
+    "includeMetadata": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "alertOnFailure": true,
+    "alertEmail": null,
+    "slackWebhook": null
+  },
+  "businessUnits": [
+    {
+      "id": 1,
+      "name": "BU1",
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "BU2",
+      "enabled": true
+    },
+    {
+      "id": 3,
+      "name": "BU3",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "name": "BU4",
+      "enabled": true
+    },
+    {
+      "id": 5,
+      "name": "BU5",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "name": "BU6",
+      "enabled": true
+    }
+  ]
+}
