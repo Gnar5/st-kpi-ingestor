@@ -433,8 +433,18 @@ app.get('/backfill-async', async (req, res) => {
     const startTime = Date.now();
     const results = {};
     const errors = {};
+    const skipped = {};
+
+    // Skip campaigns - already has full backfill (2020-05-18 to present)
+    const skipEntities = ['campaigns'];
 
     for (const [entity, ingestor] of Object.entries(ingestors)) {
+      if (skipEntities.includes(entity)) {
+        logger.info(`Backfill: Skipping ${entity} (already has full data)`);
+        skipped[entity] = 'Already has full backfill from 2020-05-18';
+        continue;
+      }
+
       try {
         logger.info(`Backfill: Starting ${entity}...`);
         const result = await ingestor.ingest({ mode: 'full' });
@@ -459,7 +469,9 @@ app.get('/backfill-async', async (req, res) => {
       durationMs: duration,
       durationMin: Math.round(duration / 60000),
       succeeded: Object.keys(results).length,
+      skipped: Object.keys(skipped).length,
       failed: Object.keys(errors).length,
+      skippedEntities: skipped,
       errors: hasErrors ? errors : undefined
     });
   })();
