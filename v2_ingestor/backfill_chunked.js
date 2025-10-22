@@ -4,6 +4,7 @@
  * Shows byte-based batching in action
  */
 
+import 'dotenv/config';
 import { EstimatesIngestor } from './src/ingestors/estimates.js';
 import { ServiceTitanClient } from './src/api/servicetitan_client.js';
 import { BigQueryClient } from './src/bq/bigquery_client.js';
@@ -42,10 +43,10 @@ async function backfillChunk(chunk, chunkNum, totalChunks) {
 
   try {
     // Fetch estimates for this date range
-    console.log(`\n⏳ Fetching estimates modified between ${chunk.label}...`);
+    console.log(`\n⏳ Fetching estimates created in ${chunk.label}...`);
     const estimates = await stClient.fetchAll('sales/v2/tenant/{tenant}/estimates', {
-      modifiedOnOrAfter: chunk.startDate,
-      modifiedBefore: chunk.endDate
+      createdOnOrAfter: chunk.startDate,
+      createdBefore: chunk.endDate
     });
 
     console.log(`✅ Fetched ${estimates.length.toLocaleString()} estimates`);
@@ -96,7 +97,7 @@ async function backfillChunk(chunk, chunkNum, totalChunks) {
 
 async function main() {
   console.log('\n' + '='.repeat(70));
-  console.log('  CHUNKED ESTIMATES BACKFILL - Byte-Based Batching Demo');
+  console.log('  CHUNKED ESTIMATES BACKFILL - By createdOn (Historical)');
   console.log('='.repeat(70));
 
   const chunks = generateYearlyChunks();

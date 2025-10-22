@@ -1,0 +1,126 @@
+
+======================================================================
+  CHUNKED ESTIMATES BACKFILL - Byte-Based Batching Demo
+======================================================================
+
+📅 Generated 6 yearly chunks:
+   1. 2020
+   2. 2021
+   3. 2022
+   4. 2023
+   5. 2024
+   6. 2025
+
+🚀 Starting chunked backfill...
+   You can stop at any time with Ctrl+C
+   Progress will be saved after each chunk
+
+
+============================================================
+📦 CHUNK 1/6: 2020
+   Date range: 2020-01-01 to 2021-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2020...
+{"timestamp":"2025-10-22T01:27:50.223Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2020-01-01T07:00:00.000Z","modifiedBefore":"2021-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:27:50.223Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:27:50.508Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:27:50.508Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2020 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 2/6: 2021
+   Date range: 2021-01-01 to 2022-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2021...
+{"timestamp":"2025-10-22T01:27:52.511Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2021-01-01T07:00:00.000Z","modifiedBefore":"2022-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:27:52.512Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:27:52.596Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:27:52.596Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2021 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 3/6: 2022
+   Date range: 2022-01-01 to 2023-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2022...
+{"timestamp":"2025-10-22T01:27:54.599Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2022-01-01T07:00:00.000Z","modifiedBefore":"2023-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:27:54.599Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:27:54.688Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:27:54.688Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2022 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 4/6: 2023
+   Date range: 2023-01-01 to 2024-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2023...
+{"timestamp":"2025-10-22T01:27:56.690Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2023-01-01T07:00:00.000Z","modifiedBefore":"2024-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:27:56.691Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:27:56.786Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:27:56.786Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2023 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 5/6: 2024
+   Date range: 2024-01-01 to 2025-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2024...
+{"timestamp":"2025-10-22T01:27:58.791Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2024-01-01T07:00:00.000Z","modifiedBefore":"2025-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:27:58.791Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:27:58.883Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:27:58.884Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2024 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 6/6: 2025
+   Date range: 2025-01-01 to 2025-10-22
+============================================================
+
+⏳ Fetching estimates modified between 2025...
+{"timestamp":"2025-10-22T01:28:00.888Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2025-01-01T07:00:00.000Z","modifiedBefore":"2025-10-22T01:27:50.221Z"}}
+{"timestamp":"2025-10-22T01:28:00.888Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:28:00.978Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Authentication failed","error":"Request failed with status code 400","status":400}
+{"timestamp":"2025-10-22T01:28:00.978Z","severity":"ERROR","context":"v2-ingestor:st-client","message":"Pagination failed","endpoint":"sales/v2/tenant/{tenant}/estimates","page":1,"error":"ServiceTitan authentication failed: Request failed with status code 400"}
+
+❌ Chunk 2025 failed: ServiceTitan authentication failed: Request failed with status code 400
+
+======================================================================
+  BACKFILL COMPLETE - SUMMARY
+======================================================================
+
+📊 Results by chunk:
+   ❌ 2020: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+   ❌ 2021: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+   ❌ 2022: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+   ❌ 2023: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+   ❌ 2024: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+   ❌ 2025: 0 records (Error: ServiceTitan authentication failed: Request failed with status code 400)
+
+📈 Totals:
+   Total fetched: 0
+   Total inserted: 0
+   Successful chunks: 0/6
+   Failed chunks: 6
+
+✨ Done!
+

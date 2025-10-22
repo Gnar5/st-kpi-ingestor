@@ -1,0 +1,139 @@
+
+======================================================================
+  CHUNKED ESTIMATES BACKFILL - Byte-Based Batching Demo
+======================================================================
+
+📅 Generated 6 yearly chunks:
+   1. 2020
+   2. 2021
+   3. 2022
+   4. 2023
+   5. 2024
+   6. 2025
+
+🚀 Starting chunked backfill...
+   You can stop at any time with Ctrl+C
+   Progress will be saved after each chunk
+
+
+============================================================
+📦 CHUNK 1/6: 2020
+   Date range: 2020-01-01 to 2021-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2020...
+{"timestamp":"2025-10-22T01:29:02.969Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2020-01-01T07:00:00.000Z","modifiedBefore":"2021-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:29:02.969Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:03.312Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:29:03.926Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":1,"totalItems":0}
+✅ Fetched 0 estimates
+   ℹ️  No estimates for this period, skipping...
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 2/6: 2021
+   Date range: 2021-01-01 to 2022-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2021...
+{"timestamp":"2025-10-22T01:29:05.952Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2021-01-01T07:00:00.000Z","modifiedBefore":"2022-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:29:05.952Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:06.113Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:29:06.244Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":1,"totalItems":0}
+✅ Fetched 0 estimates
+   ℹ️  No estimates for this period, skipping...
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 3/6: 2022
+   Date range: 2022-01-01 to 2023-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2022...
+{"timestamp":"2025-10-22T01:29:08.248Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2022-01-01T07:00:00.000Z","modifiedBefore":"2023-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:29:08.248Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:08.412Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:29:08.560Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":1,"totalItems":0}
+✅ Fetched 0 estimates
+   ℹ️  No estimates for this period, skipping...
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 4/6: 2023
+   Date range: 2023-01-01 to 2024-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2023...
+{"timestamp":"2025-10-22T01:29:10.562Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2023-01-01T07:00:00.000Z","modifiedBefore":"2024-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:29:10.562Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:10.729Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:29:10.857Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":1,"totalItems":0}
+✅ Fetched 0 estimates
+   ℹ️  No estimates for this period, skipping...
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 5/6: 2024
+   Date range: 2024-01-01 to 2025-01-01
+============================================================
+
+⏳ Fetching estimates modified between 2024...
+{"timestamp":"2025-10-22T01:29:12.860Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2024-01-01T07:00:00.000Z","modifiedBefore":"2025-01-01T07:00:00.000Z"}}
+{"timestamp":"2025-10-22T01:29:12.860Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:13.055Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:29:13.194Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":1,"totalItems":0}
+✅ Fetched 0 estimates
+   ℹ️  No estimates for this period, skipping...
+
+⏸️  Pausing 2 seconds before next chunk...
+
+============================================================
+📦 CHUNK 6/6: 2025
+   Date range: 2025-01-01 to 2025-10-22
+============================================================
+
+⏳ Fetching estimates modified between 2025...
+{"timestamp":"2025-10-22T01:29:15.197Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Starting paginated fetch","endpoint":"sales/v2/tenant/{tenant}/estimates","params":{"modifiedOnOrAfter":"2025-01-01T07:00:00.000Z","modifiedBefore":"2025-10-22T01:29:02.968Z"}}
+{"timestamp":"2025-10-22T01:29:15.197Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authenticating with ServiceTitan"}
+{"timestamp":"2025-10-22T01:29:15.390Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Authentication successful","expiresIn":900}
+{"timestamp":"2025-10-22T01:32:05.757Z","severity":"INFO","context":"v2-ingestor:st-client","message":"Pagination complete","endpoint":"sales/v2/tenant/{tenant}/estimates","totalPages":299,"totalItems":149310}
+✅ Fetched 149,310 estimates
+
+🔄 Transforming 149,310 estimates...
+
+📊 Inserting to BigQuery with BYTE-BASED BATCHING...
+   (Watch for batch size in MB in the logs below)
+{"timestamp":"2025-10-22T01:32:09.267Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Creating table","datasetId":"st_raw_v2","tableId":"raw_estimates_temp_1761096728188"}
+{"timestamp":"2025-10-22T01:32:09.529Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Table created","datasetId":"st_raw_v2","tableId":"raw_estimates_temp_1761096728188"}
+{"timestamp":"2025-10-22T01:32:09.529Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Using byte-based batching","datasetId":"st_raw_v2","tableId":"raw_estimates_temp_1761096728188","totalRows":149310,"maxMB":"8.00"}
+{"timestamp":"2025-10-22T01:32:12.253Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Byte-based batches created","datasetId":"st_raw_v2","tableId":"raw_estimates_temp_1761096728188","totalBatches":128,"avgRowsPerBatch":1166}
+{"timestamp":"2025-10-22T01:37:57.731Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Byte-based batched insert complete","datasetId":"st_raw_v2","tableId":"raw_estimates_temp_1761096728188","totalRows":149310,"totalBatches":128}
+{"timestamp":"2025-10-22T01:38:19.949Z","severity":"INFO","context":"v2-ingestor:bq-client","message":"Merge complete","datasetId":"st_raw_v2","tableId":"raw_estimates","rowsProcessed":149310,"primaryKey":"id"}
+
+✅ Chunk 2025 complete!
+   Records inserted: 149,310
+
+======================================================================
+  BACKFILL COMPLETE - SUMMARY
+======================================================================
+
+📊 Results by chunk:
+   ✅ 2020: 0 records 
+   ✅ 2021: 0 records 
+   ✅ 2022: 0 records 
+   ✅ 2023: 0 records 
+   ✅ 2024: 0 records 
+   ✅ 2025: 149,310 records 
+
+📈 Totals:
+   Total fetched: 149,310
+   Total inserted: 149,310
+   Successful chunks: 6/6
+   Failed chunks: 0
+
+✨ Done!
+
