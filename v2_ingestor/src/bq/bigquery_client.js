@@ -157,6 +157,13 @@ export class BigQueryClient {
 
   /**
    * Insert rows into table (streaming insert)
+   * Automatically batches large payloads to avoid 413 errors
+   *
+   * Two batching strategies:
+   * 1. Row-based (default): Fixed number of rows per batch
+   * 2. Byte-based: Dynamic batching based on JSON payload size
+   *    - Use for entities with variable record sizes (estimates, invoices)
+   *    - Prevents 413 errors when some records are very large
    */
   async insert(datasetId, tableId, rows, options = {}) {
     if (!rows || rows.length === 0) {
@@ -167,37 +174,183 @@ export class BigQueryClient {
     const dataset = this.bq.dataset(datasetId);
     const table = dataset.table(tableId);
 
-    try {
+    const useByteBatching = options.useByteBatching || false;
+    const maxBytes = options.maxBytes || 8 * 1024 * 1024; // 8MB (2MB buffer from 10MB limit)
+    const batchSize = options.batchSize || 1000;
+    const totalRows = rows.length;
+
+    // Helper function to insert a single batch
+    const insertBatch = async (batch, batchNum, totalBatches) => {
+      const batchBytes = Buffer.from(JSON.stringify(batch)).length;
+      const batchMB = (batchBytes / (1024 * 1024)).toFixed(2);
+
       await retryWithBackoff(
         async () => {
-          await table.insert(rows, {
+          await table.insert(batch, {
             skipInvalidRows: options.skipInvalidRows || false,
             ignoreUnknownValues: options.ignoreUnknownValues || true
           });
         },
         {
-          context: `BQ insert ${tableId}`,
+          context: `BQ insert ${tableId} batch ${batchNum}/${totalBatches}`,
           maxRetries: 3
         }
       );
 
-      this.log.info('Rows inserted', {
+      this.log.debug('Batch inserted', {
         datasetId,
         tableId,
-        count: rows.length
+        batch: `${batchNum}/${totalBatches}`,
+        batchRows: batch.length,
+        batchMB
       });
 
-      return { inserted: rows.length };
-    } catch (error) {
-      this.log.error('Insert failed', {
+      return batch.length;
+    };
+
+    // BYTE-BASED BATCHING (for entities with variable record sizes)
+    if (useByteBatching) {
+      this.log.info('Using byte-based batching', {
         datasetId,
         tableId,
-        rowCount: rows.length,
-        error: error.message,
-        errors: error.errors
+        totalRows,
+        maxMB: (maxBytes / (1024 * 1024)).toFixed(2)
       });
-      throw error;
+
+      const batches = [];
+      let currentBatch = [];
+      let currentSize = 0;
+
+      for (const row of rows) {
+        const rowJson = JSON.stringify(row);
+        const rowSize = Buffer.from(rowJson).length;
+
+        // If adding this row would exceed limit AND we have at least one row, start new batch
+        if (currentSize + rowSize > maxBytes && currentBatch.length > 0) {
+          batches.push([...currentBatch]);
+          currentBatch = [row];
+          currentSize = rowSize;
+        } else {
+          currentBatch.push(row);
+          currentSize += rowSize;
+        }
+      }
+
+      // Add final batch
+      if (currentBatch.length > 0) {
+        batches.push(currentBatch);
+      }
+
+      this.log.info('Byte-based batches created', {
+        datasetId,
+        tableId,
+        totalBatches: batches.length,
+        avgRowsPerBatch: Math.round(totalRows / batches.length)
+      });
+
+      let insertedCount = 0;
+
+      for (let i = 0; i < batches.length; i++) {
+        const batch = batches[i];
+        try {
+          const inserted = await insertBatch(batch, i + 1, batches.length);
+          insertedCount += inserted;
+        } catch (error) {
+          this.log.error('Batch insert failed', {
+            datasetId,
+            tableId,
+            batch: `${i + 1}/${batches.length}`,
+            batchRows: batch.length,
+            error: error.message
+          });
+          throw error;
+        }
+      }
+
+      this.log.info('Byte-based batched insert complete', {
+        datasetId,
+        tableId,
+        totalRows: insertedCount,
+        totalBatches: batches.length
+      });
+
+      return { inserted: insertedCount };
     }
+
+    // ROW-BASED BATCHING (original behavior)
+    // If under batch size, insert directly
+    if (totalRows <= batchSize) {
+      try {
+        await retryWithBackoff(
+          async () => {
+            await table.insert(rows, {
+              skipInvalidRows: options.skipInvalidRows || false,
+              ignoreUnknownValues: options.ignoreUnknownValues || true
+            });
+          },
+          {
+            context: `BQ insert ${tableId}`,
+            maxRetries: 3
+          }
+        );
+
+        this.log.info('Rows inserted', {
+          datasetId,
+          tableId,
+          count: rows.length
+        });
+
+        return { inserted: rows.length };
+      } catch (error) {
+        this.log.error('Insert failed', {
+          datasetId,
+          tableId,
+          rowCount: rows.length,
+          error: error.message,
+          errors: error.errors
+        });
+        throw error;
+      }
+    }
+
+    // Batch insert for large datasets
+    this.log.info('Using row-based batching', {
+      datasetId,
+      tableId,
+      totalRows,
+      batchSize,
+      batches: Math.ceil(totalRows / batchSize)
+    });
+
+    let insertedCount = 0;
+    const totalBatches = Math.ceil(totalRows / batchSize);
+
+    for (let i = 0; i < totalRows; i += batchSize) {
+      const batch = rows.slice(i, i + batchSize);
+      const batchNum = Math.floor(i / batchSize) + 1;
+
+      try {
+        const inserted = await insertBatch(batch, batchNum, totalBatches);
+        insertedCount += inserted;
+      } catch (error) {
+        this.log.error('Batch insert failed', {
+          datasetId,
+          tableId,
+          batch: `${batchNum}/${totalBatches}`,
+          batchRows: batch.length,
+          error: error.message
+        });
+        throw error;
+      }
+    }
+
+    this.log.info('Row-based batched insert complete', {
+      datasetId,
+      tableId,
+      totalRows: insertedCount
+    });
+
+    return { inserted: insertedCount };
   }
 
   /**
@@ -225,10 +378,12 @@ export class BigQueryClient {
         { description: 'Temporary table for MERGE operation' }
       );
 
-      // Insert into temp table
+      // Insert into temp table (pass through byte batching options)
       await this.insert(datasetId, tempTableId, rows, {
         skipInvalidRows: false,
-        ignoreUnknownValues: true
+        ignoreUnknownValues: true,
+        useByteBatching: options.useByteBatching || false,
+        maxBytes: options.maxBytes
       });
 
       // Build and execute MERGE query

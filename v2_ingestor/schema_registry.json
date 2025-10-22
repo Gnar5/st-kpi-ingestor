@@ -252,6 +252,18 @@
           "type": "JSON",
           "nullable": true,
           "description": "Custom fields"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-22T00:25:21.024Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-22T00:25:21.025Z",
+          "source": "auto-detected"
         }
       }
     },
@@ -447,6 +459,18 @@
           "type": "INT64",
           "nullable": true,
           "description": "Batch ID"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T23:57:54.137Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T23:57:54.139Z",
+          "source": "auto-detected"
         }
       }
     },
@@ -525,6 +549,18 @@
           "type": "INT64",
           "nullable": true,
           "description": "Merged customer ID"
+        },
+        "_ingested_at": {
+          "type": "TIMESTAMP",
+          "nullable": true,
+          "discovered": "2025-10-21T23:47:14.582Z",
+          "source": "auto-detected"
+        },
+        "_ingestion_source": {
+          "type": "STRING",
+          "nullable": true,
+          "discovered": "2025-10-21T23:47:14.583Z",
+          "source": "auto-detected"
         }
       }
     },

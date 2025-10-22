@@ -90,11 +90,18 @@ export class BaseIngestor {
       );
 
       // 5. Load to BigQuery (upsert for idempotency)
+      // Use byte-based batching for entities with variable record sizes
+      const useByteBatching = ['estimates', 'invoices'].includes(this.entityType);
+
       const result = await this.bqClient.upsert(
         this.bqClient.datasetRaw,
         this.tableId,
         transformed,
-        this.primaryKey
+        this.primaryKey,
+        {
+          useByteBatching,
+          maxBytes: 8 * 1024 * 1024  // 8MB (2MB buffer from 10MB limit)
+        }
       );
 
       metadata.records_inserted = result.merged;
