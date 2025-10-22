@@ -40,7 +40,7 @@ export class InvoicesIngestor extends BaseIngestor {
       total: invoice.total,
       balance: invoice.balance,
       invoiceTypeId: invoice.invoiceTypeId,
-      jobId: invoice.jobId,
+      jobId: invoice.job?.id,  // FIX: Extract job ID from nested job object
       projectId: invoice.projectId,
       businessUnitId: invoice.businessUnitId,
       locationId: invoice.locationId,
