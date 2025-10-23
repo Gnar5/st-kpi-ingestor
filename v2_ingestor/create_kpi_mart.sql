@@ -25,7 +25,7 @@ warranty_types AS (
 -- Sales business units
 sales_units AS (
   SELECT businessUnit FROM UNNEST([
-    'Andy\'s Painting Sales',
+    "Andy's Painting-Sales",
     'Commercial-AZ-Sales',
     'Guaranteed Painting-Sales',
     'Nevada-Sales',

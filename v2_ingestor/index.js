@@ -16,7 +16,10 @@ import {
   PayrollIngestor,
   CustomersIngestor,
   LocationsIngestor,
-  CampaignsIngestor
+  CampaignsIngestor,
+  AppointmentsIngestor,
+  PurchaseOrdersIngestor,
+  ReturnsIngestor
 } from './src/ingestors/index.js';
 
 // Reference/Dimension ingestors
@@ -39,7 +42,10 @@ const ingestors = {
   payroll: new PayrollIngestor(stClient, bqClient),
   customers: new CustomersIngestor(stClient, bqClient),
   locations: new LocationsIngestor(stClient, bqClient),
-  campaigns: new CampaignsIngestor(stClient, bqClient)
+  campaigns: new CampaignsIngestor(stClient, bqClient),
+  appointments: new AppointmentsIngestor(stClient, bqClient),
+  purchase_orders: new PurchaseOrdersIngestor(stClient, bqClient),
+  returns: new ReturnsIngestor(stClient, bqClient)
 };
 
 // Initialize reference/dimension ingestors
