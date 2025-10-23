@@ -1,0 +1,247 @@
+name: Nightly KPI Validation
+
+on:
+  schedule:
+    # Run at 2 AM PST / 3 AM MST every day
+    - cron: '0 10 * * *'  # 10:00 UTC
+  workflow_dispatch:  # Allow manual trigger
+
+env:
+  BQ_PROJECT_ID: kpi-auto-471020
+  NODE_VERSION: '18'
+
+jobs:
+  validate-data:
+    name: Run Data Validation Suite
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: write  # To create issues on failures
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: v2_ingestor/package-lock.json
+
+      - name: Install dependencies
+        working-directory: v2_ingestor
+        run: npm ci
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Setup Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Run validation suite
+        id: validation
+        working-directory: v2_ingestor/validation
+        run: |
+          # Run validations and capture output
+          node run_validations.js --output=json > validation_results.json 2>&1 || true
+
+          # Also generate table output for logs
+          node run_validations.js --output=table
+
+          # Check if validation failed
+          if grep -q '"overallStatus": "FAILURE"' validation_results.json; then
+            echo "validation_failed=true" >> $GITHUB_OUTPUT
+          else
+            echo "validation_failed=false" >> $GITHUB_OUTPUT
+          fi
+
+          # Extract summary stats
+          PASSED=$(jq '.passed' validation_results.json)
+          FAILED=$(jq '.failed' validation_results.json)
+          echo "passed_count=$PASSED" >> $GITHUB_OUTPUT
+          echo "failed_count=$FAILED" >> $GITHUB_OUTPUT
+
+      - name: Upload validation results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results-${{ github.run_id }}
+          path: v2_ingestor/validation/validation_results.json
+          retention-days: 30
+
+      - name: Check critical thresholds
+        id: threshold_check
+        working-directory: v2_ingestor/validation
+        run: |
+          # Run with threshold fail flag
+          if node run_validations.js --output=json --threshold-fail > threshold_results.json 2>&1; then
+            echo "threshold_exceeded=false" >> $GITHUB_OUTPUT
+          else
+            echo "threshold_exceeded=true" >> $GITHUB_OUTPUT
+            # Extract critical failures
+            jq '.validations[] | select(.status == "FAILED") | {name, description, statusCounts}' threshold_results.json
+          fi
+
+      - name: Generate validation report
+        if: always()
+        working-directory: v2_ingestor/validation
+        run: |
+          cat > validation_report.md << 'EOF'
+          # Data Validation Report
+
+          **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          **Project:** ${{ env.BQ_PROJECT_ID }}
+          **Run ID:** ${{ github.run_id }}
+
+          ## Summary
+          - ✅ Passed: ${{ steps.validation.outputs.passed_count }}
+          - ❌ Failed: ${{ steps.validation.outputs.failed_count }}
+          - Overall Status: ${{ steps.validation.outputs.validation_failed == 'true' && '**FAILURE**' || '**SUCCESS**' }}
+
+          ## Validation Results
+
+          EOF
+
+          # Append detailed results
+          jq -r '.validations[] | "### \(.name)\n- Status: \(.status)\n- Description: \(.description)\n- Red: \(.statusCounts.red) | Yellow: \(.statusCounts.yellow) | Green: \(.statusCounts.green)\n"' validation_results.json >> validation_report.md
+
+      - name: Post to Slack (if configured)
+        if: failure() && env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST $SLACK_WEBHOOK_URL \
+            -H 'Content-Type: application/json' \
+            -d '{
+              "text": "⚠️ KPI Data Validation Failed",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "*KPI Data Validation Failed*\n• Passed: ${{ steps.validation.outputs.passed_count }}\n• Failed: ${{ steps.validation.outputs.failed_count }}\n• <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View Details>"
+                  }
+                }
+              ]
+            }'
+
+      - name: Create issue on critical failure
+        if: steps.threshold_check.outputs.threshold_exceeded == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const validation_results = JSON.parse(
+              fs.readFileSync('v2_ingestor/validation/validation_results.json', 'utf8')
+            );
+
+            // Find critical failures
+            const criticalFailures = validation_results.validations
+              .filter(v => v.status === 'FAILED')
+              .map(v => `- **${v.name}**: ${v.description}`)
+              .join('\n');
+
+            // Create issue
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 Critical Data Validation Failure - ${new Date().toISOString().split('T')[0]}`,
+              body: `## Data Validation Critical Thresholds Exceeded
+
+              **Run ID:** ${context.runId}
+              **Timestamp:** ${new Date().toISOString()}
+
+              ### Failed Validations
+              ${criticalFailures}
+
+              ### Action Required
+              1. Review the [validation run](${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId})
+              2. Check BigQuery for data freshness issues
+              3. Verify ServiceTitan API connectivity
+              4. Review recent code changes that might affect data ingestion
+
+              ### Validation Summary
+              - Passed: ${{ steps.validation.outputs.passed_count }}
+              - Failed: ${{ steps.validation.outputs.failed_count }}
+
+              cc: @devops-team`,
+              labels: ['bug', 'critical', 'data-quality']
+            });
+
+      - name: Exit with appropriate code
+        if: always()
+        run: |
+          if [[ "${{ steps.threshold_check.outputs.threshold_exceeded }}" == "true" ]]; then
+            echo "❌ Critical thresholds exceeded - failing workflow"
+            exit 1
+          elif [[ "${{ steps.validation.outputs.validation_failed }}" == "true" ]]; then
+            echo "⚠️ Some validations failed but within acceptable thresholds"
+            exit 0
+          else
+            echo "✅ All validations passed"
+            exit 0
+          fi
+
+  ingestion-health-check:
+    name: Check Ingestion Health
+    runs-on: ubuntu-latest
+    needs: validate-data
+    if: always()  # Run even if validation fails
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Check Cloud Run service health
+        id: health_check
+        run: |
+          # Get service status
+          SERVICE_URL=$(gcloud run services describe v2-ingestor \
+            --region=us-central1 \
+            --format='value(status.url)' 2>/dev/null || echo "")
+
+          if [[ -n "$SERVICE_URL" ]]; then
+            # Check health endpoint
+            HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "${SERVICE_URL}/health" || echo "000")
+
+            if [[ "$HTTP_STATUS" == "200" ]]; then
+              echo "✅ Cloud Run service is healthy"
+              echo "service_healthy=true" >> $GITHUB_OUTPUT
+            else
+              echo "❌ Cloud Run service health check failed (HTTP $HTTP_STATUS)"
+              echo "service_healthy=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "⚠️ Cloud Run service not found"
+            echo "service_healthy=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Check recent ingestion logs
+        run: |
+          echo "Checking recent ingestion logs..."
+
+          # Query recent ingestion status from BigQuery
+          bq query --use_legacy_sql=false --format=json "
+            SELECT
+              entity_type,
+              MAX(end_time) as last_run,
+              DATETIME_DIFF(CURRENT_DATETIME(), MAX(end_time), HOUR) as hours_since_last_run,
+              COUNTIF(status = 'success' AND end_time > DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 24 HOUR)) as successful_runs_24h,
+              COUNTIF(status = 'error' AND end_time > DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 24 HOUR)) as failed_runs_24h
+            FROM \`kpi-auto-471020.st_logs_v2.ingestion_logs\`
+            WHERE start_time > DATETIME_SUB(CURRENT_DATETIME(), INTERVAL 7 DAY)
+            GROUP BY entity_type
+            ORDER BY hours_since_last_run DESC
+          " > ingestion_status.json
+
+          # Display results
+          cat ingestion_status.json | jq -r '.[] | "\(.entity_type): Last run \(.hours_since_last_run)h ago | 24h: \(.successful_runs_24h) success, \(.failed_runs_24h) failed"'
