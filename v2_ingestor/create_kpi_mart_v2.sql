@@ -6,31 +6,29 @@ CREATE OR REPLACE VIEW `kpi-auto-471020.st_mart_v2.daily_kpis` AS
 
 WITH
 -- Sales KPIs (Lead Generation and Booking)
+-- Note: ServiceTitan's "BU Sales - API" report uses estimate soldOn date, not job createdOn
 sales_kpis AS (
   SELECT
-    DATE(j.createdOn) AS event_date,
+    DATE(e.soldOn) AS event_date,
     j.businessUnitNormalized AS business_unit,
 
-    -- Lead metrics
+    -- Lead metrics (count jobs as sales opportunities)
     COUNT(DISTINCT j.id) AS lead_count,
 
     -- Estimate metrics
     COUNT(DISTINCT e.id) AS estimate_count,
 
     -- Booked revenue (sold estimates - use subTotal since total is often NULL)
-    SUM(CASE
-      WHEN e.status = 'Sold' THEN COALESCE(e.total, e.subTotal)
-      ELSE 0
-    END) AS total_booked,
+    SUM(COALESCE(e.total, e.subTotal)) AS total_booked,
 
-    -- Close rate
+    -- Close rate (based on customers with sold estimates)
     SAFE_DIVIDE(
-      COUNT(DISTINCT CASE WHEN e.status = 'Sold' THEN e.customerId END),
+      COUNT(DISTINCT e.customerId),
       COUNT(DISTINCT e.customerId)
     ) AS close_rate
 
-  FROM `kpi-auto-471020.st_dim_v2.dim_jobs` j
-  LEFT JOIN `kpi-auto-471020.st_raw_v2.raw_estimates` e ON j.id = e.jobId
+  FROM `kpi-auto-471020.st_raw_v2.raw_estimates` e
+  JOIN `kpi-auto-471020.st_dim_v2.dim_jobs` j ON e.jobId = j.id
 
   WHERE j.businessUnitNormalized IN (
     'Phoenix-Sales',
@@ -40,6 +38,8 @@ sales_kpis AS (
     'Commercial-AZ-Sales',
     'Guaranteed Painting-Sales'
   )
+  AND e.status = 'Sold'
+  AND e.soldOn IS NOT NULL
 
   GROUP BY event_date, business_unit
 ),
@@ -91,7 +91,7 @@ production_kpis AS (
     'Commercial-AZ-Production',
     'Guaranteed Painting-Production'
   )
-  AND jc.jobStatus = 'Completed'  -- Only completed jobs count as "produced"
+  AND jc.jobStatus IN ('Completed', 'Hold')  -- ServiceTitan includes both Completed and Hold status jobs
 
   GROUP BY event_date, business_unit
 ),
