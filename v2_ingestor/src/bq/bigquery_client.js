@@ -477,22 +477,22 @@ export class BigQueryClient {
     // Get all field names
     const fields = schema.map(f => f.name);
 
-    // Build field list for INSERT
-    const fieldList = fields.join(', ');
+    // Build field list for INSERT (wrap in backticks to handle reserved keywords)
+    const fieldList = fields.map(f => `\`${f}\``).join(', ');
 
-    // Build field list for UPDATE (exclude primary key)
+    // Build field list for UPDATE (exclude primary key, wrap in backticks)
     const updateFields = fields
       .filter(f => f !== primaryKey)
-      .map(f => `target.${f} = source.${f}`)
+      .map(f => `target.\`${f}\` = source.\`${f}\``)
       .join(',\n    ');
 
-    // Build source field list for INSERT VALUES
-    const sourceFieldList = fields.map(f => `source.${f}`).join(', ');
+    // Build source field list for INSERT VALUES (wrap in backticks)
+    const sourceFieldList = fields.map(f => `source.\`${f}\``).join(', ');
 
     const mergeQuery = `
 MERGE ${fullTargetTable} AS target
 USING ${fullSourceTable} AS source
-ON target.${primaryKey} = source.${primaryKey}
+ON target.\`${primaryKey}\` = source.\`${primaryKey}\`
 WHEN MATCHED THEN
   UPDATE SET
     ${updateFields}
