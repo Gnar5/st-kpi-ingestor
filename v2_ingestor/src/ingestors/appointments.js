@@ -44,8 +44,8 @@ export class AppointmentsIngestor extends BaseIngestor {
       id: appt.id,
       jobId: appt.jobId,
       appointmentNumber: appt.appointmentNumber,
-      start: this.parseDate(appt.start),
-      end: this.parseDate(appt.end),
+      scheduledStart: this.parseDate(appt.start),  // Renamed from 'start' (reserved keyword)
+      scheduledEnd: this.parseDate(appt.end),      // Renamed from 'end' (reserved keyword)
       arrivalWindowStart: this.parseDate(appt.arrivalWindowStart),
       arrivalWindowEnd: this.parseDate(appt.arrivalWindowEnd),
       status: appt.status,
@@ -71,8 +71,8 @@ export class AppointmentsIngestor extends BaseIngestor {
       { name: 'id', type: 'INT64', mode: 'REQUIRED' },
       { name: 'jobId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'appointmentNumber', type: 'STRING', mode: 'NULLABLE' },
-      { name: 'start', type: 'TIMESTAMP', mode: 'NULLABLE' },
-      { name: 'end', type: 'TIMESTAMP', mode: 'NULLABLE' },
+      { name: 'scheduledStart', type: 'TIMESTAMP', mode: 'NULLABLE' },  // This is the "job start date"
+      { name: 'scheduledEnd', type: 'TIMESTAMP', mode: 'NULLABLE' },
       { name: 'arrivalWindowStart', type: 'TIMESTAMP', mode: 'NULLABLE' },
       { name: 'arrivalWindowEnd', type: 'TIMESTAMP', mode: 'NULLABLE' },
       { name: 'status', type: 'STRING', mode: 'NULLABLE' },
