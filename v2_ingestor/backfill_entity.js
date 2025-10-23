@@ -12,6 +12,8 @@ import { JobsIngestor } from './src/ingestors/jobs.js';
 import { InvoicesIngestor } from './src/ingestors/invoices.js';
 import { PaymentsIngestor } from './src/ingestors/payments.js';
 import { PayrollIngestor } from './src/ingestors/payroll.js';
+import { PurchaseOrdersIngestor } from './src/ingestors/purchase_orders.js';
+import { ReturnsIngestor } from './src/ingestors/returns.js';
 
 // Entity configuration
 const ENTITY_CONFIG = {
@@ -40,8 +42,22 @@ const ENTITY_CONFIG = {
     ingestor: PayrollIngestor,
     endpoint: 'payroll/v2/tenant/{tenant}/gross-pay-items',  // Use gross-pay-items for line-item detail
     tableId: 'raw_payroll',
-    primaryKey: 'payrollId',  // Payroll uses payrollId instead of id
+    primaryKey: 'id',  // Use hash-based unique ID
     useByteBatching: true  // Enable byte-size batching to avoid 10MB payload limit
+  },
+  purchase_orders: {
+    ingestor: PurchaseOrdersIngestor,
+    endpoint: 'inventory/v2/tenant/{tenant}/purchase-orders',
+    tableId: 'raw_purchase_orders',
+    primaryKey: 'id',  // Use hash-based unique ID
+    useByteBatching: true  // Purchase orders can have multiple line items
+  },
+  returns: {
+    ingestor: ReturnsIngestor,
+    endpoint: 'inventory/v2/tenant/{tenant}/returns',
+    tableId: 'raw_returns',
+    primaryKey: 'id',  // Use hash-based unique ID
+    useByteBatching: true  // Returns can have multiple line items
   }
 };
 
@@ -67,7 +83,7 @@ function generateYearlyChunks(startYear = 2020) {
   return chunks;
 }
 
-async function backfillChunk(entityName, config, chunk, chunkNum, totalChunks) {
+async function backfillChunk(entityName, config, chunk, chunkNum, totalChunks, ensureTable = false) {
   console.log(`\n${'='.repeat(60)}`);
   console.log(`📦 CHUNK ${chunkNum}/${totalChunks}: ${chunk.label}`);
   console.log(`   Date range: ${chunk.startDate.split('T')[0]} to ${chunk.endDate.split('T')[0]}`);
@@ -78,6 +94,21 @@ async function backfillChunk(entityName, config, chunk, chunkNum, totalChunks) {
   const ingestor = new config.ingestor(stClient, bqClient);
 
   try {
+    // Ensure table exists on first chunk
+    if (ensureTable) {
+      console.log('\n🔧 Ensuring table exists with correct schema...');
+      await bqClient.ensureTable(
+        bqClient.datasetRaw,
+        config.tableId,
+        ingestor.getSchema(),
+        {
+          description: `ServiceTitan ${entityName} data`,
+          partitionField: ingestor.config.partitionField,
+          clusterFields: ingestor.config.clusterFields
+        }
+      );
+    }
+
     // Fetch records for this date range
     console.log(`\n⏳ Fetching ${entityName} created in ${chunk.label}...`);
     const records = await stClient.fetchAll(config.endpoint, {
@@ -168,7 +199,9 @@ async function main() {
   const results = [];
 
   for (let i = 0; i < chunks.length; i++) {
-    const result = await backfillChunk(entityName, config, chunks[i], i + 1, chunks.length);
+    // Ensure table exists on first chunk
+    const ensureTable = (i === 0);
+    const result = await backfillChunk(entityName, config, chunks[i], i + 1, chunks.length, ensureTable);
     results.push(result);
 
     // Short pause between chunks

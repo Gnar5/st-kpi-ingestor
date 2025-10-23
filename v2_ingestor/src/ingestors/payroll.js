@@ -3,15 +3,16 @@
  * Fetches payroll data from ServiceTitan Payroll API
  */
 
+import crypto from 'crypto';
 import { BaseIngestor } from './base_ingestor.js';
 
 export class PayrollIngestor extends BaseIngestor {
   constructor(stClient, bqClient, config = {}) {
     super('payroll', stClient, bqClient, {
       tableId: 'raw_payroll',
-      primaryKey: 'payrollId',  // Changed from 'id' to 'payrollId'
+      primaryKey: 'id',  // Use sourceEntityId as primary key
       partitionField: 'modifiedOn',
-      clusterFields: ['employeeId', 'date'],  // Changed 'paidDate' to 'date'
+      clusterFields: ['employeeId', 'jobId', 'date'],
       ...config
     });
   }
@@ -28,32 +29,72 @@ export class PayrollIngestor extends BaseIngestor {
   }
 
   async transform(data) {
-    return data.map(item => ({
-      payrollId: item.payrollId,
-      employeeId: item.employeeId,
-      employeeType: item.employeeType,
-      businessUnitName: item.businessUnitName,
-      date: this.parseDate(item.date),
-      activity: item.activity,
-      amount: item.amount,
-      paidDurationHours: item.paidDurationHours,
-      paidTimeType: item.paidTimeType,
-      jobId: item.jobId,
-      jobNumber: item.jobNumber,
-      invoiceId: item.invoiceId,
-      invoiceNumber: item.invoiceNumber,
-      customerId: item.customerId,
-      locationId: item.locationId,
-      createdOn: this.parseDate(item.createdOn),
-      modifiedOn: this.parseDate(item.modifiedOn),
-      _ingested_at: new Date().toISOString(),
-      _ingestion_source: 'servicetitan_v2'
-    }));
+    return data.map((item, index) => {
+      // Generate unique hash-based ID from all fields
+      // sourceEntityId is NOT unique - multiple line items can share same sourceEntityId
+      // We need to hash all differentiating fields to ensure uniqueness
+      const uniqueId = this.generateUniqueId(item, index);
+
+      return {
+        id: uniqueId,  // Primary key (hash-based)
+        payrollId: item.payrollId,
+        employeeId: item.employeeId,
+        employeeType: item.employeeType,
+        businessUnitName: item.businessUnitName,
+        date: this.parseDate(item.date),
+        activity: item.activity,
+        amount: item.amount,
+        paidDurationHours: item.paidDurationHours,
+        paidTimeType: item.paidTimeType,
+        jobId: item.jobId,
+        jobNumber: item.jobNumber,
+        invoiceId: item.invoiceId,
+        invoiceNumber: item.invoiceNumber,
+        customerId: item.customerId,
+        locationId: item.locationId,
+        sourceEntityId: item.sourceEntityId,  // Store this too
+        createdOn: this.parseDate(item.createdOn),
+        modifiedOn: this.parseDate(item.modifiedOn),
+        _ingested_at: new Date().toISOString(),
+        _ingestion_source: 'servicetitan_v2'
+      };
+    });
+  }
+
+  /**
+   * Generate unique ID using hash of all fields
+   * sourceEntityId is NOT unique, so we hash all differentiating fields
+   */
+  generateUniqueId(item, index) {
+    // Create a deterministic string from all fields that could differ
+    const uniqueString = [
+      item.payrollId || '',
+      item.employeeId || '',
+      item.jobId || '',
+      item.date || '',
+      item.activity || '',
+      item.amount || '',
+      item.paidDurationHours || '',
+      item.invoiceId || '',
+      item.sourceEntityId || '',
+      item.createdOn || '',
+      index  // Fallback for truly identical records
+    ].join('|');
+
+    // Generate SHA256 hash and convert to BigInt
+    const hash = crypto.createHash('sha256').update(uniqueString).digest('hex');
+
+    // Take first 15 digits of hex as integer (fits in BigQuery INT64)
+    // This gives us 60 bits of uniqueness (2^60 = 1.15 quintillion possible values)
+    const uniqueId = parseInt(hash.substring(0, 15), 16);
+
+    return uniqueId;
   }
 
   getSchema() {
     return [
-      { name: 'payrollId', type: 'INT64', mode: 'REQUIRED' },
+      { name: 'id', type: 'INT64', mode: 'REQUIRED' },  // Unique hash-based ID
+      { name: 'payrollId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'employeeId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'employeeType', type: 'STRING', mode: 'NULLABLE' },
       { name: 'businessUnitName', type: 'STRING', mode: 'NULLABLE' },
@@ -68,6 +109,7 @@ export class PayrollIngestor extends BaseIngestor {
       { name: 'invoiceNumber', type: 'STRING', mode: 'NULLABLE' },
       { name: 'customerId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'locationId', type: 'INT64', mode: 'NULLABLE' },
+      { name: 'sourceEntityId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'createdOn', type: 'TIMESTAMP', mode: 'NULLABLE' },
       { name: 'modifiedOn', type: 'TIMESTAMP', mode: 'NULLABLE' },
       { name: '_ingested_at', type: 'TIMESTAMP', mode: 'REQUIRED' },

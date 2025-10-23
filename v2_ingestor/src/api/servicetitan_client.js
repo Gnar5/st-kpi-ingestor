@@ -88,7 +88,8 @@ export class ServiceTitanClient {
     return {
       'Authorization': `Bearer ${token}`,
       'ST-App-Key': this.appKey,
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Accept-Encoding': 'gzip, deflate'  // Enable compression for faster transfers
     };
   }
 

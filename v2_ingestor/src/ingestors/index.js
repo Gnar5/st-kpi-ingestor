@@ -12,3 +12,5 @@ export { PayrollIngestor } from './payroll.js';
 export { CustomersIngestor } from './customers.js';
 export { LocationsIngestor } from './locations.js';
 export { CampaignsIngestor } from './campaigns.js';
+export { PurchaseOrdersIngestor } from './purchase_orders.js';
+export { ReturnsIngestor } from './returns.js';
