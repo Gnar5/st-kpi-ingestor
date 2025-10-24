@@ -34,9 +34,7 @@ job_labor AS (
   SELECT
     jobId,
     SUM(amount) as labor_gross_pay,
-    -- Assume 30% burden rate (payroll taxes, benefits, etc.) if not specified
-    SUM(amount * 0.30) as labor_burden,
-    SUM(amount * 1.30) as total_labor_cost,
+    SUM(amount) as total_labor_cost,  -- Use raw payroll, no burden (matches ST FOREMAN report)
     COUNT(DISTINCT employeeId) as tech_count
   FROM `kpi-auto-471020.st_raw_v2.raw_payroll`
   WHERE jobId IS NOT NULL
@@ -51,7 +49,7 @@ job_materials AS (
     COUNT(*) as po_count
   FROM `kpi-auto-471020.st_raw_v2.raw_purchase_orders`
   WHERE jobId IS NOT NULL
-    AND status = 'Billed'  -- Only include billed POs
+    AND status IN ('Exported', 'Received')  -- Include exported and received POs (not Billed)
   GROUP BY jobId
 ),
 
@@ -113,7 +111,6 @@ job_costing AS (
 
     -- Component details for troubleshooting
     COALESCE(jl.labor_gross_pay, 0) as labor_gross_pay,
-    COALESCE(jl.labor_burden, 0) as labor_burden,
     COALESCE(jm.material_cost, 0) as material_cost_raw,
     COALESCE(jr.return_credit, 0) as return_credit,
     COALESCE(ji.invoice_count, 0) as invoice_count,
