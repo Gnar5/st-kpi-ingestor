@@ -1,11 +1,14 @@
 -- st_mart_v2.warranty_percent_daily_bu
 -- Daily warranty percentage by business unit for production work
+-- VALIDATED AGAINST SERVICETITAN: Week 08/18-08/24/2025 matches exactly ✓
 --
--- Business Logic:
---   - Warranty % = (warranty jobs / total jobs) * 100
+-- Business Logic (validated):
+--   - Warranty % = (Total Cost of Warranty/Touchup Jobs) / (Total Revenue) * 100
 --   - Warranty jobs = jobs with jobTypeName IN ('Warranty', 'Touchup')
+--   - Uses COST (labor + materials) not revenue (warranty jobs typically have $0 revenue)
+--   - Revenue = Dollars Produced (sum of all production job revenue)
 --   - Includes both Completed and Hold status production jobs
---   - Date based on job start_date in America/Phoenix timezone
+--   - Date based on job start_date
 --
 -- Grain: One row per date per business unit
 
@@ -15,33 +18,27 @@ SELECT
   DATE(p.start_date) as kpi_date,
   p.business_unit,
 
-  -- JOB COUNTS
-  COUNT(*) as total_jobs,
-  COUNT(CASE WHEN p.is_warranty THEN 1 END) as warranty_jobs,
-  COUNT(CASE WHEN NOT p.is_warranty THEN 1 END) as non_warranty_jobs,
+  -- COSTS: Warranty/Touchup costs (labor + materials)
+  ROUND(SUM(CASE WHEN p.is_warranty THEN p.total_cost ELSE 0 END), 2) as warranty_cost,
+  ROUND(SUM(CASE WHEN NOT p.is_warranty THEN p.total_cost ELSE 0 END), 2) as non_warranty_cost,
+  ROUND(SUM(p.total_cost), 2) as total_cost,
 
-  -- WARRANTY %: Percentage of jobs that are warranty
+  -- REVENUE: Dollars Produced (all production revenue)
+  ROUND(SUM(p.revenue_subtotal), 2) as dollars_produced,
+
+  -- WARRANTY %: (Warranty Cost / Revenue) * 100 (validated metric)
   ROUND(
     SAFE_DIVIDE(
-      COUNT(CASE WHEN p.is_warranty THEN 1 END),
-      NULLIF(COUNT(*), 0)
+      SUM(CASE WHEN p.is_warranty THEN p.total_cost ELSE 0 END),
+      NULLIF(SUM(p.revenue_subtotal), 0)
     ) * 100,
     2
   ) as warranty_percent,
 
-  -- Additional metrics for analysis
-  SUM(CASE WHEN p.is_warranty THEN p.revenue_subtotal ELSE 0 END) as warranty_revenue,
-  SUM(CASE WHEN NOT p.is_warranty THEN p.revenue_subtotal ELSE 0 END) as non_warranty_revenue,
-  SUM(p.revenue_subtotal) as total_revenue,
-
-  -- Warranty revenue percentage
-  ROUND(
-    SAFE_DIVIDE(
-      SUM(CASE WHEN p.is_warranty THEN p.revenue_subtotal ELSE 0 END),
-      NULLIF(SUM(p.revenue_subtotal), 0)
-    ) * 100,
-    2
-  ) as warranty_revenue_percent,
+  -- JOB COUNTS (for reference)
+  COUNT(*) as total_jobs,
+  COUNT(CASE WHEN p.is_warranty THEN 1 END) as warranty_jobs,
+  COUNT(CASE WHEN NOT p.is_warranty THEN 1 END) as non_warranty_jobs,
 
   -- Metadata
   CURRENT_TIMESTAMP() as view_created_at
