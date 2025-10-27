@@ -9,6 +9,7 @@ export { InvoicesIngestor } from './invoices.js';
 export { EstimatesIngestor } from './estimates.js';
 export { PaymentsIngestor } from './payments.js';
 export { PayrollIngestor } from './payroll.js';
+export { PayrollAdjustmentsIngestor } from './payroll_adjustments.js';
 export { CustomersIngestor } from './customers.js';
 export { LocationsIngestor } from './locations.js';
 export { CampaignsIngestor } from './campaigns.js';

@@ -322,7 +322,7 @@ export class ServiceTitanClient {
   }
 
   /**
-   * Payroll API
+   * Payroll API (Gross Pay Items)
    */
   async getPayroll(params = {}) {
     return this.fetchAll('payroll/v2/tenant/{tenant}/gross-pay-items', params);
@@ -331,6 +331,23 @@ export class ServiceTitanClient {
   async getPayrollIncremental(modifiedSince) {
     return this.fetchIncremental(
       'payroll/v2/tenant/{tenant}/gross-pay-items',
+      {},
+      { modifiedSince }
+    );
+  }
+
+  /**
+   * Payroll Adjustments API
+   * Returns payroll adjustments, bonuses, and corrections
+   * These link to invoiceId rather than jobId
+   */
+  async getPayrollAdjustments(params = {}) {
+    return this.fetchAll('payroll/v2/tenant/{tenant}/payroll-adjustments', params);
+  }
+
+  async getPayrollAdjustmentsIncremental(modifiedSince) {
+    return this.fetchIncremental(
+      'payroll/v2/tenant/{tenant}/payroll-adjustments',
       {},
       { modifiedSince }
     );

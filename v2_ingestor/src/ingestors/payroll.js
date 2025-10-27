@@ -64,9 +64,16 @@ export class PayrollIngestor extends BaseIngestor {
   /**
    * Generate unique ID using hash of all fields
    * sourceEntityId is NOT unique, so we hash all differentiating fields
+   * IMPORTANT: Do NOT include index - must be deterministic across syncs
    */
   generateUniqueId(item, index) {
-    // Create a deterministic string from all fields that could differ
+    // Use sourceEntityId if available (preferred unique key from ServiceTitan)
+    if (item.sourceEntityId) {
+      return item.sourceEntityId;
+    }
+
+    // Otherwise create deterministic hash from all fields
+    // DO NOT include index - it changes between syncs and causes duplicates
     const uniqueString = [
       item.payrollId || '',
       item.employeeId || '',
@@ -76,9 +83,7 @@ export class PayrollIngestor extends BaseIngestor {
       item.amount || '',
       item.paidDurationHours || '',
       item.invoiceId || '',
-      item.sourceEntityId || '',
-      item.createdOn || '',
-      index  // Fallback for truly identical records
+      item.createdOn || ''
     ].join('|');
 
     // Generate SHA256 hash and convert to BigInt

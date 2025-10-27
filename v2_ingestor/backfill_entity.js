@@ -12,6 +12,7 @@ import { JobsIngestor } from './src/ingestors/jobs.js';
 import { InvoicesIngestor } from './src/ingestors/invoices.js';
 import { PaymentsIngestor } from './src/ingestors/payments.js';
 import { PayrollIngestor } from './src/ingestors/payroll.js';
+import { PayrollAdjustmentsIngestor } from './src/ingestors/payroll_adjustments.js';
 import { PurchaseOrdersIngestor } from './src/ingestors/purchase_orders.js';
 import { ReturnsIngestor } from './src/ingestors/returns.js';
 
@@ -44,6 +45,13 @@ const ENTITY_CONFIG = {
     tableId: 'raw_payroll',
     primaryKey: 'id',  // Use hash-based unique ID
     useByteBatching: true  // Enable byte-size batching to avoid 10MB payload limit
+  },
+  payroll_adjustments: {
+    ingestor: PayrollAdjustmentsIngestor,
+    endpoint: 'payroll/v2/tenant/{tenant}/payroll-adjustments',  // Direct adjustments, bonuses, corrections
+    tableId: 'raw_payroll_adjustments',
+    primaryKey: 'id',  // Use hash-based unique ID
+    useByteBatching: false  // Adjustments are typically small records
   },
   purchase_orders: {
     ingestor: PurchaseOrdersIngestor,

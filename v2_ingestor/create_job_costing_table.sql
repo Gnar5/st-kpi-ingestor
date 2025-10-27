@@ -30,18 +30,45 @@ job_invoices AS (
 ),
 
 -- Get labor costs by job from payroll
+-- IMPORTANT: Deduplicate to avoid counting the same payroll entry multiple times
+-- NOTE: sourceEntityId is NOT unique - it can have multiple line items with different amounts
+--       Must use composite key: (jobId, employeeId, date, activity, amount, paidDurationHours)
+-- NOTE: Do NOT include payroll-adjustments separately - they are already in gross-pay-items
+--       with activity = 'Direct Adjustment'
 job_labor AS (
   SELECT
     jobId,
     SUM(amount) as labor_gross_pay,
-    SUM(amount) as total_labor_cost,  -- Use raw payroll, no burden (matches ST FOREMAN report)
+    SUM(amount) as total_labor_cost,
     COUNT(DISTINCT employeeId) as tech_count
-  FROM `kpi-auto-471020.st_raw_v2.raw_payroll`
-  WHERE jobId IS NOT NULL
+  FROM (
+    -- Deduplicate using composite key of all differentiating fields
+    -- sourceEntityId is NOT unique and cannot be used for deduplication
+    SELECT DISTINCT
+      jobId,
+      employeeId,
+      date,
+      activity,
+      amount,
+      paidDurationHours,
+      -- Use all fields to create unique key
+      CONCAT(
+        CAST(jobId AS STRING), '-',
+        CAST(employeeId AS STRING), '-',
+        CAST(date AS STRING), '-',
+        COALESCE(activity, 'NULL'), '-',
+        CAST(amount AS STRING), '-',
+        CAST(paidDurationHours AS STRING)
+      ) as dedup_key
+    FROM `kpi-auto-471020.st_raw_v2.raw_payroll`
+    WHERE jobId IS NOT NULL
+  )
   GROUP BY jobId
 ),
 
 -- Get material costs from purchase orders
+-- Include Sent, PartiallyReceived, Received, and Exported statuses
+-- "Sent" represents committed costs even if not yet received
 job_materials AS (
   SELECT
     jobId,
@@ -49,7 +76,7 @@ job_materials AS (
     COUNT(*) as po_count
   FROM `kpi-auto-471020.st_raw_v2.raw_purchase_orders`
   WHERE jobId IS NOT NULL
-    AND status IN ('Exported', 'Received')  -- Include exported and received POs (not Billed)
+    AND status IN ('Exported', 'Received', 'PartiallyReceived', 'Sent')
   GROUP BY jobId
 ),
 
