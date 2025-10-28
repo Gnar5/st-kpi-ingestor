@@ -27,7 +27,7 @@ export class PaymentsIngestor extends BaseIngestor {
   constructor(stClient, bqClient, config = {}) {
     super('payments', stClient, bqClient, {
       tableId: 'raw_payments',
-      primaryKey: 'payment_split_id', // Composite key since we flatten splits
+      primaryKey: 'id', // Use id as primary key for BaseIngestor
       partitionField: 'paidOn',
       clusterFields: ['invoiceId', 'paymentTypeId', 'status'],
       ...config
@@ -54,7 +54,7 @@ export class PaymentsIngestor extends BaseIngestor {
       // If payment has no splits, create one row with NULL invoiceId
       if (splits.length === 0) {
         rows.push({
-          payment_split_id: `${payment.id}-0`,
+          id: `${payment.id}-0`,
           paymentId: payment.id,
           invoiceId: null,
           amount: null,
@@ -71,7 +71,7 @@ export class PaymentsIngestor extends BaseIngestor {
         // Create one row per split
         splits.forEach((split, index) => {
           rows.push({
-            payment_split_id: `${payment.id}-${split.invoiceId || index}`,
+            id: `${payment.id}-${split.invoiceId || index}`,
             paymentId: payment.id,
             invoiceId: split.invoiceId,
             amount: split.amount,
@@ -93,7 +93,7 @@ export class PaymentsIngestor extends BaseIngestor {
 
   getSchema() {
     return [
-      { name: 'payment_split_id', type: 'STRING', mode: 'REQUIRED' },
+      { name: 'id', type: 'STRING', mode: 'REQUIRED' },
       { name: 'paymentId', type: 'INT64', mode: 'REQUIRED' },
       { name: 'invoiceId', type: 'INT64', mode: 'NULLABLE' },
       { name: 'amount', type: 'FLOAT64', mode: 'NULLABLE' },
