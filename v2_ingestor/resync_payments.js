@@ -38,10 +38,11 @@ async function resyncPayments() {
 
     // Step 3: Fetch payments (limiting to recent data for initial test)
     console.log('Step 3: Fetching payments from ServiceTitan API...');
-    console.log('Date range: August 2025 to present\n');
+    console.log('Date range: Week of 8/18/2025 for testing\n');
 
     const payments = await stClient.getPayments({
-      createdOnOrAfter: '2025-08-01T00:00:00Z',
+      createdOnOrAfter: '2025-08-18T00:00:00Z',
+      createdBefore: '2025-08-25T00:00:00Z',
       pageSize: 500
     });
 
@@ -54,9 +55,9 @@ async function resyncPayments() {
     }
 
     // Step 4: Transform the data
-    console.log('Step 4: Transforming payments (flattening splits)...');
+    console.log('Step 4: Transforming payments...');
     const transformed = await ingestor.transform(payments);
-    console.log(`✓ Transformed into ${transformed.length} payment split rows\n`);
+    console.log(`✓ Transformed into ${transformed.length} payment rows\n`);
 
     if (transformed.length > 0) {
       console.log('Sample transformed row:');
