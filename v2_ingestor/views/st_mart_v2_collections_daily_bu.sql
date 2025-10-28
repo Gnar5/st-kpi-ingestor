@@ -3,31 +3,32 @@
 --
 -- Business Logic:
 --   - Collections = sum of payment amounts received on a given date
---   - Date based on paidOn (when payment was actually received)
---   - Aggregated by business unit (via invoice → job → business unit)
---   - Uses flattened payment splits from raw_payments
+--   - Date based on payment_date (when payment was actually received)
+--   - Aggregated by business unit
 --
 -- Grain: One row per payment date per business unit
+--
+-- TODO: Migrate to st_raw_v2.raw_payments once we resolve API data issue
+--   Current issue: ServiceTitan Payments API returns payments with empty 'splits' arrays
+--   The list endpoint doesn't populate the splits field - may need individual GET calls
+--   or a different API parameter. For now using st_raw.raw_collections which comes
+--   from the Collections report and has complete data.
 
 CREATE OR REPLACE VIEW `kpi-auto-471020.st_mart_v2.collections_daily_bu` AS
 
 SELECT
-  DATE(p.paidOn) as payment_date,
-  bu.name as business_unit,
-  COUNT(DISTINCT p.paymentId) as payment_count,
-  COUNT(*) as payment_split_count,
-  ROUND(SUM(p.amount), 2) as total_collections,
-  ROUND(AVG(p.amount), 2) as avg_payment_amount,
-  ROUND(MIN(p.amount), 2) as min_payment,
-  ROUND(MAX(p.amount), 2) as max_payment,
+  DATE(c.payment_date) as payment_date,
+  c.bu_key as business_unit,
+  COUNT(*) as payment_count,
+  ROUND(SUM(c.amount), 2) as total_collections,
+  ROUND(AVG(c.amount), 2) as avg_payment_amount,
+  ROUND(MIN(c.amount), 2) as min_payment,
+  ROUND(MAX(c.amount), 2) as max_payment,
+  MAX(c.updated_on) as last_updated,
   CURRENT_TIMESTAMP() as view_created_at
-FROM `kpi-auto-471020.st_raw_v2.raw_payments` p
-LEFT JOIN `kpi-auto-471020.st_raw_v2.raw_invoices` i ON p.invoiceId = i.id
-LEFT JOIN `kpi-auto-471020.st_dim_v2.dim_jobs` j ON i.jobId = j.id
-LEFT JOIN `kpi-auto-471020.st_ref_v2.dim_business_units` bu ON j.businessUnitId = bu.id
-WHERE DATE(p.paidOn) IS NOT NULL
-  AND bu.name IS NOT NULL
-  AND p.amount IS NOT NULL
-  AND p.amount > 0
-GROUP BY DATE(p.paidOn), bu.name
-ORDER BY payment_date DESC, bu.name;
+FROM `kpi-auto-471020.st_raw.raw_collections` c
+WHERE DATE(c.payment_date) IS NOT NULL
+  AND c.bu_key IS NOT NULL
+  AND c.amount IS NOT NULL
+GROUP BY DATE(c.payment_date), c.bu_key
+ORDER BY payment_date DESC, c.bu_key;
