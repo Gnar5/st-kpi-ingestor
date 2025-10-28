@@ -30,6 +30,11 @@ import {
   ActivityCodesIngestor
 } from './src/ingestors_ref/index.js';
 
+// Report-based ingestors
+import {
+  CollectionsIngestor
+} from './src/ingestors_reports/index.js';
+
 // Initialize clients
 const stClient = new ServiceTitanClient();
 const bqClient = new BigQueryClient();
@@ -47,7 +52,8 @@ const ingestors = {
   campaigns: new CampaignsIngestor(stClient, bqClient),
   appointments: new AppointmentsIngestor(stClient, bqClient),
   purchase_orders: new PurchaseOrdersIngestor(stClient, bqClient),
-  returns: new ReturnsIngestor(stClient, bqClient)
+  returns: new ReturnsIngestor(stClient, bqClient),
+  collections: new CollectionsIngestor(stClient, bqClient)  // Report-based ingestor
 };
 
 // Initialize reference/dimension ingestors

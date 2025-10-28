@@ -503,6 +503,126 @@ export class ServiceTitanClient {
 
   /**
    * =======================================================================
+   * REPORTING API
+   * ServiceTitan Reporting API for fetching report data
+   * =======================================================================
+   */
+
+  /**
+   * Fetch report data using the Reporting API
+   * @param {string} categoryPath - Report category (e.g., 'report-category/accounting')
+   * @param {string} reportId - Report ID
+   * @param {object} parameters - Report parameters (e.g., { From: '2025-08-18', To: '2025-08-24', DateType: 2 })
+   * @param {object} options - Optional settings (pageSize, etc.)
+   * @returns {Promise<{columns: Array, items: Array}>} Report data
+   */
+  async fetchReport(categoryPath, reportId, parameters = {}, options = {}) {
+    const url = `${this.baseUrl}/reporting/v2/tenant/${this.tenantId}/${categoryPath}/reports/${reportId}/data`;
+    const pageSize = options.pageSize || 5000;
+
+    let page = 1;
+    let hasMore = true;
+    const allItems = [];
+    let columns = null;
+
+    this.log.info('Starting report fetch', { reportId, categoryPath, parameters });
+
+    while (hasMore) {
+      const body = {
+        request: { page, pageSize },
+        parameters: this.formatReportParameters(parameters)
+      };
+
+      try {
+        await this.rateLimiter.acquire();
+
+        const headers = await this.getHeaders();
+        headers['Content-Type'] = 'application/json';
+
+        const response = await this.circuitBreaker.execute(
+          () => retryWithBackoff(
+            () => axios({
+              method: 'POST',
+              url,
+              headers,
+              data: body,
+              timeout: options.timeout || 60000
+            }),
+            {
+              context: `ST Report ${reportId} page ${page}`,
+              maxRetries: 3,
+              baseDelay: 2000
+            }
+          ),
+          `report-${reportId}`
+        );
+
+        const pageData = response.data;
+
+        // Capture columns from first page
+        if (!columns && pageData?.columns) {
+          columns = pageData.columns;
+        }
+
+        // Get items from response
+        const pageItems = pageData?.items || pageData?.data || [];
+        if (Array.isArray(pageItems) && pageItems.length) {
+          allItems.push(...pageItems);
+        }
+
+        hasMore = !!pageData?.hasMore;
+
+        this.log.debug('Report page fetched', {
+          reportId,
+          page,
+          itemsInPage: pageItems.length,
+          totalFetched: allItems.length,
+          hasMore
+        });
+
+        page++;
+
+        // Safety limit
+        if (page > 1000) {
+          this.log.warn('Report pagination safety limit reached', { reportId, page });
+          break;
+        }
+      } catch (error) {
+        this.log.error('Report fetch failed', {
+          reportId,
+          categoryPath,
+          page,
+          error: error.message
+        });
+        throw error;
+      }
+    }
+
+    this.log.info('Report fetch complete', {
+      reportId,
+      totalPages: page - 1,
+      totalItems: allItems.length
+    });
+
+    return {
+      columns: columns || [],
+      items: allItems
+    };
+  }
+
+  /**
+   * Format report parameters for ServiceTitan Reporting API
+   * Converts { From: '2025-08-18', To: '2025-08-24' } to [{ name: 'From', value: '2025-08-18' }, ...]
+   */
+  formatReportParameters(params) {
+    return Object.entries(params).map(([name, value]) => ({
+      name,
+      value
+    }));
+  }
+
+  /**
+   * =======================================================================
    * REFERENCE / DIMENSION APIs
    * These endpoints return metadata/lookup tables for ID resolution
    * =======================================================================
