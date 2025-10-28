@@ -15,6 +15,7 @@
  */
 
 import { BaseIngestor } from '../ingestors/base_ingestor.js';
+import { randomUUID } from 'crypto';
 
 export class CollectionsIngestor extends BaseIngestor {
   constructor(stClient, bqClient, config = {}) {
@@ -133,7 +134,7 @@ export class CollectionsIngestor extends BaseIngestor {
    */
   async ingest(options = {}) {
     const startTime = Date.now();
-    const runId = this.generateRunId();
+    const runId = randomUUID();
 
     try {
       this.log.info('Collections ingestion started', {
