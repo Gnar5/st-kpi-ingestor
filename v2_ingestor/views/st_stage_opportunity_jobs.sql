@@ -25,7 +25,7 @@ WITH estimate_rollup AS (
 SELECT
   j.id as job_id,
   j.customerId as customer_id,
-  j.businessUnitId as business_unit_id,
+  j.businessUnitNormalized as business_unit,
   j.jobStatus as job_status,
   j.createdOn as job_created_on_utc,
   j.completedOn as job_completed_on_utc,
@@ -54,7 +54,7 @@ SELECT
   -- Metadata
   CURRENT_TIMESTAMP() as view_created_at
 
-FROM `kpi-auto-471020.st_raw_v2.raw_jobs` j
+FROM `kpi-auto-471020.st_dim_v2.dim_jobs` j
 LEFT JOIN estimate_rollup e ON j.id = e.jobId
 WHERE j.id IS NOT NULL
   AND COALESCE(e.estimate_count, 0) >= 1  -- Only include jobs with at least 1 estimate

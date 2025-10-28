@@ -11,8 +11,7 @@ CREATE OR REPLACE VIEW `kpi-auto-471020.st_mart_v2.opportunity_daily` AS
 
 SELECT
   o.opportunity_date as kpi_date,
-  o.business_unit_id,
-  bu.businessUnitName as business_unit_name,
+  o.business_unit,
 
   -- Opportunity counts
   COUNT(CASE WHEN o.is_sales_opportunity THEN 1 END) as sales_opportunities,
@@ -36,16 +35,14 @@ SELECT
   CURRENT_TIMESTAMP() as view_created_at
 
 FROM `kpi-auto-471020.st_stage.opportunity_jobs` o
-LEFT JOIN `kpi-auto-471020.st_dim_v2.dim_jobs` bu
-  ON o.job_id = bu.id
 
 WHERE o.opportunity_date IS NOT NULL
+  AND o.business_unit IS NOT NULL
 GROUP BY
   o.opportunity_date,
-  o.business_unit_id,
-  bu.businessUnitName
+  o.business_unit
 
 ORDER BY
   o.opportunity_date DESC,
-  o.business_unit_id
+  o.business_unit
 ;
