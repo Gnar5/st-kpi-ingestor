@@ -20,7 +20,8 @@ import {
   CampaignsIngestor,
   AppointmentsIngestor,
   PurchaseOrdersIngestor,
-  ReturnsIngestor
+  ReturnsIngestor,
+  InventoryBillsIngestor
 } from './src/ingestors/index.js';
 
 // Reference/Dimension ingestors
@@ -53,6 +54,7 @@ const ingestors = {
   appointments: new AppointmentsIngestor(stClient, bqClient),
   purchase_orders: new PurchaseOrdersIngestor(stClient, bqClient),
   returns: new ReturnsIngestor(stClient, bqClient),
+  inventory_bills: new InventoryBillsIngestor(stClient, bqClient),
   collections: new CollectionsIngestor(stClient, bqClient)  // Report-based ingestor
 };
 

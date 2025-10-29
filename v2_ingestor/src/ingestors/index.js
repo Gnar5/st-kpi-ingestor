@@ -16,3 +16,4 @@ export { CampaignsIngestor } from './campaigns.js';
 export { AppointmentsIngestor } from './appointments.js';
 export { PurchaseOrdersIngestor } from './purchase_orders.js';
 export { ReturnsIngestor } from './returns.js';
+export { InventoryBillsIngestor } from './inventory_bills.js';

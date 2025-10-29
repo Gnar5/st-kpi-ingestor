@@ -1,11 +1,12 @@
 -- st_stage.production_jobs
 -- Jobs filtered for production KPIs (dollars produced, GPM, etc.)
--- VALIDATED: Matches daily_kpis.dollars_produced calculation
+-- UPDATED: 2025-10-29 to include Scheduled and InProgress jobs
 --
 -- Business Logic:
---   - Production jobs = jobs from Production BUs with status Completed or Hold
+--   - Production jobs = jobs from Production BUs with status Completed, Hold, Scheduled, or InProgress
 --   - Uses job_costing table which has revenue and cost breakdowns
 --   - Date: job_start_date (from first appointment) in America/Phoenix timezone
+--   - Matches ServiceTitan FOREMAN Job Cost report methodology
 --
 -- Grain: One row per production job from job_costing table
 
@@ -46,8 +47,9 @@ WHERE
     'Guaranteed Painting-Production'
   )
 
-  -- Filter: Completed or Hold status (ServiceTitan includes both)
-  AND jc.jobStatus IN ('Completed', 'Hold')
+  -- Filter: Include all active production job statuses
+  -- ServiceTitan FOREMAN report includes: Completed, Hold, Scheduled, InProgress
+  AND jc.jobStatus IN ('Completed', 'Hold', 'Scheduled', 'InProgress')
 
   -- Basic nullability checks
   AND jc.job_id IS NOT NULL

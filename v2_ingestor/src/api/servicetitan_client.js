@@ -472,6 +472,21 @@ export class ServiceTitanClient {
   }
 
   /**
+   * Inventory Bills API (Accounting)
+   */
+  async getInventoryBills(params = {}) {
+    return this.fetchAll('accounting/v2/tenant/{tenant}/inventory-bills', params);
+  }
+
+  async getInventoryBillsIncremental(modifiedSince) {
+    return this.fetchIncremental(
+      'accounting/v2/tenant/{tenant}/inventory-bills',
+      {},
+      { modifiedSince }
+    );
+  }
+
+  /**
    * Appointments API
    */
   async getAppointments(params = {}) {

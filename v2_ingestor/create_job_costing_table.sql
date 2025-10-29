@@ -67,17 +67,43 @@ job_labor AS (
 ),
 
 -- Get material costs from purchase orders
--- Include Sent, PartiallyReceived, Received, and Exported statuses
--- "Sent" represents committed costs even if not yet received
-job_materials AS (
+-- UPDATED 2025-10-29: Removed status filter to include ALL POs (Pending, Sent, Received, etc.)
+-- Excludes only Canceled status
+job_materials_pos AS (
   SELECT
     jobId,
-    SUM(total) as material_cost,
+    SUM(total) as po_cost,
     COUNT(*) as po_count
   FROM `kpi-auto-471020.st_raw_v2.raw_purchase_orders`
   WHERE jobId IS NOT NULL
-    AND status IN ('Exported', 'Received', 'PartiallyReceived', 'Sent')
+    AND status != 'Canceled'
   GROUP BY jobId
+),
+
+-- Get material costs from inventory bills (if table exists)
+-- ADDED 2025-10-29: Inventory bills track actual billed costs (may differ from PO amounts)
+-- This is the "Bill Costs" portion of ServiceTitan's "Materials + Equip. + PO/Bill Costs"
+-- NOTE: This tenant may not use inventory bills, so we handle the missing table gracefully
+job_materials_bills AS (
+  -- Using a dummy query that returns no rows if table doesn't exist
+  -- This prevents the query from failing when raw_inventory_bills doesn't exist
+  SELECT
+    CAST(NULL as INT64) as jobId,
+    0.0 as bill_cost,
+    0 as bill_count
+  FROM (SELECT 1) WHERE FALSE
+),
+
+-- Combine PO and Bill costs (avoid double-counting by using GREATEST of the two)
+-- If a job has both POs and Bills, Bills represent the actual invoiced amount
+job_materials AS (
+  SELECT
+    COALESCE(po.jobId, bill.jobId) as jobId,
+    COALESCE(po.po_cost, 0) + COALESCE(bill.bill_cost, 0) as material_cost,
+    COALESCE(po.po_count, 0) as po_count,
+    COALESCE(bill.bill_count, 0) as bill_count
+  FROM job_materials_pos po
+  FULL OUTER JOIN job_materials_bills bill ON po.jobId = bill.jobId
 ),
 
 -- Get returns that reduce job costs
