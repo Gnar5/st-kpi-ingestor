@@ -47,9 +47,9 @@ WHERE
     'Guaranteed Painting-Production'
   )
 
-  -- Filter: Include all active production job statuses
-  -- ServiceTitan FOREMAN report includes: Completed, Hold, Scheduled, InProgress
-  AND jc.jobStatus IN ('Completed', 'Hold', 'Scheduled', 'InProgress')
+  -- Filter: Include all production job statuses (including Canceled for accurate counts)
+  -- ServiceTitan FOREMAN report includes: Completed, Hold, Scheduled, InProgress, Canceled
+  AND jc.jobStatus IN ('Completed', 'Hold', 'Scheduled', 'InProgress', 'Canceled')
 
   -- Basic nullability checks
   AND jc.job_id IS NOT NULL
