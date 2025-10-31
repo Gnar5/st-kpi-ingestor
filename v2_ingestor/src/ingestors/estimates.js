@@ -23,8 +23,19 @@ export class EstimatesIngestor extends BaseIngestor {
       return await this.stClient.getEstimates();
     }
 
+    // Incremental sync with lookback window
+    // Use 7-day lookback to catch estimates sold/created but never modified
     const lastSync = await this.bqClient.getLastSyncTime(this.entityType);
-    return await this.stClient.getEstimatesIncremental(lastSync);
+    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 168; // 7 days default
+    const lookbackDate = new Date(new Date(lastSync).getTime() - (lookbackHours * 60 * 60 * 1000));
+
+    this.log.info('Performing incremental sync with lookback', {
+      lastSync,
+      lookbackDate: lookbackDate.toISOString(),
+      lookbackHours
+    });
+
+    return await this.stClient.getEstimatesIncremental(lookbackDate.toISOString());
   }
 
   async transform(data) {

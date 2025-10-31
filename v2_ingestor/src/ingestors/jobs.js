@@ -24,11 +24,19 @@ export class JobsIngestor extends BaseIngestor {
       return await this.stClient.getJobs();
     }
 
-    // Incremental sync
+    // Incremental sync with lookback window
+    // Use 7-day lookback to catch records created but never modified
     const lastSync = await this.bqClient.getLastSyncTime(this.entityType);
-    this.log.info('Performing incremental sync', { since: lastSync });
+    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 168; // 7 days default
+    const lookbackDate = new Date(new Date(lastSync).getTime() - (lookbackHours * 60 * 60 * 1000));
 
-    return await this.stClient.getJobsIncremental(lastSync);
+    this.log.info('Performing incremental sync with lookback', {
+      lastSync,
+      lookbackDate: lookbackDate.toISOString(),
+      lookbackHours
+    });
+
+    return await this.stClient.getJobsIncremental(lookbackDate.toISOString());
   }
 
   async transform(data) {
