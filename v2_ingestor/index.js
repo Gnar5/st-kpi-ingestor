@@ -496,6 +496,57 @@ app.get('/backfill-async', async (req, res) => {
 /**
  * Start server
  */
+/**
+ * Rebuild dim_jobs dimension table
+ * GET /rebuild/dim_jobs
+ */
+app.get('/rebuild/dim_jobs', async (req, res) => {
+  try {
+    logger.info('dim_jobs rebuild requested');
+    const startTime = Date.now();
+
+    // Execute rebuild query
+    const query = `
+      CREATE OR REPLACE TABLE \`kpi-auto-471020.st_dim_v2.dim_jobs\` AS
+      SELECT
+        j.*,
+        bu.name as businessUnitName,
+        bu.active as businessUnitActive,
+        COALESCE(bu.name, 'Unknown') as businessUnitNormalized,
+        jt.name as jobTypeName,
+        jt.active as jobTypeActive
+      FROM \`kpi-auto-471020.st_raw_v2.raw_jobs\` j
+      LEFT JOIN \`kpi-auto-471020.st_ref_v2.dim_business_units\` bu ON j.businessUnitId = bu.id
+      LEFT JOIN \`kpi-auto-471020.st_ref_v2.dim_job_types\` jt ON j.jobTypeId = jt.id
+    `;
+
+    await bqClient.query(query);
+
+    // Get row count
+    const countQuery = 'SELECT COUNT(*) as count FROM `kpi-auto-471020.st_dim_v2.dim_jobs`';
+    const [countResult] = await bqClient.query(countQuery);
+    const rowCount = countResult[0].count;
+
+    const duration = Date.now() - startTime;
+
+    logger.info('dim_jobs rebuild completed', { rowCount, duration });
+
+    res.status(200).json({
+      success: true,
+      table: 'dim_jobs',
+      rowCount: parseInt(rowCount),
+      duration,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    logger.error('dim_jobs rebuild failed', { error: error.message });
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+});
+
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {

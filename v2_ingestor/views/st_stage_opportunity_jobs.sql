@@ -27,6 +27,7 @@ SELECT
   j.customerId as customer_id,
   j.businessUnitNormalized as business_unit,
   j.jobStatus as job_status,
+  j.jobTypeName as job_type_name,
   j.createdOn as job_created_on_utc,
   j.completedOn as job_completed_on_utc,
 
@@ -58,4 +59,5 @@ FROM `kpi-auto-471020.st_dim_v2.dim_jobs` j
 LEFT JOIN estimate_rollup e ON j.id = e.jobId
 WHERE j.id IS NOT NULL
   AND COALESCE(e.estimate_count, 0) >= 1  -- Only include jobs with at least 1 estimate
+  AND (j.jobTypeName NOT LIKE '%COMM%' OR j.jobTypeName IS NULL)  -- Close rate excludes commercial jobs
 ;
