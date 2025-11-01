@@ -10,7 +10,7 @@ export class EstimatesIngestor extends BaseIngestor {
     super('estimates', stClient, bqClient, {
       tableId: 'raw_estimates',
       primaryKey: 'id',
-      partitionField: 'modifiedOn',
+      partitionField: 'createdOn',  // Partition by creation date (more stable than modifiedOn)
       clusterFields: ['businessUnitId', 'jobId', 'status'],
       ...config
     });
@@ -24,15 +24,18 @@ export class EstimatesIngestor extends BaseIngestor {
     }
 
     // Incremental sync with lookback window
-    // Use 7-day lookback to catch estimates sold/created but never modified
+    // API filters by BOTH createdOnOrAfter AND modifiedOnOrAfter
+    // This catches estimates created or modified recently, but misses estimates
+    // that were sold recently but haven't been modified (e.g., old estimate gets sold)
     const lastSync = await this.bqClient.getLastSyncTime(this.entityType);
-    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 168; // 7 days default
+    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 4320; // 180 days default (increased from 7)
     const lookbackDate = new Date(new Date(lastSync).getTime() - (lookbackHours * 60 * 60 * 1000));
 
     this.log.info('Performing incremental sync with lookback', {
       lastSync,
       lookbackDate: lookbackDate.toISOString(),
-      lookbackHours
+      lookbackHours,
+      lookbackDays: Math.round(lookbackHours / 24)
     });
 
     return await this.stClient.getEstimatesIncremental(lookbackDate.toISOString());
@@ -55,7 +58,7 @@ export class EstimatesIngestor extends BaseIngestor {
       soldById: estimate.soldBy || null,  // API uses 'soldBy' not 'soldById'
       estimateNumber: estimate.estimateNumber,
       businessUnitId: estimate.businessUnitId,
-      items: this.toJson(estimate.items),
+      // items field removed to reduce data size - not needed for KPI calculations
       subtotal: estimate.subtotal,
       totalTax: estimate.totalTax,
       total: estimate.total,
@@ -81,7 +84,7 @@ export class EstimatesIngestor extends BaseIngestor {
       { name: 'soldById', type: 'INT64', mode: 'NULLABLE' },
       { name: 'estimateNumber', type: 'STRING', mode: 'NULLABLE' },
       { name: 'businessUnitId', type: 'INT64', mode: 'NULLABLE' },
-      { name: 'items', type: 'JSON', mode: 'NULLABLE' },
+      // items field removed to reduce data size - not needed for KPI calculations
       { name: 'subtotal', type: 'FLOAT64', mode: 'NULLABLE' },
       { name: 'totalTax', type: 'FLOAT64', mode: 'NULLABLE' },
       { name: 'total', type: 'FLOAT64', mode: 'NULLABLE' },

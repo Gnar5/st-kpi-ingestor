@@ -1,0 +1,123 @@
+{
+  "fields": [
+    {
+      "name": "Name",
+      "label": "Campaign Name"
+    },
+    {
+      "name": "JobsBookedFromNewCustomers",
+      "label": "Jobs Booked from New Customers"
+    },
+    {
+      "name": "JobsBookedFromExistingCustomers",
+      "label": "Jobs Booked from Existing Customers"
+    },
+    {
+      "name": "TotalJobsBooked",
+      "label": "Total Jobs Booked"
+    },
+    {
+      "name": "CloseRate",
+      "label": "Close Rate"
+    },
+    {
+      "name": "TotalSales",
+      "label": "Total Sales"
+    },
+    {
+      "name": "CompletedRevenue",
+      "label": "Completed Revenue"
+    },
+    {
+      "name": "WipJobs",
+      "label": "WIP Jobs"
+    },
+    {
+      "name": "Category",
+      "label": "Campaign Category"
+    }
+  ],
+  "page": 1,
+  "pageSize": 1000,
+  "hasMore": false,
+  "totalCount": null,
+  "data": [
+    [
+      "Keith",
+      4,
+      3,
+      7,
+      0.5,
+      10065.25,
+      8000,
+      2,
+      "Grassroots"
+    ],
+    [
+      "Sean",
+      0,
+      3,
+      3,
+      0.5,
+      600,
+      0,
+      1,
+      "Grassroots"
+    ],
+    [
+      "Brad",
+      0,
+      1,
+      1,
+      null,
+      0,
+      0,
+      0,
+      "Grassroots"
+    ],
+    [
+      "GeneL",
+      4,
+      1,
+      5,
+      null,
+      0,
+      0,
+      5,
+      "Grassroots"
+    ],
+    [
+      "Hansel",
+      0,
+      1,
+      1,
+      null,
+      0,
+      1049.62,
+      0,
+      "Grassroots"
+    ],
+    [
+      "Jonathan",
+      0,
+      1,
+      1,
+      null,
+      0,
+      0,
+      0,
+      "Grassroots"
+    ],
+    [
+      "Justin",
+      0,
+      1,
+      1,
+      null,
+      0,
+      0,
+      0,
+      "Grassroots"
+    ]
+  ]
+}

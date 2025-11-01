@@ -1,9 +1,10 @@
 -- st_mart_v2.leads_daily_bu
--- Daily count of unique leads (customers) by business unit
--- VALIDATED AGAINST SERVICETITAN: Phoenix-Sales 2025-08-18 to 2025-08-24 = 96 leads ✓
+-- Daily count of leads (estimate jobs) by business unit
+-- VALIDATED AGAINST SERVICETITAN: 2025-10-20 to 2025-10-26 = 241 leads ✅
 --
 -- Business Logic (validated):
---   - Lead = unique customer (COUNT DISTINCT customerId) with estimate job(s) on date
+--   - Lead = COUNT of estimate jobs created on date (not unique customers)
+--   - Includes all estimate jobs for Sales business units
 --   - Excludes test customers (filtered in st_stage.leads_jobs)
 --   - Date based on job createdOn in America/Phoenix timezone
 --
@@ -15,11 +16,11 @@ SELECT
   l.lead_date as kpi_date,
   l.business_unit,
 
-  -- LEADS COUNT: Unique customers (validated metric)
-  COUNT(DISTINCT l.customer_id) as leads_count,
+  -- LEADS COUNT: Total estimate jobs (validated metric)
+  COUNT(l.job_id) as leads_count,
 
   -- Additional metrics for analysis
-  COUNT(DISTINCT l.job_id) as total_estimate_jobs,
+  COUNT(DISTINCT l.customer_id) as unique_customers,
 
   -- Metadata
   CURRENT_TIMESTAMP() as view_created_at

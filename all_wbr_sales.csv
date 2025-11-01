@@ -1,0 +1,94 @@
+Job #,Lead Type,Estimate #,Estimate Sold Date,Job’s Business Unit,Customer Name,Estimate Subtotal,Sales Opportunity,Closed
+388040532,Marketing,388312230,2025-10-20,Phoenix-Sales,Tyler Nolan,4885.8,True,True
+211871686,Marketing,211954797,2025-10-21,Phoenix-Sales,Danielle Hamby,3685.6,True,True
+389508895,Marketing,397688299,2025-10-21,Phoenix-Sales,Dick Cantwell ,4785.5,True,True
+389504099,Marketing,397658166,2025-10-21,Phoenix-Sales,Daniel Guzman,4385.15,True,True
+389440596,Marketing,397600777,2025-10-22,Phoenix-Sales,William Fechter,5500.35,True,True
+340094194,Marketing,397775551,2025-10-22,Phoenix-Sales,Marv & Susan Spatz,680.0,True,True
+337743718,Marketing,337870910,2025-10-22,Phoenix-Sales,William Kearns,5975.5,True,True
+397803489,Marketing,397804784,2025-10-22,Phoenix-Sales,Tracy Conboy,4985.25,True,True
+365762187,Marketing,397677774,2025-10-23,Phoenix-Sales,Hughes Development,4400.0,True,True
+389638634,Marketing,397838112,2025-10-23,Phoenix-Sales,Anibal (Andy) Perez ,7885.45,True,True
+389357313,Marketing,397584628,2025-10-24,Phoenix-Sales,Tony Rogan,5985.7,True,True
+389266772,Marketing,397676785,2025-10-24,Phoenix-Sales,Jose Mariscal,9685.75,True,True
+388826514,Marketing,389392094,2025-10-25,Phoenix-Sales,Amy Arens,3985.65,True,True
+397867220,Marketing,397916175,2025-10-25,Phoenix-Sales,Jason Silvius,12885.6,True,True
+389385178,Marketing,397729902,2025-10-22,Phoenix-Sales,April Ferry,1500.0,False,False
+388923085,Marketing,389325688,2025-10-22,Phoenix-Sales,Lo Charley,5000.0,True,True
+397652917,Marketing,397838013,2025-10-23,Guaranteed Painting-Sales,Alyssa Shaw,400.0,True,True
+389395041,Marketing,389630769,2025-10-21,Tucson-Sales,Dennis and Pam Prutzman,1363.21,True,True
+397674247,Marketing,397719788,2025-10-21,Tucson-Sales,Greg Matzuk  ,3182.44,True,True
+388938964,Marketing,389021709,2025-10-21,Tucson-Sales,Orion Hudson ,8057.79,True,True
+389326223,Marketing,389544621,2025-10-21,Tucson-Sales,Teenu Agarwal-Hebbar,629.73,True,True
+389029743,Marketing,389475761,2025-10-22,Tucson-Sales,Jody Johnson,4551.81,True,True
+389326402,Marketing,397798569,2025-10-22,Tucson-Sales,Robin Hunter,3134.64,True,True
+389326402,Marketing,397799944,2025-10-22,Tucson-Sales,Robin Hunter,1948.91,True,True
+397671876,Marketing,397812870,2025-10-23,Tucson-Sales,Kendra Drake,3502.72,True,True
+397708350,Marketing,397888007,2025-10-24,Tucson-Sales,Ken Haner,2772.34,True,True
+389592534,Marketing,397663186,2025-10-24,Tucson-Sales,Lina Urbain,3148.14,True,True
+389592534,Marketing,397664254,2025-10-24,Tucson-Sales,Lina Urbain,294.23,True,True
+387795170,Marketing,388595390,2025-10-25,Tucson-Sales,Elisa Ovhoa,2846.62,True,True
+389330709,Marketing,389659833,2025-10-20,Tucson-Sales,Susan Benz,1390.0,True,True
+389330709,Marketing,389657899,2025-10-20,Tucson-Sales,Susan Benz,1200.0,True,True
+389330709,Marketing,389658967,2025-10-20,Tucson-Sales,Susan Benz,1200.0,True,True
+397630191,Marketing,397682556,2025-10-20,Tucson-Sales,Rachelle Felzien,4630.82,True,True
+388652898,Marketing,388857171,2025-10-20,Tucson-Sales,Mary Johnson,1000.0,True,True
+389497162,Marketing,397683899,2025-10-20,Tucson-Sales,Lana White ,4752.11,True,True
+389019760,Marketing,389088947,2025-10-22,Tucson-Sales,Sarah Kaplan,4376.91,True,True
+397706893,Marketing,397779045,2025-10-22,Tucson-Sales,Leslie Aills,2009.63,True,True
+397556384,Marketing,397786783,2025-10-22,Tucson-Sales,Dana Wregglesworth,6785.11,True,True
+397672848,Marketing,397851717,2025-10-23,Andy's Painting-Sales,Melissa Baca,511.93,True,True
+389426734,Marketing,389633463,2025-10-23,Tucson-Sales,Jane Hoffman,6701.78,True,True
+389446307,Marketing,389623467,2025-10-20,Commercial-AZ-Sales,"The Paint Folks, Inc",700.0,True,True
+389203298,Marketing,389546046,2025-10-21,Commercial-AZ-Sales,Rick Ames,600.0,True,True
+397678670,Marketing,397696600,2025-10-21,Phoenix-Sales,Greg Scott,8487.2,True,True
+397607234,Marketing,397717061,2025-10-21,Phoenix-Sales,Bill Shearer,7599.2,True,True
+389073620,Marketing,389335088,2025-10-22,Phoenix-Sales,Anthony Schmidt,861.6,True,True
+397607234,Marketing,397719066,2025-10-23,Phoenix-Sales,Bill Shearer,1047.2,True,True
+389655276,Marketing,397562647,2025-10-23,Phoenix-Sales,McBride Services,13770.4,True,True
+397656874,Marketing,397898291,2025-10-24,Phoenix-Sales,Gail Schroeder,1184.8,True,True
+389102629,Marketing,397555759,2025-10-20,Andy's Painting-Sales,Denny Frost,5596.0,True,True
+389500258,Marketing,397722454,2025-10-21,Andy's Painting-Sales,Patrice Troy,552.0,True,True
+388788224,Marketing,389506773,2025-10-21,Andy's Painting-Sales,Nathan Leach,6376.8,True,True
+388788224,Marketing,389496861,2025-10-21,Andy's Painting-Sales,Nathan Leach,4249.6,True,True
+389199829,Marketing,389585419,2025-10-22,Andy's Painting-Sales,Rachel Giunta,1320.0,True,True
+366956881,Marketing,367436794,2025-10-23,Andy's Painting-Sales,Steven Elwell,3444.67,True,True
+362859356,Marketing,397844329,2025-10-23,Andy's Painting-Sales,Leroy Romero,3200.0,True,True
+389569404,Marketing,397821175,2025-10-24,Andy's Painting-Sales,Phil Monteith,3251.25,True,True
+388554484,Marketing,389070880,2025-10-25,Andy's Painting-Sales,Nikeya Gerber,4811.2,True,True
+389544096,Marketing,389639421,2025-10-20,Phoenix-Sales,Gary Griffith,1850.0,True,True
+389480163,Marketing,397687184,2025-10-21,Phoenix-Sales,Jim Brown,4520.0,True,True
+389542164,Marketing,397737357,2025-10-21,Phoenix-Sales,Sherry Cahill,3120.0,True,True
+362940804,Marketing,363562584,2025-10-22,Phoenix-Sales,Russ Goldstein,1950.0,True,True
+389422063,Marketing,397842705,2025-10-23,Phoenix-Sales,Daniel Teachey,3750.0,True,True
+389413460,Marketing,397794785,2025-10-23,Phoenix-Sales,Ashley Farrar,8720.0,True,True
+389523674,Marketing,397756507,2025-10-24,Phoenix-Sales,Colin Nickels,3200.0,True,True
+397672092,Marketing,397794281,2025-10-24,Phoenix-Sales,Jerri Fletcher,4350.0,True,True
+389583078,Marketing,389585823,2025-10-20,Phoenix-Sales,Robert Wolff,3978.0,True,True
+397644148,Marketing,397679679,2025-10-20,Phoenix-Sales,Chris Mares,3612.5,True,True
+387805706,Marketing,388040660,2025-10-21,Phoenix-Sales,Gary and Aimee Hendrickson,0.0,True,True
+389634388,Marketing,397751016,2025-10-21,Phoenix-Sales,Stacey Akhbari,7238.4,True,True
+389634388,Marketing,397749609,2025-10-21,Phoenix-Sales,Stacey Akhbari,286.0,True,True
+389473026,Marketing,397798497,2025-10-23,Phoenix-Sales,Debbie Vandekamp,2904.97,True,True
+389588997,Marketing,397836735,2025-10-23,Phoenix-Sales,Maria Salas,6000.0,True,True
+389588997,Marketing,397839401,2025-10-23,Phoenix-Sales,Maria Salas,328.0,True,True
+397672047,Marketing,397850431,2025-10-23,Phoenix-Sales,Jaimie Carrasco,500.0,True,True
+397689651,Marketing,397843759,2025-10-24,Phoenix-Sales,Kris & Paul Flaven,1759.5,True,True
+397689651,Marketing,397847238,2025-10-24,Phoenix-Sales,Kris & Paul Flaven,756.5,True,True
+397654304,Marketing,397675372,2025-10-20,Nevada-Sales,Davy Delug,1190.0,True,True
+388545799,Marketing,388983359,2025-10-21,Nevada-Sales,Noontide Services ,4300.0,True,True
+388429283,Marketing,388780429,2025-10-21,Nevada-Sales,Chun Napoli ,3280.0,True,True
+397845369,Marketing,397893738,2025-10-24,Nevada-Sales,Justin Remelin,4335.0,True,True
+397772076,Marketing,397884058,2025-10-24,Nevada-Sales,Tony Barboza ,1190.0,True,True
+389356386,Marketing,389510788,2025-10-24,Nevada-Sales,Rita Varney,4720.0,True,True
+397737075,Marketing,397860642,2025-10-24,Nevada-Sales,Baby University,5000.0,True,True
+388829605,Marketing,389091705,2025-10-20,Phoenix-Sales,Annie Sciacca,6093.2,True,True
+389492484,Marketing,397668002,2025-10-20,Phoenix-Sales,Rosie On The House-Joyce,350.0,True,True
+388829605,Marketing,389089722,2025-10-21,Phoenix-Sales,Annie Sciacca,5200.0,True,True
+397565314,Marketing,397725531,2025-10-21,Phoenix-Sales,Jo Abrams,2209.49,True,True
+389655030,Marketing,397729223,2025-10-21,Phoenix-Sales,Teresa Bell,4012.13,True,True
+397623477,Marketing,397800784,2025-10-22,Phoenix-Sales,Iman Aljumailey,2875.0,True,True
+386626392,Marketing,386826872,2025-10-24,Phoenix-Sales,Gary Blakeslee,405.0,True,True
+386510877,Marketing,386548896,2025-10-22,Tucson-Sales,Associa Arizona,4268.4,True,True
+397621485,Marketing,397845988,2025-10-23,Tucson-Sales,Juniper Briggs,1394.17,True,True
+389106715,Marketing,397684963,2025-10-24,Tucson-Sales,Moondance Patio Homes HOA,95000.0,True,True

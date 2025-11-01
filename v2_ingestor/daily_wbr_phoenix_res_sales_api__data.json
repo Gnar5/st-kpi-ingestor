@@ -1,0 +1,390 @@
+{
+  "metadata": {
+    "id": 387935289,
+    "name": "Daily WBR - Phoenix-Res Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull",
+    "modifiedOn": "2025-10-16T10:48:47.7005903-07:00",
+    "parameters": [
+      {
+        "name": "From",
+        "label": "From",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "To",
+        "label": "To",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "BusinessUnitId",
+        "label": "Business Unit",
+        "dataType": "Number",
+        "isArray": true,
+        "isRequired": false,
+        "acceptValues": {
+          "fields": [
+            {
+              "name": "Value",
+              "label": "Value"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "dynamicSetId": "business-units",
+          "values": null
+        }
+      },
+      {
+        "name": "JobTypes",
+        "label": "Job Type",
+        "dataType": "String",
+        "isArray": false,
+        "isRequired": false,
+        "acceptValues": {
+          "fields": [
+            {
+              "name": "Value",
+              "label": "Value"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "dynamicSetId": "job-types",
+          "values": null
+        }
+      },
+      {
+        "name": "IncludeInactive",
+        "label": "Include Inactive Technicians",
+        "dataType": "Boolean",
+        "isArray": false,
+        "isRequired": false,
+        "acceptValues": null
+      }
+    ],
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name",
+        "dataType": "String"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities",
+        "dataType": "Number"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs",
+        "dataType": "Number"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity",
+        "dataType": "Number"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate",
+        "dataType": "Number"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales",
+        "dataType": "Number"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale",
+        "dataType": "Number"
+      },
+      {
+        "name": "Team",
+        "label": "Team",
+        "dataType": "String"
+      }
+    ]
+  },
+  "data": {
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale"
+      },
+      {
+        "name": "Team",
+        "label": "Team"
+      }
+    ],
+    "page": 1,
+    "pageSize": 1000,
+    "hasMore": false,
+    "totalCount": null,
+    "data": [
+      [
+        "Keith Bryant",
+        12,
+        25,
+        28,
+        0.42857142857142855,
+        79711.3,
+        6219.275,
+        "PHX SALES"
+      ],
+      [
+        "Jose Alvarez",
+        8,
+        20,
+        20,
+        0.4,
+        31460,
+        3932.5,
+        "PHX SALES"
+      ],
+      [
+        "Kyle Rollins",
+        7,
+        17,
+        16,
+        0.4375,
+        27363.87,
+        3909.1242857142856,
+        "PHX SALES"
+      ],
+      [
+        "_Christopher Stevenson",
+        6,
+        25,
+        23,
+        0.2608695652173913,
+        21144.82,
+        3524.1366666666668,
+        "PHX SALES"
+      ],
+      [
+        "Sam Hettinger",
+        1,
+        0,
+        1,
+        1,
+        6500,
+        5000,
+        "** GM**"
+      ],
+      [
+        "Albert Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ],
+      [
+        "Alfred Mazariegos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX Res PM"
+      ],
+      [
+        "Alfredo Robles",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX Res PM"
+      ],
+      [
+        "Caleb Pena",
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        "Corporate"
+      ],
+      [
+        "Debbie Vargas",
+        0,
+        3,
+        3,
+        0,
+        0,
+        0,
+        "PHX SALES"
+      ],
+      [
+        "Doug Caris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "Corporate"
+      ],
+      [
+        "Gene Landers",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX SALES"
+      ],
+      [
+        "Jacob Guerber",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX Res PM"
+      ],
+      [
+        "Joe Campbell",
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        "Corporate"
+      ],
+      [
+        "Joe Miller",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "Corporate"
+      ],
+      [
+        "Jon Snow",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "Corporate"
+      ],
+      [
+        "Justin Williams",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ],
+      [
+        "Kevin Berneburg",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ],
+      [
+        "Marc Anthony",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX Res PM"
+      ],
+      [
+        "Michael Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ],
+      [
+        "Seth Fahnle",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ],
+      [
+        "Uriel Morales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "PHX Res PM"
+      ],
+      [
+        "Vincent Linares (Son)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        "** GM**"
+      ]
+    ]
+  }
+}

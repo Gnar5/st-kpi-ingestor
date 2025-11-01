@@ -1,0 +1,344 @@
+[
+  {
+    "category": "operations",
+    "id": 41478401,
+    "name": "**Job Costing Per Crew - Exclude Warranty**",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 129864480,
+    "name": "*Customers Owing Deposits*",
+    "description": "Use future dates only for this report.  Filter by job start date.  Select business units.  Include adjustment invoices."
+  },
+  {
+    "category": "operations",
+    "id": 27771890,
+    "name": "*FOREMAN Job Cost - THIS WEEK ONLY*",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 389438975,
+    "name": "*FOREMAN Job Cost - THIS WEEK ONLY* - API",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 169,
+    "name": "*Production Numbers*",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"invoice date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 40273980,
+    "name": "*Warranty/Tup Costs*",
+    "description": "Warranty costs for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 133963674,
+    "name": "*Weekly Batch*",
+    "description": "Filter by start date, select all business units, use prior week dates (Monday-Sunday)"
+  },
+  {
+    "category": "operations",
+    "id": 144837455,
+    "name": "Albert Weekly Tracker",
+    "description": "Weekly Job Costing Report"
+  },
+  {
+    "category": "operations",
+    "id": 363297805,
+    "name": "Alfred Weekly Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "operations",
+    "id": 53248920,
+    "name": "Call Center Performance Summary",
+    "description": "Upgrade to legacy Call Center Performance Summary Report. Use it to assess company performance across business units, like completed jobs, recalls, conversion rate, and percentage of jobs canceled before and after dispatch."
+  },
+  {
+    "category": "operations",
+    "id": 104454488,
+    "name": "Current Job addresses",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 25724682,
+    "name": "Daily Huddle Report",
+    "description": "Upgraded version of the legacy Daily Huddle Report. Use it to assess performance across business units such as completed jobs, canceled jobs, conversion rates, revenue, pace and recalls."
+  },
+  {
+    "category": "operations",
+    "id": 147139077,
+    "name": "Derek Weekly Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "operations",
+    "id": 56231698,
+    "name": "Estimates Sold By Report for Joe",
+    "description": "Made by Kirstie (ST)"
+  },
+  {
+    "category": "operations",
+    "id": 147142353,
+    "name": "Gael Painting Job Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "operations",
+    "id": 131719539,
+    "name": "GPM BY CREW REPORT - SAM",
+    "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+  },
+  {
+    "category": "operations",
+    "id": 145035135,
+    "name": "Hansel Weekly Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "operations",
+    "id": 148072704,
+    "name": "Isaac Weekly Tracker ",
+    "description": "Weekly Job Costing Report"
+  },
+  {
+    "category": "operations",
+    "id": 363287236,
+    "name": "Jacob 5/19/25 Weekly Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "operations",
+    "id": 147139293,
+    "name": "Jacob Weekly Tracker",
+    "description": "PM Weekly Job Costing Template"
+  },
+  {
+    "category": "accounting",
+    "id": 26117979,
+    "name": "*Collections*",
+    "description": "Daily or weekly collections"
+  },
+  {
+    "category": "accounting",
+    "id": 25724646,
+    "name": "Invoice Summary by Business Unit",
+    "description": "Upgrade to legacy Invoice Summary by Business Unit Report. Use it to audit individual invoices across business units. Shows subtotals, discounts and fees, taxes, and totals."
+  },
+  {
+    "category": "accounting",
+    "id": 178,
+    "name": "Master Pay File",
+    "description": "Do not use the upper filters, if you want to filter by business unit or employee you should use the filters in the report section. This is because if an employee is terminated and you use the upper filters they will not show in the report."
+  },
+  {
+    "category": "accounting",
+    "id": 7927534,
+    "name": "Master Pay File By Pay Period",
+    "description": "Do not use the upper filters, if you want to filter by business unit or employee you should use the filters in the report section.  This is because if an employee is terminated and you use the upper filters they will not show in the report."
+  },
+  {
+    "category": "marketing",
+    "id": 145586563,
+    "name": " *Leads* - HPM ",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 132073290,
+    "name": "*BA Customers & Revenue*",
+    "description": "This report shows Brand Ambassadors total Jobs created new and existing customers, total Sales vs. Revenue, & close rate"
+  },
+  {
+    "category": "marketing",
+    "id": 132065471,
+    "name": "*BA Leads*",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 76567168,
+    "name": "*Leads-Floor Coatings ONLY*",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 25706401,
+    "name": "*Leads*",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 389357017,
+    "name": "*Leads* - API",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 145657442,
+    "name": "*Leads* - Croc Painting",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 79662136,
+    "name": "*Leads* from Social Media",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 339550833,
+    "name": "*Leads* V2 - HPM",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+  },
+  {
+    "category": "marketing",
+    "id": 25724700,
+    "name": "Active Memberships",
+    "description": "Upgraded version of the legacy Active Member Report. Use this report to audit your customers' memberships. This report includes information about the membership status, duration, billing cadence, the sold by technician, and customer contact information. "
+  },
+  {
+    "category": "marketing",
+    "id": 26396477,
+    "name": "BMG - # of Esimates & Lead Source",
+    "description": "Date Type:  Parent Completion Date, sales business units."
+  },
+  {
+    "category": "marketing",
+    "id": 40761142,
+    "name": "BMG - # of Sold Jobs, Amount, Lead Source",
+    "description": "Filter by Sold On date.  Use Sales business Units"
+  },
+  {
+    "category": "marketing",
+    "id": 37491334,
+    "name": "BMG Leads Report",
+    "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and only view Sales business units.  Will only show # of scheduled leads."
+  },
+  {
+    "category": "marketing",
+    "id": 212979554,
+    "name": "Brad - Completed Comm Estimates",
+    "description": "Proposals by Job Type.  Run by \"Creation Date\" and filter by business units if you choose."
+  },
+  {
+    "category": "marketing",
+    "id": 74696954,
+    "name": "Items Quoted on Estimate",
+    "description": "Report showing which items were quoted on a specific estimate.  To filter items you click the filter button on the \"Item Name\" column."
+  },
+  {
+    "category": "marketing",
+    "id": 98432341,
+    "name": "Proposals by Job Type",
+    "description": "Proposals by Job Type.  Run by \"Creation Date\" and filter by business units if you choose."
+  },
+  {
+    "category": "marketing",
+    "id": 74710780,
+    "name": "Who Booked The Estimates?",
+    "description": "Calebs"
+  },
+  {
+    "category": "technician",
+    "id": 130700652,
+    "name": "*Daily WBR C/R*",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking"
+  },
+  {
+    "category": "technician",
+    "id": 397555674,
+    "name": "BU Sales - API",
+    "description": "Shows sales metrics for business units, such as Total Sales, Close Rate and Sales Opps. Metrics are based on estimate sales."
+  },
+  {
+    "category": "technician",
+    "id": 143403571,
+    "name": "Copy of *Daily WBR C/R*",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking"
+  },
+  {
+    "category": "technician",
+    "id": 387936790,
+    "name": "Daily WBR - Andy's-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387930556,
+    "name": "Daily WBR - COMMPHX-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387945629,
+    "name": "Daily WBR - GTX-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387945741,
+    "name": "Daily WBR - Nevada-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387935289,
+    "name": "Daily WBR - Phoenix-Res Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387951872,
+    "name": "Daily WBR - Tucson-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 387950018,
+    "name": "Daily WBR - West PHX-Sales (API)",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+  },
+  {
+    "category": "technician",
+    "id": 53203361,
+    "name": "Field Conversion Report",
+    "description": "This report should be used to evaluate technician performance around conversions. This report includes the SLM conversion rate, which is especially useful in evaluating a technician as it counts the job as converted if they set a lead, sell a membership or convert the job. If you are looking for a conversion rate that accounts for leads set, this is a great calculation. This report also includes other helpful KPIs such as options per opportunity, billable hours, and basic conversion metrics. "
+  },
+  {
+    "category": "technician",
+    "id": 53244961,
+    "name": "Sales Report by Field Employee/Technician",
+    "description": "This report is used to focus on conversion of estimates. This report is best used to evaluate how effective your field employee is at converting an estimate, independent of whether or not work was performed that day. This would be a great report to use to evaluate performance if a field employee is focused on selling. "
+  },
+  {
+    "category": "technician",
+    "id": 53248935,
+    "name": "Sold By Sales Detail Report by Completion Date",
+    "description": "Upgrade to legacy Sold By Sales Detail Report by Completion Date. Displays invoice details of completed jobs, based on the Sold By technician. Use this to evaluate the work generated by your salesmen that has been completed."
+  },
+  {
+    "category": "technician",
+    "id": 25724673,
+    "name": "Technician Performance Board",
+    "description": "Upgrade to legacy Technician Performance Board Report. Use it to track your technicians' performance including completed revenue, conversion rate, job average, replacement lead conversion, and work in progress."
+  },
+  {
+    "category": "technician",
+    "id": 1153,
+    "name": "Technician Performance Board (M)",
+    "description": "Upgrade to the legacy Technician Performance Board (M) Report. Includes metrics on completed revenue, job average, and conversion rates."
+  },
+  {
+    "category": "technician",
+    "id": 53244726,
+    "name": "Technician Timesheet with Technician Information",
+    "description": "This report will give a breakdown by technician of paid time with additional information about the technician such as technician business unit and Payroll ID."
+  }
+]

@@ -1,0 +1,44 @@
+,Scheduled Date,Business Unit,Sold By,Primary Technician,Job Type,Customer Name,Job #,Jobs Subtotal,Labor Pay,Payroll Adjustments,Materials + Equip. + PO/Bill Costs,Returns,Jobs Total Costs,Jobs Gross Margin %,Status
+Business Unit: Andy's Painting-Production,,,,,,,,,,,,,,,
+,10/20/2025,Andy's Painting-Production,,*Jose Ruiz - Perez,Production-COMM-EXT,Don Cobb,389324885,$2139.46,$0.00,$2000.00,$1611.33,$0.00,$3611.33,-68.80%,Completed
+,10/22/2025,Andy's Painting-Production,,Mario Cereceda ,Warranty,Laura Montoya,389438781,$0.00,$0.00,$100.00,$49.97,$0.00,$149.97,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Warranty,Joanna Clark,389618389,$0.00,$73.33,$0.00,$0.00,$0.00,$73.33,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-INT,Paul Beatty,389133384,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-EXT,Paul Beatty,389144857,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Vigil and Associates Architectural Group,397643260,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Elizabeth Brown,397657930,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Ajoy Moonka,397672609,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Felix Briones,397644081,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Michael Denman,397711456,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397715561,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Don Cobb,397734996,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397820904,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397820255,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Marcus Carter,397769226,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Barbara Lepori,397706721,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Courtney Rausch,397768822,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Argi Taylor,397786853,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Alberto Aguayo-Rico,397767024,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397878953,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,David Sparks ,397576600,$0.00,$0.00,$0.00,$167.45,$0.00,$167.45,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,*Pedro Ortiz,Touchup,Barbara Lepori,397653981,$0.00,$0.00,$200.00,$0.00,$0.00,$200.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Vigil and Associates Architectural Group,397692507,$0.00,$158.00,$0.00,$45.69,$0.00,$203.69,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,*Rafael Perla Castillo,Touchup,Felix Briones,397690946,$0.00,$0.00,$450.00,$0.00,$0.00,$450.00,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,Marcus Carter,397874133,$0.00,$0.00,$0.00,$26.75,$0.00,$26.75,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,*Juan Barraza ,Touchup,Jessica Sandoval,397827963,$0.00,$0.00,$150.00,$0.00,$0.00,$150.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Matt Sullivan,397655265,$0.00,$407.00,$0.00,$87.14,$0.00,$494.14,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,*Cesar Galeano,Touchup,Church's Chicken - Delia Cruz,397769180,$0.00,$0.00,$100.00,$0.00,$0.00,$100.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-RES-INT,Elizabeth Brown,388742795,$619.58,$85.00,$200.00,$269.63,$0.00,$554.63,16.88%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Ajoy Moonka,389126602,$1148.80,$0.00,$550.00,$362.28,$0.00,$912.28,20.59%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Alberto Aguayo-Rico,389182944,$1420.00,$0.00,$800.00,$183.19,$0.00,$983.19,30.76%,Completed
+,10/23/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-INT,Carter Breckenridge,389209474,$2820.00,$0.00,$1012.00,$593.41,$0.00,$1605.41,43.07%,In Progress
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-Cabinet,Jamison Brown ,389478663,$4496.00,$0.00,$1785.00,$603.45,$0.00,$2388.45,46.88%,Completed
+,10/21/2025,Andy's Painting-Production,Seth Fahnle,Richard Olguin,Production-Cabinet,Courtney Rausch,389126650,$2096.00,$200.33,$599.67,$224.55,$0.00,$1024.55,51.12%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-COMM-INT,Paul Dunn,389284427,$2925.00,$0.00,$877.00,$478.50,$0.00,$1355.50,53.66%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-EXT,Michael Denman,388899959,$5060.75,$0.00,$1253.00,$1069.33,$0.00,$2322.33,54.11%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-RES-INT,Cyndi-Marie M,389186404,$650.00,$0.00,$195.00,$95.37,$0.00,$290.37,55.33%,Completed
+,10/22/2025,Andy's Painting-Production,,*Hector Amaya,Production-RES-INT,Argi Taylor,389323999,$480.00,$0.00,$200.00,$0.50,$0.00,$200.50,58.23%,Completed
+,10/20/2025,Andy's Painting-Production,,Richard Olguin,Production-Cabinet,Jaimie Kennedy,397652196,$854.00,$141.67,$158.33,$49.80,$0.00,$349.80,59.04%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-RES-INT,Joshua Bump,388524852,$4030.76,$0.00,$1200.00,$450.38,-$66.00,$1584.38,60.69%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-Cabinet,Joshua Bump,388525076,$3000.00,$0.00,$900.00,$239.75,$0.00,$1139.75,62.01%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,Jose Rodriguez,Production-RES-EXT,Elizabeth Brown,388981346,$1533.66,$0.00,$50.00,$441.28,$0.00,$491.28,70.33%,Completed

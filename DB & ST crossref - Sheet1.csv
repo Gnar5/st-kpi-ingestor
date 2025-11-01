@@ -1,0 +1,259 @@
+,Scheduled Date,Business Unit,Sold By,Primary Technician,Job Type,Customer Name,Job #,Jobs Subtotal,Labor Pay,Payroll Adjustments,Materials + Equip. + PO/Bill Costs,Returns,Jobs Total Costs,Jobs Gross Margin %,Status
+Business Unit: Andy's Painting-Production,,,,,,,,,,,,,,,
+,10/20/2025,Andy's Painting-Production,,*Jose Ruiz - Perez,Production-COMM-EXT,Don Cobb,389324885,$2139.46,$0.00,$2000.00,$1611.33,$0.00,$3611.33,-68.80%,Completed
+,10/22/2025,Andy's Painting-Production,,Mario Cereceda ,Warranty,Laura Montoya,389438781,$0.00,$0.00,$100.00,$49.97,$0.00,$149.97,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Warranty,Joanna Clark,389618389,$0.00,$73.33,$0.00,$0.00,$0.00,$73.33,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-INT,Paul Beatty,389133384,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-EXT,Paul Beatty,389144857,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Vigil and Associates Architectural Group,397643260,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Elizabeth Brown,397657930,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Ajoy Moonka,397672609,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Felix Briones,397644081,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Michael Denman,397711456,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397715561,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Don Cobb,397734996,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397820904,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397820255,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Marcus Carter,397769226,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Barbara Lepori,397706721,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Courtney Rausch,397768822,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Argi Taylor,397786853,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Alberto Aguayo-Rico,397767024,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397878953,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,David Sparks ,397576600,$0.00,$0.00,$0.00,$167.45,$0.00,$167.45,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,,*Pedro Ortiz,Touchup,Barbara Lepori,397653981,$0.00,$0.00,$200.00,$0.00,$0.00,$200.00,0.00%,Completed
+,10/21/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Vigil and Associates Architectural Group,397692507,$0.00,$158.00,$0.00,$45.69,$0.00,$203.69,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,*Rafael Perla Castillo,Touchup,Felix Briones,397690946,$0.00,$0.00,$450.00,$0.00,$0.00,$450.00,0.00%,Completed
+,10/24/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,Marcus Carter,397874133,$0.00,$0.00,$0.00,$26.75,$0.00,$26.75,0.00%,Completed
+,10/23/2025,Andy's Painting-Production,,*Juan Barraza ,Touchup,Jessica Sandoval,397827963,$0.00,$0.00,$150.00,$0.00,$0.00,$150.00,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Matt Sullivan,397655265,$0.00,$407.00,$0.00,$87.14,$0.00,$494.14,0.00%,Completed
+,10/22/2025,Andy's Painting-Production,,*Cesar Galeano,Touchup,Church's Chicken - Delia Cruz,397769180,$0.00,$0.00,$100.00,$0.00,$0.00,$100.00,0.00%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-RES-INT,Elizabeth Brown,388742795,$619.58,$85.00,$200.00,$269.63,$0.00,$554.63,16.88%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Ajoy Moonka,389126602,$1148.80,$0.00,$550.00,$362.28,$0.00,$912.28,20.59%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Alberto Aguayo-Rico,389182944,$1420.00,$0.00,$800.00,$183.19,$0.00,$983.19,30.76%,Completed
+,10/23/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-INT,Carter Breckenridge,389209474,$2820.00,$0.00,$1012.00,$593.41,$0.00,$1605.41,43.07%,In Progress
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-Cabinet,Jamison Brown ,389478663,$4496.00,$0.00,$1785.00,$603.45,$0.00,$2388.45,46.88%,Completed
+,10/21/2025,Andy's Painting-Production,Seth Fahnle,Richard Olguin,Production-Cabinet,Courtney Rausch,389126650,$2096.00,$200.33,$599.67,$224.55,$0.00,$1024.55,51.12%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-COMM-INT,Paul Dunn,389284427,$2925.00,$0.00,$877.00,$478.50,$0.00,$1355.50,53.66%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-EXT,Michael Denman,388899959,$5060.75,$0.00,$1253.00,$1069.33,$0.00,$2322.33,54.11%,Completed
+,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-RES-INT,Cyndi-Marie M,389186404,$650.00,$0.00,$195.00,$95.37,$0.00,$290.37,55.33%,Completed
+,10/22/2025,Andy's Painting-Production,,*Hector Amaya,Production-RES-INT,Argi Taylor,389323999,$480.00,$0.00,$200.00,$0.50,$0.00,$200.50,58.23%,Completed
+,10/20/2025,Andy's Painting-Production,,Richard Olguin,Production-Cabinet,Jaimie Kennedy,397652196,$854.00,$141.67,$158.33,$49.80,$0.00,$349.80,59.04%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-RES-INT,Joshua Bump,388524852,$4030.76,$0.00,$1200.00,$450.38,-$66.00,$1584.38,60.69%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-Cabinet,Joshua Bump,388525076,$3000.00,$0.00,$900.00,$239.75,$0.00,$1139.75,62.01%,Completed
+,10/20/2025,Andy's Painting-Production,Seth Fahnle,Jose Rodriguez,Production-RES-EXT,Elizabeth Brown,388981346,$1533.66,$0.00,$50.00,$441.28,$0.00,$491.28,70.33%,Completed
+,,42,,,,,,$33274.01,$1065.33,$12780.00,$7049.75,,$20829.08,37.72%,
+Business Unit: Commercial-AZ-Production,,,,,,,,,,,,,,,
+,10/22/2025,Commercial-AZ-Production,Brad Hendrickson,Luis Delgado,Production-COMM-EXT,JBS Construction Group,397686112,$200.00,$0.00,$200.00,$95.91,$0.00,$295.91,-47.96%,Scheduled
+,10/20/2025,Commercial-AZ-Production,,Adrian Murillo,Production-COMM-EXT/INT,CKZ Holdings,389653357,$2215.00,$0.00,$2000.00,$1206.10,$0.00,$3206.10,-44.74%,Completed
+,10/20/2025,Commercial-AZ-Production,,Ramon De Loera,Production-COMM-EXT,JE Fuller,388934314,$10538.80,$628.66,$2686.34,$7384.13,$0.00,$10699.13,-1.52%,Scheduled
+,10/21/2025,Commercial-AZ-Production,,Jose Luis Simental,Production-COMM-INT,CKZ Holdings,397674675,$0.00,$133.33,$142.97,$0.00,$0.00,$276.30,0.00%,Completed
+,10/22/2025,Commercial-AZ-Production,,Luis Delgado,Production-COMM-EXT,Komico Phoenix LLC,397671692,$0.00,$0.00,$210.00,$88.58,$0.00,$298.58,0.00%,Scheduled
+,10/22/2025,Commercial-AZ-Production,,Jose Luis Simental,Production-COMM-EXT,Avison Young-Ahwatukee Square,397669665,$0.00,$624.59,$1135.41,$176.27,$0.00,$1936.27,0.00%,Scheduled
+,10/20/2025,Commercial-AZ-Production,,Jose Luis Simental,Production-COMM-EXT,"SunRay Property Holdings, LLC",397663774,$489.00,$287.08,$147.50,$0.00,$0.00,$434.58,11.13%,Completed
+,10/20/2025,Commercial-AZ-Production,,Carlos Chavez Bernal,Production-COMM-EXT,Troon Country Club,388940524,$10919.25,$3486.67,$1738.00,$3026.74,$0.00,$8251.41,24.43%,Completed
+,10/20/2025,Commercial-AZ-Production,Sean Zackery,Juan Espinoza,Production-COMM-EXT,Harkins Theater ,387563401,$10429.02,$2438.55,$1702.45,$3668.23,-$327.92,$7481.31,28.26%,Completed
+,10/24/2025,Commercial-AZ-Production,Sean Zackery,Javier Bueno,Production-COMM-EXT,Curtis Fletcher,389449179,$3030.00,$393.66,$820.67,$352.63,$0.00,$1566.96,48.29%,Scheduled
+,10/20/2025,Commercial-AZ-Production,,Francisco Espinoza,Production-COMM-EXT,Buckhorn Plaza,388942963,$19478.68,$3272.53,$2127.47,$4097.11,$0.00,$9497.11,51.24%,Completed
+,10/20/2025,Commercial-AZ-Production,Brad Hendrickson,Luis Delgado,Production-COMM-INT,CKZ Holdings,388743945,$2444.98,$0.00,$600.00,$289.07,$0.00,$889.07,63.64%,Scheduled
+,10/20/2025,Commercial-AZ-Production,,Nathan Rice,Production-COMM-INT,CKZ Holdings,389664342,$500.00,$0.00,$0.00,$0.00,$0.00,$0.00,100.00%,Scheduled
+,,13,,,,,,$60244.73,$11265.07,$13510.81,$20384.77,,$44832.73,25.58%,
+Business Unit: Guaranteed Painting-Production,,,,,,,,,,,,,,,
+,10/20/2025,Guaranteed Painting-Production,Michael Rodriguez,Abraham Hernandez,Production-RES-EXT,Kristy Foote,387944595,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Guaranteed Painting-Production,,Abraham Hernandez,Production-RES-INT,Tori Spandrio,397656424,$1049.62,$696.66,$0.00,$130.47,$0.00,$827.13,21.20%,Completed
+,10/20/2025,Guaranteed Painting-Production,Michael Rodriguez,Jesse Sleeper,Production-RES-INT,Connie Rodriguez,389635183,$833.00,$0.00,$600.00,$10.00,$0.00,$610.00,26.77%,Completed
+,10/22/2025,Guaranteed Painting-Production,,Abraham Hernandez,Production-RES-INT,Gayle & Tony Travis,388972633,$1190.00,$704.00,$0.00,$98.66,$0.00,$802.66,32.55%,Completed
+,10/20/2025,Guaranteed Painting-Production,,*Gilberto Lopez ,Production-COMM-EXT,River Oaks Townhomes,397656404,$20323.52,$0.00,$9411.76,$2524.88,$0.00,$11936.64,41.27%,Scheduled
+,10/20/2025,Guaranteed Painting-Production,Michael Rodriguez,Brady Spellman,Production-RES-EXT,Jill Hoganson,387377241,$5166.89,$0.00,$2028.04,$596.91,$0.00,$2624.95,49.20%,Completed
+,10/20/2025,Guaranteed Painting-Production,Hansel Contreras,Kevin Rivera ,Production-RES-EXT,Ron Lewis,388744199,$3880.00,$0.00,$1604.51,$335.53,$0.00,$1940.04,50.00%,Completed
+,10/24/2025,Guaranteed Painting-Production,,Abraham Hernandez,Production-COMM-EXT/INT,Boxwood Real Estate,397951702,$800.00,$381.33,$0.00,$0.00,$0.00,$381.33,52.33%,Completed
+,,8,,,,,,$33243.03,$1781.99,$13644.31,$3696.45,,$19122.75,42.48%,
+Business Unit: Nevada-Production,,,,,,,,,,,,,,,
+,10/20/2025,Nevada-Production,,*Belky,Production-COMM-EXT,Pro Tech Construction,389126476,$5000.00,$0.00,$2500.00,$2511.31,$0.00,$5011.31,-0.23%,Completed
+,10/22/2025,Nevada-Production,,*Alberto Moreno,Warranty,Discount Tire,397713160,$0.00,$0.00,$500.00,$0.00,$0.00,$500.00,0.00%,Completed
+,10/21/2025,Nevada-Production,,*Isaac Matute,PM Inspection,Reg Buck,389498207,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/22/2025,Nevada-Production,,*Isaac Matute,PM Inspection,Trisha Nepomuceno,397555276,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/24/2025,Nevada-Production,,Angelica Moreno,Touchup,Charles Saldutto,397654533,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Nevada-Production,Gibran Luna,Luis Arambula Jr.,Production-RES-EXT,Curtis Farnsworth,389148898,$4240.00,$370.00,$750.00,$1588.65,$0.00,$2708.65,36.12%,Completed
+,10/20/2025,Nevada-Production,Gibran Luna,Luis Arambula Jr.,Production-RES-INT,Marty Solis ,389022627,$3320.00,$420.00,$680.00,$886.24,$0.00,$1986.24,40.17%,Completed
+,10/20/2025,Nevada-Production,Gibran Luna,Edvin Garcia,Production-RES-EXT,Sara Roth,389294575,$11920.00,$1505.66,$1500.00,$3583.50,$0.00,$6589.16,44.72%,Completed
+,10/24/2025,Nevada-Production,Gibran Luna,*Alberto Moreno,Production-RES-EXT,Steve Lee,389433089,$1190.00,$0.00,$600.00,$40.77,$0.00,$640.77,46.15%,Completed
+,10/22/2025,Nevada-Production,Gibran Luna,*Alberto Moreno,Production-RES-EXT,Davy Delug,397690209,$1190.00,$0.00,$500.00,$53.50,$0.00,$553.50,53.49%,Completed
+,10/21/2025,Nevada-Production,Gibran Luna,*Alberto Moreno,Production-RES-INT,Saraita Whan-mccarthy,389205021,$900.00,$0.00,$400.00,$0.00,$0.00,$400.00,55.56%,Completed
+,10/20/2025,Nevada-Production,Gibran Luna,*Alberto Moreno,Production-RES-INT,Margie Turner ,389024855,$1280.00,$0.00,$400.00,$126.51,$0.00,$526.51,58.87%,Completed
+,10/20/2025,Nevada-Production,Gibran Luna,Edvin Garcia,Production-RES-EXT,Kevin Barber ,387052938,$5200.00,$0.00,$0.00,$0.00,$0.00,$0.00,100.00%,Hold
+,,13,,,,,,$34240.00,$2295.66,$7830.00,$8790.48,,$18916.14,44.75%,
+Business Unit: Phoenix-Production,,,,,,,,,,,,,,,
+,10/20/2025,Phoenix-Production,,Damon Taylor,Production-RES-INT,Sharon Binder,397596121,$2422.50,$2252.10,$0.00,$875.46,$0.00,$3127.56,-3.48%,Completed
+,10/20/2025,Phoenix-Production,,Jeremy Valle,Production-RES-EXT,Robert Sacha,388015522,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Phoenix-Production,,_Manuel Sandoval-Alvarado,Production-RES-EXT,Lorraine Jones,389478357,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Gene Landers,Production-RES-EXT,Sam Hettinger,365766216,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/24/2025,Phoenix-Production,,Antonio Saris,Warranty,Tom Keohane,389109080,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Phoenix-Production,,Jesus Lagunes Gomez,Warranty,Vaughn Knipfer,367637561,$0.00,$438.00,$0.00,$203.43,$0.00,$641.43,0.00%,Completed
+,10/20/2025,Phoenix-Production,Jon Snow,_Manuel Sandoval-Alvarado,Production-RES-INT,Richard Pearson,389600506,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Marv & Susan Spatz,397556144,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/20/2025,Phoenix-Production,,_Alfonso Gamino,PM Inspection,Joanie Pagakis,397669789,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/20/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Jonathon Palmer,397684055,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,,PM Inspection,Hazel Cohn,389438279,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/20/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Elizabeth Davis,397658033,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Francisco Martinez,397665456,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Jerri Valadez ,397677747,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Patricia Wyant,397690852,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Francisco Martinez,397707225,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Robert Sacha,397712870,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Uriel Morales,PM Inspection,Joel Arthur,397656799,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Hazel Cohn,389424917,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Katie Smith,397706854,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Uriel Morales,PM Inspection,Tammy Grasso,397712398,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Marie Delacruez,397576048,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Claire Fox,389569955,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Angela Sims,397711589,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/21/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Elizabeth Davis,397728599,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Jerri Valadez ,397731286,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Antonio Saris,PM Inspection,Annette Gauthier,366611946,$0.00,$0.00,$1125.00,$0.00,$0.00,$1125.00,0.00%,Completed
+,10/23/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Katie Smith,397836008,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Phoenix-Production,,_Ruben Lainfiesta,PM Inspection,Trina Gallegos,389359078,$0.00,$0.00,$0.00,$44.76,$0.00,$44.76,0.00%,Completed
+,10/23/2025,Phoenix-Production,,Uriel Morales,PM Inspection,Darrell Sharpley,397729868,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Phoenix-Production,,Uriel Morales,PM Inspection,Sherri Shahriari,397717854,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Phoenix-Production,,,PM Inspection,Jessica Fleming,397775417,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/22/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Kim & Sherry Koss,389501525,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/22/2025,Phoenix-Production,,Alfred Mazariegos,PM Inspection,Robert Sacha,397766201,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Phoenix-Production,,Marc Anthony,PM Inspection,111 Palms Condo Association,397830152,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/24/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Alison Jarbo,397845069,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/24/2025,Phoenix-Production,,Uriel Morales,PM Inspection,Renee Rizzo,397711684,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Marc Anthony,PM Inspection,Rosie Harris	,397735073,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Uriel Morales,PM Inspection, Lucas Shorette,397681955,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Jacob Guerber,PM Inspection,Michelle Baldwin,397874779,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,"_Heber Esparza Jr,",Touchup,Foree Cooley,389266117,$0.00,$228.50,$0.00,$117.26,$0.00,$345.76,0.00%,Completed
+,10/21/2025,Phoenix-Production,,Antonio Saris,Touchup,Antonio Alvaro,397579507,$0.00,$0.00,$0.00,$193.80,$0.00,$193.80,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Francisco Hernandez,Touchup,Renee Rizzo,389609628,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Jose Salazar,Touchup,Renee Berberian,397555429,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/24/2025,Phoenix-Production,,Jesus Lagunes Gomez,Touchup,Darrell Sharpley,397675313,$0.00,$694.50,$427.76,$320.85,$0.00,$1443.11,0.00%,Completed
+,10/23/2025,Phoenix-Production,,Jose Pacheco,Touchup,Barbara Rector,397796474,$0.00,$0.00,$0.00,$23.04,$0.00,$23.04,0.00%,Scheduled
+,10/23/2025,Phoenix-Production,,_Travis D'Addabbo,Touchup,Hughes Development,397802313,$0.00,$160.30,$0.00,$741.79,$0.00,$902.09,0.00%,Scheduled
+,10/24/2025,Phoenix-Production,,_Manuel Sandoval-Alvarado,Touchup,Elsie Olsen ,397712372,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Kevin Engen,Touchup,Cindy Duffy,397715314,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,_Ruben Lainfiesta,Touchup,Donald Cox,397779392,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Phoenix-Production,,Jose Pacheco,Touchup,Roy & Stacy Seeger,397865823,$0.00,$0.00,$0.00,$26.56,$0.00,$26.56,0.00%,Scheduled
+,10/25/2025,Phoenix-Production,Kyle Rollins,_Christopher Stevenson,Window/Solar Washing, Heather & Rob Campbell,388278558,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/25/2025,Phoenix-Production,_Christopher Stevenson,_Christopher Stevenson,Window/Solar Washing,Troy Browder,387989848,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/20/2025,Phoenix-Production,,Jeremy Valle,Production-RES-INT,Janice Adams,397657967,$1200.00,$0.00,$720.00,$463.27,$0.00,$1183.27,1.39%,Scheduled
+,10/20/2025,Phoenix-Production,,Juan Romo,Production-RES-INT,Aktion Construction,397597603,$5000.00,$0.00,$4500.00,$317.91,$0.00,$4817.91,3.64%,Scheduled
+,10/22/2025,Phoenix-Production,Sam Hettinger,_Alfonso Gamino,Production-RES-INT,Holly Moss,389215111,$1537.50,$0.00,$600.00,$660.55,$0.00,$1260.55,18.01%,Completed
+,10/25/2025,Phoenix-Production,_Christopher Stevenson,**Juan Manuel Marroquin,Production-RES-EXT,Isaiah Shaird,389205072,$640.00,$0.00,$500.00,$20.21,$0.00,$520.21,18.72%,Completed
+,10/22/2025,Phoenix-Production,Kyle Rollins,Jesus Rendon,Production-RES-EXT,Marcie Miller,387264608,$3593.28,$0.00,$1400.00,$1337.14,$0.00,$2737.14,23.83%,Completed
+,10/20/2025,Phoenix-Production,Sam Hettinger,_Orlando Espinoza,Production-RES-EXT,111 Palms Condo Association,365622028,$10900.00,$0.00,$3860.00,$3764.74,$0.00,$7624.74,30.05%,Completed
+,10/23/2025,Phoenix-Production,Keith Bryant,_Danny Lopez,Production-RES-EXT,Mike Cawley,397672182,$400.35,$0.00,$150.00,$114.55,$0.00,$264.55,33.92%,Completed
+,10/20/2025,Phoenix-Production,Jose Alvarez,Alberto Guerrero Ceja,Production-RES-INT,Sandra Schroeder,366912331,$4950.00,$0.00,$2000.00,$1213.35,$0.00,$3213.35,35.08%,Completed
+,10/23/2025,Phoenix-Production,Kyle Rollins,Francisco Hernandez,Production-RES-INT,Chris Mares,397706800,$3612.50,$0.00,$1570.00,$767.00,$0.00,$2337.00,35.31%,Completed
+,10/20/2025,Phoenix-Production,,Andrew Sussex,Production-Cabinet+Interior,John Pieratt,397653732,$500.00,$0.00,$250.00,$72.19,$0.00,$322.19,35.56%,Completed
+,10/20/2025,Phoenix-Production,,Juan Manuel Barrientos,Production-RES-INT,Dawn Jones,397594304,$3850.00,$0.00,$1250.00,$1229.56,$0.00,$2479.56,35.60%,Scheduled
+,10/20/2025,Phoenix-Production,,Argenis E. Zerpa,Production-RES-EXT,George Rozelle,389145116,$8880.00,$0.00,$2700.00,$2857.20,$0.00,$5557.20,37.42%,Scheduled
+,10/20/2025,Phoenix-Production,,Jose Pacheco,Production-RES-INT,Elizabeth Davis,397658510,$1500.00,$0.00,$840.00,$62.68,$0.00,$902.68,39.82%,Completed
+,10/20/2025,Phoenix-Production,Kyle Rollins,*Leonardo Espinoza Sr.,Production-RES-EXT,Hunter Wilcox,387625123,$3350.00,$0.00,$1298.20,$711.80,$0.00,$2010.00,40.00%,Completed
+,10/20/2025,Phoenix-Production,_Christopher Stevenson,_Travis D'Addabbo,Production-RES-EXT,Karen Chalmers,388974729,$1241.17,$307.65,$0.00,$425.01,$0.00,$732.66,40.97%,Completed
+,10/21/2025,Phoenix-Production,Keith Bryant,Rudy Villegas,Production-RES-EXT,Patricia Wyant,387680999,$4970.40,$0.00,$1400.00,$1467.62,$0.00,$2867.62,42.31%,Completed
+,10/23/2025,Phoenix-Production,Sam Hettinger,Leonardo Espinoza Jr,Production-RES-EXT,Mrittika Ganguli,389336810,$500.00,$0.00,$200.00,$83.25,$0.00,$283.25,43.35%,Completed
+,10/20/2025,Phoenix-Production,Kyle Rollins,"_Heber Esparza Jr,",Production-RES-EXT,Katie Smith,388939000,$7093.25,$519.00,$1981.00,$1499.43,$0.00,$3999.43,43.62%,Completed
+,10/25/2025,Phoenix-Production,Kyle Rollins,Kevin Engen,Production-RES-INT,Phyllis Martynowicz,389437660,$900.00,$0.00,$300.00,$206.20,$0.00,$506.20,43.76%,Completed
+,10/23/2025,Phoenix-Production,Keith Bryant,_Demetrio Chavez,Production-RES-INT,Neha Jaiswal ,389617947,$3700.05,$0.00,$1150.00,$902.54,-$20.63,$2031.91,45.08%,Completed
+,10/20/2025,Phoenix-Production,Jose Alvarez,Leonardo Espinoza Jr,Production-RES-EXT,Janae Svagera,387244959,$3780.00,$192.82,$857.18,$1002.31,$0.00,$2052.31,45.71%,Completed
+,10/20/2025,Phoenix-Production,Keith Bryant,_Alvaro Esquivel,Production-RES-EXT,Scott Creighton,388510634,$5885.40,$533.34,$866.66,$1775.09,$0.00,$3175.09,46.05%,Completed
+,10/20/2025,Phoenix-Production,Kyle Rollins,Damon Taylor,Production-RES-INT,Frank  Crisalli ,388413301,$1920.00,$0.00,$700.00,$333.51,$0.00,$1033.51,46.17%,Completed
+,10/24/2025,Phoenix-Production,Keith Bryant,_Gustavo Espinosa,Production-RES-INT,Lindsey Kramer,389612440,$800.70,$0.00,$300.00,$127.35,$0.00,$427.35,46.63%,Completed
+,10/20/2025,Phoenix-Production,Daniel Faherty,_Manuel Sandoval-Alvarado,Production-RES-EXT,Gerry Millman,361712253,$4312.00,$0.00,$1200.00,$1078.35,$0.00,$2278.35,47.16%,Completed
+,10/21/2025,Phoenix-Production,Doug Caris,_Gustavo Espinosa,Production-RES-EXT,Angela Sims,389083995,$3561.50,$0.00,$1000.00,$854.61,$0.00,$1854.61,47.93%,Completed
+,10/20/2025,Phoenix-Production,Kyle Rollins,   **Miguel Duenas,Production-RES-EXT,Kevin Herrell,388881200,$8384.00,$0.00,$2220.90,$2085.10,$0.00,$4306.00,48.64%,Completed
+,10/20/2025,Phoenix-Production,,Donald Bryson,Production-RES-EXT,Hughes-Development,389664708,$3500.00,$0.00,$1500.00,$292.59,$0.00,$1792.59,48.78%,Scheduled
+,10/20/2025,Phoenix-Production,Jose Alvarez,**Juan Manuel Marroquin,Production-RES-EXT,Tammy Grasso,367596089,$8530.00,$0.00,$1999.51,$2265.49,$0.00,$4265.00,50.00%,Completed
+,10/20/2025,Phoenix-Production,Keith Bryant,   **Miguel Duenas,Production-RES-EXT,Samatha Haller,389083232,$3485.00,$0.00,$985.38,$757.12,$0.00,$1742.50,50.00%,Completed
+,10/20/2025,Phoenix-Production,,Andrew Mendez,Production-RES-INT,Daniel Pecilunas,397654361,$500.00,$0.00,$250.00,$0.00,$0.00,$250.00,50.00%,Completed
+,10/20/2025,Phoenix-Production,Keith Bryant,   **Miguel Duenas,Production-RES-EXT,Kelly Messick,388675028,$3985.65,$0.00,$1547.50,$445.32,$0.00,$1992.82,50.00%,Completed
+,10/20/2025,Phoenix-Production,Steven McNeilly,   **Miguel Duenas,Production-RES-EXT,Carl Vycas,387744395,$5647.40,$0.00,$1977.43,$876.79,-$30.72,$2823.50,50.00%,Completed
+,10/24/2025,Phoenix-Production,Kyle Rollins,   **Miguel Duenas,Production-RES-EXT,Hunter Shelton,388656562,$4326.50,$0.00,$1515.94,$628.16,$0.00,$2144.10,50.44%,Completed
+,10/20/2025,Phoenix-Production,Kyle Rollins,Kevin Engen,Production-RES-INT,Ashley Alvaro,389003965,$2685.75,$0.00,$900.00,$418.10,$0.00,$1318.10,50.92%,Completed
+,10/20/2025,Phoenix-Production,Jose Alvarez,Cristian Roberson,Production-RES-EXT,Michelle Hambly,389007816,$4900.00,$0.00,$1300.00,$1072.59,$0.00,$2372.59,51.58%,Completed
+,10/23/2025,Phoenix-Production,_Christopher Stevenson,_Ruben Lainfiesta,Production-RES-EXT,Shirley Iraganje,389184844,$3400.00,$409.88,$610.12,$619.95,$0.00,$1639.95,51.77%,Completed
+,10/21/2025,Phoenix-Production,_Christopher Stevenson,Jesus Lagunes Gomez,Production-Cabinet+Interior,Karen Chalmers,388979117,$785.00,$220.00,$0.00,$157.60,$0.00,$377.60,51.90%,Completed
+,10/20/2025,Phoenix-Production,Steven McNeilly,Octavio Monteon,Production-Cabinet,Margie Van Roekel,387826576,$4269.15,$0.00,$1800.00,$246.10,$0.00,$2046.10,52.07%,Completed
+,10/21/2025,Phoenix-Production,Jose Alvarez,Andrew Mendez,Production-RES-EXT,Robert Sacha,388015394,$3480.00,$0.00,$1101.50,$725.74,$0.00,$1827.24,52.54%,Completed
+,10/23/2025,Phoenix-Production,Keith Bryant,_Travis D'Addabbo,Production-RES-EXT,Hughes Development,397830495,$4400.00,$468.65,$1100.00,$489.57,$0.00,$2058.22,53.22%,In Progress
+,10/20/2025,Phoenix-Production,_Christopher Stevenson,_Travis D'Addabbo,Production-RES-INT,Karen Chalmers,388978707,$1650.00,$12.25,$350.00,$406.41,$0.00,$768.66,53.41%,Completed
+,10/20/2025,Phoenix-Production,_Christopher Stevenson,_George Lopez,Production-RES-EXT,Rick Bowling,388067731,$6365.00,$0.00,$2400.00,$517.68,$0.00,$2917.68,54.16%,Completed
+,10/23/2025,Phoenix-Production,Daniel Faherty,_Vincent Perez,Production-RES-EXT,Jean Hinson,367228489,$2310.20,$0.00,$200.00,$854.26,$0.00,$1054.26,54.36%,Completed
+,10/20/2025,Phoenix-Production,Keith Bryant,_Juan  Lopez-Santana,Production-RES-EXT,Talani Wilson,389182317,$2985.60,$0.00,$800.00,$544.44,$0.00,$1344.44,54.97%,Completed
+,10/20/2025,Phoenix-Production,Jose Alvarez,_Rick Klein ,Production-RES-INT,Terry Bruington,388072660,$5985.00,$799.05,$1100.95,$761.07,$0.00,$2661.07,55.54%,Completed
+,10/20/2025,Phoenix-Production,,Jose Salazar,Production-RES-EXT,Connie Jacomini ,397655909,$5000.00,$0.00,$1740.00,$444.03,$0.00,$2184.03,56.32%,Completed
+,10/22/2025,Phoenix-Production,Keith Bryant,Roberto Ibanez,Production-Cabinet,Eddie Idrizovic,387848312,$3580.00,$0.00,$1100.00,$386.30,$0.00,$1486.30,58.48%,Scheduled
+,10/20/2025,Phoenix-Production,Jon Snow,_Demetrio Chavez,Production-RES-INT,Mike Mauldin,389438180,$5360.00,$0.00,$1200.00,$898.24,$0.00,$2098.24,60.85%,Completed
+,10/24/2025,Phoenix-Production,Kyle Rollins,Andrew Sussex,Production-RES-EXT,Bashar Sheba,388987517,$3500.00,$0.00,$500.00,$810.23,$0.00,$1310.23,62.56%,Scheduled
+,10/20/2025,Phoenix-Production,Kyle Rollins,Adrian Espinoza,Production-RES-EXT,Jerri Valadez ,388657413,$4985.00,$340.00,$660.00,$868.35,-$11.37,$1856.98,62.75%,Completed
+,10/23/2025,Phoenix-Production,Kyle Rollins,Jose Salazar,Production-RES-EXT,Alison Jarbo,389308932,$7743.50,$0.00,$1140.00,$1673.62,$0.00,$2813.62,63.66%,Scheduled
+,10/23/2025,Phoenix-Production,Jose Alvarez,Damon Taylor,Production-RES-INT,Mazhar Hoque,397667192,$2500.00,$0.00,$460.00,$542.90,-$39.25,$963.65,64.96%,Scheduled
+,10/20/2025,Phoenix-Production,,Roberto Ibanez,Production-Cabinet,Michele Musolino,397596564,$2450.00,$0.00,$650.00,$127.75,$0.00,$777.75,68.26%,Completed
+,10/20/2025,Phoenix-Production,,Bobby Ortega,Production-RES-EXT,Angela Hovik,397654339,$1000.00,$0.00,$300.00,$0.00,$0.00,$300.00,70.00%,Completed
+,10/20/2025,Phoenix-Production,,_Gustavo Espinosa,Production-RES-INT,Joel Dupuis,397677704,$1200.00,$0.00,$320.00,$0.00,$0.00,$320.00,73.33%,Completed
+,10/20/2025,Phoenix-Production,,_Ruben Lainfiesta,Production-RES-EXT,Marv & Susan Spatz,389080703,$8000.00,$510.37,$1200.00,$217.00,$0.00,$1927.37,75.91%,Completed
+,10/25/2025,Phoenix-Production,Jose Alvarez,_Christopher Stevenson,Window/Solar Washing,Joe Orozco,387922418,$250.00,$0.00,$0.00,$0.00,$0.00,$0.00,100.00%,Completed
+,10/25/2025,Phoenix-Production,Kyle Rollins,_Christopher Stevenson,Window/Solar Washing,David Agliano,364255346,$400.00,$0.00,$0.00,$0.00,$0.00,$0.00,100.00%,Completed
+,,112,,,,,,$218543.35,$8086.41,$66075.03,$46026.87,,$120086.34,45.36%,
+Business Unit: Tucson-Production,,,,,,,,,,,,,,,
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Anthony Silvas,Production-RES-EXT,William Lipphardt,389664675,$2600.29,$754.78,$825.31,$1477.33,$0.00,$3057.42,-17.58%,Completed
+,10/20/2025,Tucson-Production,,Eric Navarrette,Production-RES-EXT,Ernest Lyons,389061811,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/25/2025,Tucson-Production,,Santana Ruiz,Warranty,Sit Stay Play,388751942,$0.00,$0.00,$251.00,$0.00,$0.00,$251.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Mariano Martinez ,Production-RES-INT,Mary Temple,397792892,$0.00,$223.50,$0.00,$0.00,$0.00,$223.50,0.00%,Completed
+,10/21/2025,Tucson-Production,,David Cota ,Production-COMM-INT,Keegan Builders,397747162,$0.00,$0.00,$65.00,$0.00,$0.00,$65.00,0.00%,Completed
+,10/22/2025,Tucson-Production,,David Cota ,Production-COMM-INT,Keegan Builders,397950347,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/20/2025,Tucson-Production,,Victor Ramos Sr.,Production-COMM-EXT,Agave Management Solutions,397644200,$0.00,$222.92,$0.00,$130.44,$0.00,$353.36,0.00%,Completed
+,10/20/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,Steven Guthrie,397652275,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,Lehman Benson ,389591994,$0.00,$0.00,$0.00,$19.65,$0.00,$19.65,0.00%,Completed
+,10/21/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Mary Temple,397732180,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Albert Figueroa,PM Inspection,Saddlebrook 2,397734775,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,Villages of Silverhawke,397732287,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Brian Taliaferro,397735489,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,National Retail Service Group,397819476,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Brian teston,397821726,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,Tucson Realty and Trust,389084157,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/23/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Brian Taliaferro,397821505,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/23/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Amos Koren,397860829,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/21/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Paul Rheinheimer,389550674,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
+,10/21/2025,Tucson-Production,,Cassandra Figueroa,PM Inspection,Donna Knox,397733196,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
+,10/22/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,National Retail Service Group,397780236,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/22/2025,Tucson-Production,,Rashad Muhammad,PM Inspection,Bruce Vandenberg,397555714,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
+,10/24/2025,Tucson-Production,,Arturo Moya,Touchup,Debbie Milora,387850483,$0.00,$0.00,$85.50,$102.12,$0.00,$187.62,0.00%,Completed
+,10/24/2025,Tucson-Production,Gamaliel Guzman,Antonio Falcon Jr.,Window/Solar Washing,Brian teston,387979122,$0.00,$80.10,$0.00,$0.00,$0.00,$80.10,0.00%,Completed
+,10/23/2025,Tucson-Production,Gamaliel Guzman,Antonio Falcon Jr.,Window/Solar Washing,Melissa Kreitner,388781334,$0.00,$117.00,$0.00,$0.00,$0.00,$117.00,0.00%,Completed
+,10/23/2025,Tucson-Production,,Cassandra Figueroa,Company Training ,Training- The Painting Company,397823198,$0.00,$34.00,$0.00,$0.00,$0.00,$34.00,0.00%,Scheduled
+,10/20/2025,Tucson-Production,Albert Figueroa,Julio Solorio Manzo,Production-COMM-EXT,Villages of Silverhawke,389653681,$5000.00,$594.71,$905.29,$2832.12,$0.00,$4332.12,13.36%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Michael Meza ,Production-RES-EXT/INT,Paul Rheinheimer,389666834,$2359.61,$677.10,$888.50,$229.64,-$28.13,$1767.11,25.11%,Completed
+,10/22/2025,Tucson-Production,Ryan Riehl,Victor Ramos Sr.,Production-RES-EXT,Branden Klink,388571483,$2458.14,$513.33,$600.00,$718.83,$0.00,$1832.16,25.47%,Completed
+,10/20/2025,Tucson-Production,Albert Figueroa,"Jose "" David"" Martinez",Production-COMM-EXT,Villages of Silverhawke,389646395,$5000.00,$719.59,$960.00,$1992.52,$0.00,$3672.11,26.56%,Completed
+,10/20/2025,Tucson-Production,Ryan Riehl,Rene Martinez,Production-RES-EXT,Donna Knox,387843470,$5091.89,$404.72,$1122.85,$1673.39,$0.00,$3200.96,37.14%,Completed
+,10/22/2025,Tucson-Production,Gamaliel Guzman,Christopher Trujillo,Production-RES-INT,Susan Benz,397666477,$1390.00,$209.00,$208.00,$446.23,$0.00,$863.23,37.90%,Completed
+,10/20/2025,Tucson-Production,Ryan Riehl,Santana Ruiz,Production-RES-EXT,Sally McNamara,389568833,$4957.61,$667.22,$824.92,$1498.43,$0.00,$2990.57,39.68%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Christopher Orozco,Production-RES-EXT,Jeff Prang,388788307,$4185.88,$418.20,$837.56,$1199.36,$0.00,$2455.12,41.35%,Completed
+,10/24/2025,Tucson-Production,Ryan Riehl,Fabien Perez,Production-RES-EXT,Teenu Agarwal-Hebbar,397768877,$629.73,$0.00,$188.91,$179.53,$0.00,$368.44,41.49%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,David Cota ,Production-RES-EXT,Brian Taliaferro,365350342,$6070.04,$391.80,$1429.21,$1370.76,$0.00,$3191.77,47.42%,Completed
+,10/23/2025,Tucson-Production,,Fabien Perez,Production-RES-INT,Robert Hart,389664616,$500.00,$0.00,$150.00,$112.19,$0.00,$262.19,47.56%,Completed
+,10/23/2025,Tucson-Production,Gamaliel Guzman,Tim Kragel,Production-RES-INT,Han Yong,365207798,$585.00,$69.68,$105.82,$127.55,$0.00,$303.05,48.20%,Completed
+,10/21/2025,Tucson-Production,Gamaliel Guzman,Arturo Moya,Production-RES-EXT,Brian teston,387987187,$3645.18,$355.47,$738.08,$759.19,$0.00,$1852.74,49.17%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,*Roman Moreno Harim ,Production-RES-INT,Mike Dore,363024202,$9000.00,$0.00,$2700.00,$1709.61,$0.00,$4409.61,51.00%,Completed
+,10/22/2025,Tucson-Production,Gamaliel Guzman,Reynaldo Martinez,Production-RES-INT,Susan Benz,397673826,$1200.00,$223.75,$193.00,$164.80,$0.00,$581.55,51.54%,Completed
+,10/22/2025,Tucson-Production,Gamaliel Guzman,Tim Kragel,Production-RES-INT,Melissa Beyfuss,388492644,$354.92,$0.00,$95.00,$75.76,$0.00,$170.76,51.89%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Rene Gonzalez,Production-RES-EXT,Chris Perry,389499476,$6215.97,$470.25,$1394.54,$1104.39,$0.00,$2969.18,52.23%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Manny Alcala,Production-COMM-EXT/INT,National Retail Service Group,397592957,$7000.00,$1869.50,$1085.00,$375.02,$0.00,$3329.52,52.44%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Fabien Perez,Production-RES-EXT,Siobhan O'Boyle,397644686,$2208.42,$364.09,$431.78,$214.20,$0.00,$1010.07,54.26%,Completed
+,10/21/2025,Tucson-Production,Gamaliel Guzman,Reynaldo Martinez,Production-RES-EXT,Aaron Mcpherson,389480902,$824.82,$72.08,$175.36,$102.86,$0.00,$350.30,57.53%,Completed
+,10/24/2025,Tucson-Production,Ryan Riehl,Reynaldo Martinez,Production-Cabinet,Blair Douglas,397853120,$150.00,$0.00,$60.00,$0.00,$0.00,$60.00,60.00%,Completed
+,10/20/2025,Tucson-Production,Albert Figueroa,Christopher Trujillo,Production-COMM-EXT,Saddlebrook 2,397644337,$1000.00,$0.00,$300.00,$95.89,$0.00,$395.89,60.41%,Completed
+,10/24/2025,Tucson-Production,Ryan Riehl,Eric Navarrette,Production-RES-INT,Steve Bracamonte,389442906,$913.11,$142.80,$141.13,$75.24,$0.00,$359.17,60.67%,Completed
+,10/20/2025,Tucson-Production,Albert Figueroa,Valor Smiley,Production-COMM-EXT,Pride Construction,389643709,$7161.78,$498.00,$1650.57,$614.99,$0.00,$2763.56,61.41%,Completed
+,10/21/2025,Tucson-Production,Gamaliel Guzman,Christopher Trujillo,Production-Cabinet,Lizeth Flores,397556470,$450.00,$0.00,$135.00,$29.56,$0.00,$164.56,63.43%,Completed
+,10/21/2025,Tucson-Production,Albert Figueroa,Miguel Ramirez Vizcarra,Production-COMM-EXT,Saddlebrook 2,397703002,$4000.00,$405.17,$794.83,$232.24,$0.00,$1432.24,64.19%,Completed
+,10/20/2025,Tucson-Production,Gamaliel Guzman,Eric Navarrette,Production-RES-INT,Kristen Freije,389671462,$2471.08,$326.70,$414.62,$94.28,$0.00,$835.60,66.18%,Completed
+,10/20/2025,Tucson-Production,Ryan Riehl,Reynaldo Martinez,Production-Cabinet+Interior,Philip Roberts,397555115,$1052.14,$182.08,$133.56,$0.25,$0.00,$315.89,69.98%,Completed
+,10/20/2025,Tucson-Production,Ryan Riehl,Tim Kragel,Production-RES-EXT,Patty Leichow,389666802,$668.40,$94.97,$105.55,$0.10,$0.00,$200.62,69.99%,Completed
+,10/20/2025,Tucson-Production,Albert Figueroa,Samuel Reyes,Production-COMM-EXT,Saddlebrook 2,397594433,$5000.00,$627.60,$872.40,$0.00,$0.00,$1500.00,70.00%,Completed
+,10/20/2025,Tucson-Production,Ryan Riehl,Miguel Ramirez Vizcarra,Production-RES-INT,Doug DeLashmit,397643384,$873.26,$73.95,$72.26,$109.30,$0.00,$255.51,70.74%,Completed
+,,57,,,,,,$95017.27,$11804.06,$20940.55,$19867.77,,$52584.25,44.66%,
+,,245,,,,,,$474562.39,$36298.52,$134780.70,$105816.09,,$276371.29,41.93%,

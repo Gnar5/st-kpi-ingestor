@@ -100,7 +100,7 @@ export class BaseIngestor {
         this.primaryKey,
         {
           useByteBatching,
-          maxBytes: 8 * 1024 * 1024  // 8MB (2MB buffer from 10MB limit)
+          maxBytes: 1 * 1024 * 1024  // 1MB - reduced from 8MB to avoid 413 errors
         }
       );
 

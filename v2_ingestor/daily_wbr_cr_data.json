@@ -1,0 +1,9151 @@
+{
+  "metadata": {
+    "id": 130700652,
+    "name": "*Daily WBR C/R*",
+    "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking",
+    "modifiedOn": "2025-10-29T07:18:57.596899-07:00",
+    "parameters": [
+      {
+        "name": "From",
+        "label": "From",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "To",
+        "label": "To",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "BusinessUnitId",
+        "label": "Business Unit",
+        "dataType": "Number",
+        "isArray": true,
+        "isRequired": false,
+        "acceptValues": {
+          "fields": [
+            {
+              "name": "Value",
+              "label": "Value"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "dynamicSetId": "business-units",
+          "values": null
+        }
+      },
+      {
+        "name": "JobTypes",
+        "label": "Job Type",
+        "dataType": "String",
+        "isArray": false,
+        "isRequired": false,
+        "acceptValues": {
+          "fields": [
+            {
+              "name": "Value",
+              "label": "Value"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "dynamicSetId": "job-types",
+          "values": null
+        }
+      },
+      {
+        "name": "IncludeInactive",
+        "label": "Include Inactive Technicians",
+        "dataType": "Boolean",
+        "isArray": false,
+        "isRequired": false,
+        "acceptValues": null
+      }
+    ],
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name",
+        "dataType": "String"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities",
+        "dataType": "Number"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs",
+        "dataType": "Number"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity",
+        "dataType": "Number"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate",
+        "dataType": "Number"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales",
+        "dataType": "Number"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale",
+        "dataType": "Number"
+      }
+    ]
+  },
+  "data": {
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale"
+      }
+    ],
+    "page": 1,
+    "pageSize": 1000,
+    "hasMore": true,
+    "totalCount": null,
+    "data": [
+      [
+        "Albert Figueroa",
+        2,
+        3,
+        4,
+        0.5,
+        96394.17,
+        48197.085
+      ],
+      [
+        "Keith Bryant",
+        12,
+        25,
+        28,
+        0.42857142857142855,
+        79711.3,
+        6219.275
+      ],
+      [
+        "Ryan Riehl",
+        9,
+        19,
+        22,
+        0.4090909090909091,
+        35432.58,
+        3785.4855555555555
+      ],
+      [
+        "Gamaliel Guzman",
+        9,
+        14,
+        17,
+        0.5294117647058824,
+        34558.29,
+        3839.81
+      ],
+      [
+        "Sean Zackery",
+        4,
+        13,
+        13,
+        0.3076923076923077,
+        32950.4,
+        8022.2
+      ],
+      [
+        "Jose Alvarez",
+        8,
+        20,
+        20,
+        0.4,
+        31460,
+        3932.5
+      ],
+      [
+        "Seth Fahnle",
+        7,
+        7,
+        12,
+        0.5833333333333334,
+        29601.52,
+        4228.788571428571
+      ],
+      [
+        "Kyle Rollins",
+        7,
+        17,
+        16,
+        0.4375,
+        27363.87,
+        3909.1242857142856
+      ],
+      [
+        "_Christopher Stevenson",
+        6,
+        25,
+        23,
+        0.2608695652173913,
+        21144.82,
+        3524.1366666666668
+      ],
+      [
+        "Gibran Luna",
+        5,
+        12,
+        13,
+        0.38461538461538464,
+        14715,
+        2943
+      ],
+      [
+        "Sam Hettinger",
+        1,
+        0,
+        1,
+        1,
+        6500,
+        5000
+      ],
+      [
+        "Hansel Contreras",
+        1,
+        1,
+        1,
+        1,
+        400,
+        400
+      ],
+      [
+        "   **Miguel Duenas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        " **Jesus A Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Aaron Klein ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Alfonso Gamino",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Alvaro Esquivel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Antonio Valerio",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Brenda Yanez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Christopher Hart",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Danny Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Demetrio Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Eduardo Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Eduardo Zelada Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_George Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_George Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Gustavo Espinosa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Heber Esparza Jr,",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Heber Esparza Sr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Ian Charles",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Isreal Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Jhohairam Marchena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Jose Susano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Joseph F Wirth ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Juan  Lopez-Santana",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Kenneth James Woods Jr ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Larry Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Manuel Sandoval-Alvarado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Maria (Liz) Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Michael Gruppo Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Octavio Monteon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Orlando Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Rick Klein ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Roger Buckles",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Ruben Lainfiesta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Rudy Villegas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Sabrina Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Timothy Baeza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Travis D'Addabbo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Valerie Warner ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "_Vincent Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Gerardo Soto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Gustavo Linaldi",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Juan Manuel Marroquin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Julio Quintero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Luis E Alonzo Madrid ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Luke Velasco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "**Sebastian Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Alberto Moreno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Alejandro Arriola",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Angel Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Belky",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Brem Laborin ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Bryan Estrada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Carlos Alvarado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Cesar Galeano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Cristina Cota ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Dan Laborin ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Destiny Boone",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Francisco Romero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Gaspar Santos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Gilberto Lopez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Hector Amaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Hector Favela",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Irving Rodriguez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Isaac Matute",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jaimie Vasquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jair Adrian Martinez del Mazo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Javier Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jeison Rosales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jonathan Mirando",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jose Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jose Ruiz - Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Jose San Martin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Joshua Michaud",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Juan Barraza ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Juan Carlos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Julio Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Leonardo Espinoza Sr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Lizeth Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Michelle Lopeaux",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Mitsy Velasquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Octavio Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Pedro Ortiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Rafael Perla Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Roman Moreno Harim ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Sergio Westermeyer ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Tim Livingston",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Vanessa Lemos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "*Wendry Zaldivar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron Archuletta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron B. Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron Black",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron Posey",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron Sussex",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aaron Taylor",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abdiel Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abel Landa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abel Munoz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abel Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abelardo Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abraham Gonzalez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Abraham Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Acaia Acosta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adam Caretsky",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adam Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adam Mendoza Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adam Sussex",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adam Young",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adan Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aden Miranda",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Arizmendi",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Cervantes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Duran Sandoval",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Murillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Ortega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Quintero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian R. Rios ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Samorano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adrian Vargas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Adriel Meza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Agustin Orona",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Akiya Bartolo ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alan Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Albert Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Albert Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Albert Romero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alberto Bailon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alberto Carrillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alberto Guerrero Ceja",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aldo Alarcon Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aldo Amaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aldo Monteon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alegunda Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandra Rojas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandra Vargas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro A. Durazo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Alcantar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Bracamontes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Camarena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Lutt ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Ordones",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejandro Zamora",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alejo Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alex Augustus Martineau",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alex Quintana",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alex Trujillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexander Alvarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexander Alvarez Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexander Brabata-Oakes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexander Vargas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexandra Mejia Felipe",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alexis Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfonso Bojorquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfonso Maiz Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfonso Soto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfred Mazariegos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo Anaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo Landeros",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo Moncada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo Morones Cano Jr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo Robles",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alfredo velasco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Allan Rubio",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alonso Romo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alonzo Alirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alonzo Rada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alvaro Calderon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alvaro Rivera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Alyssa Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amador Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amanda Morey",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amanda Morey",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amanda Patterson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amanda Wathogoma",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amber Killary",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amber Villalpando",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amish Patel ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Amos Balderrama",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ana Arreola",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ana Calderon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ana Valenzuela",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anabel Vega ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anahi Rivera Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anayeli Jimenez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andie Warren",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andres Contreras",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andres Islava",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andres L Coat",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andres Mendoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Arceo-Gomez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Azevedo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Bon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Cervantes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Dendle",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Dobric",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew M Gastelum",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Mendez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andrew Sussex",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andy Horta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Andy Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Alcala",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Alvarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Antunez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Becerra",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Casarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel E Mendoza Perez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Flores",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Martinez Labrin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Pacheco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Solivan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Soza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angel Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angela Lewin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angela Lewin ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angelica Herrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angelica Moreno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angelica Wood",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angelo Foster",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Angelo Mondragon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anibal Nieblas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anissa Flores",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anna Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anna Rincon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anner Navas Lorenzo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Bonomo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Bonomo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Clemente",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Darrow",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Dixon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Escobedo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Flores",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Hidalgo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Jacobs",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Ladd",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Martin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Peterson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Russell",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Silvas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Villalpando",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Anthony Yrigolla",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Falcon Jr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Gionson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Lara Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Navarro",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Reed",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Roque ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Saris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Antonio Zabalza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Apostol Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aquilis Coyoy Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arash Radfar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Argenis E. Zerpa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ariana Saucedo nevarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ariane Ramos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Cano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Carvajal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Levario",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Mendoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Soto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Armando Talamantes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arris Colley",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arthur Cote",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arturo Estrada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arturo Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Arturo Moya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Asher Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ashley  Keith",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ashley Keith",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ashley Kelly-Lasalle",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ashley Kelly-Lasalle",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Aurelia Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ayden Urrea",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Azael Escalante",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Balin Burroughs",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Baltazar Esparza Andana",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Barbara Bradshaw",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Basilio Romero Rosales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Beatriz Duran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Belisario Cruz Ortiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Belkys Maribel Geronimo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benjamin Beamer",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benjamin Blanco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benjamin Buursma",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benjamin C  Bracamonte Reeth",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benjamin Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Benny Rada ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bernard Lindsey",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Beverly Baca",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bibiana Silsby",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bill Borchers",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Billy Lane",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Billy Ray James",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bobby Dircks",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bobby Ortega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bobby Pine",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brad Hendrickson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brady Spellman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon  Craig",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Boyd",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Contreras",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Craig",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Dudley",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon K. Najera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Landis",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Luna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Mehalek",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Parra",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Ramcheck",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Richeson ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandon Yepiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brandu Muniz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brayan Franco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brehana Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brenda Carrasco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brenda Padilla",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brendon Greathouse",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Buchele",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Cho",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Cruz Madrid",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian longoria ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Marin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Pueyo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Thompson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Villalba Romo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Viramontes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Brian Y. Ruiz ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Britton Cruce",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Briza Laffoon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan A Munguia ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Galvan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Gutierrez landa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Jimenez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Lopez Jimenez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Richeson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryan Welch ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryce Olmsted",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryce Vulgamore ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Bryson Lee",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Byron Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Byron Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Caesar Garcia-Hidalgo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Caleb Kruse",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Caleb Pena",
+        0,
+        2,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        "Calvin Griffin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cameron Delk-Price",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cameron Evans",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Camie Liddiard",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Bermudez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Bostick ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Camarena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Carrillo Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Casasola",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Chavez Bernal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Chavira",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Gonzalez Estrada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Marquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Moreno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Noperi",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos R Beck",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Rabago Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Reyes-Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Rivera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Tenas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carlos Villalobos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carmen Sandoval ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carolina Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carolina Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Carter Christian Olsen",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Casimiro Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cassa Smith",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cassandra Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cayetano Salinas Molina",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cecilia Maiz Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cecilia Mata Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cedric Christopher",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Alejandro Rodriguez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Davalos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Duran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Lucia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Ortiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Salas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Santos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cesar Zapien",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Gardoni",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Jojola",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Mendoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Norwood",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Charles Price",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Checo Arce",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chris Canales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chris Cerullo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chris Coffman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chris Jozefski",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chris Reddis",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Alva",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Alvarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Benitez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Braun",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Estrella ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Fernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Gallegos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Morales Uribe",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Rivera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Solis ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christian Valencia Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christina Armengual",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christobal Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Carrillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Coffman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Cogburn",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Curiel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Davenport ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Huynh",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher J Borboa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Lundy",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Mosley",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Orozco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Parris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Perrington",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Roybal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Rumualdo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Shea",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Christopher Trujillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Chui(Jesus Alvarez)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cintia Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Clarissa S. Campos-Sandoval",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Claudia Engebose",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cody Leyba",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cody Nesselrode",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Conception Qranillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Consuelo Caballos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Corey Hoeft",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Corey Steur",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Corie Harder",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cornelio Escalante",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Craig Mena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Crismara Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Alexis Caraveo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Bernal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Cortez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Marroquin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristian Roberson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "CristianLopez Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cristobal Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Curtis Hewes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cutberto G Cuevas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Cynthia Acosta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "d",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dajamen Archer",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dale Soriano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dallas Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dallas Tomes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dalton Miller",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damian Lagpacan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damian Marquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damian Mendivil",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damian Velasquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damien Begay",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damon Adler",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Damon Taylor",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Danial Sundberg",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel A Alvarez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Abernathy",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Abernathy",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Cisneros",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Faherty",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Holden",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Lazo ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Maldonado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Oyloa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel S Nava",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Soto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Szentendrei",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Villalobos ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Daniel Wilcox",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Danny Longoria",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Darian Farias",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Darren MacNeal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Darvin Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Darwin Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Bartlett",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Camarena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Cota ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Curiel ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Deluna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Diaz Delgado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Durham",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Estrella",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Favela",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Garcia ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Gavilanes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Giangola",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Griego",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Juarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Prieto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Repinski",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Rico",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Robles",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Salinas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Salvador",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Sibrian Ayala",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Smith",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Stabile",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Vargas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "David Villarreal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dean Allen",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Debbie Vargas",
+        0,
+        3,
+        3,
+        0,
+        0,
+        0
+      ],
+      [
+        "Deion Smith ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dejan Lent ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Delfino Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Demani Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Demetrius Farris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Denilson Bonilla",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Denise \"Reign\" Dominguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dennis Florian",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Derek Bonenfant",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dermidio Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Desmond Wong",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Destanie Rose Quinones",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Devon Stubblefield ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Devon Woodrum",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dexter Lariosa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dhraydren Bato",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Diana Villegas ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dianilyn Monteserin Pena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Diego Amaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Diego Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dominic Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dominic R. Merino",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dominique Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dominnick Garza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Don Critchfield",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Donald A Russell JR ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Donald Bryson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dorian Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Doug Caris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Doug Caris",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Douglas Ayers",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dre Bishton",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dummy Tech Dude",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Duray Walker",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Duronza R Knight",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dustin Perdue",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dustin Smith",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dustyn Atine",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dylan O'Brien",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Dylan Sias",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eddie Nunez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eddie Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eddie Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgar Fernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgar Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgar Meraz Morales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgar Ochoa Moreno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgar Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgardo Dominguez Cortez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgardo Duran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgardo Flores ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edgardo R Alvarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Contreras",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Martinez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Martinez Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Martinez Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Mendoza ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eduardo Romo Aguirre",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edvin Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edward Carrillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edward Montano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edward Montano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwardo Peralta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Flores",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Edwin Tovar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eldon Soria",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eleana Hernandez Puerto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eleazar Giner",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elias Murillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elias Vasquez Sarceno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elias Young",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elizandro Lara",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elmer Bejarano ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elmer Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elvia Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Elvis Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emanuel Luna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emilio Ayon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emilliano Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emily Venegas ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emily Waight-Anaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emmanuel Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emmanuel Valencia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Emuel Gastelum Lugue",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Enrique Garza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Enrique O Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Enrique Pantoja",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric  Avenente",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Cervantes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Harvill",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Herrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric M. Coley",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Maestas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Navarrette",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Perez Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Rector",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Rereys",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eric Valesqes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Erica Ahumada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Erik Johnson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Erik Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Erik Pickard",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Erika Rodrigues",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ermon Ray Brockman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ernest I Martinez Jr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ernest Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ernesto Galvez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ernesto R Casas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Esgardo Villareal",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Esmerelda Peralta ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Esmiry Mendez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Esteban Enriquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Esteban Teran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Estefania Estrada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ESTIMATES TO SCHEDULE - East",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ESTIMATES TO SCHEDULE - Nevada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ESTIMATES TO SCHEDULE - Tucson",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "ESTIMATES TO SCHEDULE - West",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eugene Hopkins ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Eugenio Alcantar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Evan Regenwether",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Evangelina Arambula",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Evaristo Cervantes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Evelyn Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ever Osvaldo Flores Nunez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ever Perez-Rocha",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ezekiel Reed",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ezequiel Alberto Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ezequiel Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabian Garcia Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabian Murillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabian Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabian Valencia Castellanos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabien Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fabiola Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fausto Santana Gonzalez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Favian Carrasco Kellogg",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Felipe Bravo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Felipe Escalona",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Felipe Gomez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Felipe lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Felix Lozano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fermin Becerra",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Castillo Luna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Contreras ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Guzman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Orduno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fernando Perea",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fidel Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Flor Lucero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Florencia Morales Aguilar ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Arellano Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Arellano Sr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Curiel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Frias",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Monge",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Olivarria Ballesteros",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Quinonez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Rios",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Rivera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Torres",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisco Valenzuela",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Francisico Sillik",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frank A Ortega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frank Ballesteros",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frank Coca Pena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frank Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frank Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fred Bueno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fred Garcia ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Freddie Zavala",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Frederic Ramos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Fredy Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Armand Isaiah Isunza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Celaya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Hernandez Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Salcido",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriel Speidel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gabriela Medina",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Garrett Angulo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Garrett Guzman",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Garrett Leon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Garrett Redding ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gary Banfill",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gary Banfill Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gary Briones",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gary Campopiano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gary Vaughn",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gavin Littlebrook",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gelacio Maiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gene Landers",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "General Work Construction ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "General Work Construction LLC",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "George A Vidalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "George Fuentes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "George Jaramillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "George Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerardo Flores ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerardo Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerardo Guerena",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerardo Rueda Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerardo Stanton",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "German Buzani Sesma",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "German Luna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gerson Vazquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gianni Signore ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilbert Antunez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilbert D Romero ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilbert Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilbert Recio",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilberto Bey-Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilberto Federico",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gilberto Hinojosa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Giovanni Montiel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Giovanni Santigo ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gonzalo Espinoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gregory A. Rojas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gregory Greene",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gregory Hawkins",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gregory Nunez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guadalupe Jaques",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guadalupe Jimenez Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guadalupe Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guilber Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guillermo A Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guillermo Hernandez Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guillermo Morales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Guillermo Vasquez Gonzalez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gustavo Cabrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gustavo Ceja",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gustavo Estrada",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Gustavo Gallardo ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hannah Vance",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hatcher Lange",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hayley Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Heather Kelsey",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Bravo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Galvez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Ramos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Rodriguez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Roman Salgado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hector Ulibarri",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Heidi Whitley",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Henry Vasquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Heriberto Sandoval ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hildo Chavarria Balan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hisrael Enriquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Hugo Duque",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Humberto Guerrero Verduzco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ibis Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ildefonso Yepiz Enriquez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Iliana Miramontes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Imported Default Technician",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ira Porter",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Iran F Gutierrez Castro",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Irene Zarate",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaac Martinez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaac Martinez Albarran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaac Moreno Miranda",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaac Palafox",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isabella Hofman Herrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaiah Gonzales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaiah Navarrette",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isaiah Villela",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ismael Santana Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ismaiel Gomez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Israel Avila",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Israel Cruz Gomez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Israel Franco",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Israel Maiz Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Israel Merida",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Isreal Arellano ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Issac Arellano",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Issac James",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ivan Ayala",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ivan Chavez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ivan Gamez Miranda",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Ivan Prieto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaaziel Valencia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jack Clarke",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jack E. Rios",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jackie Brown Jr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jackie Brown Sr.",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jackie Damian",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jacklyn Degiraud",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jacob Guerber",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jacson Montalvo Ocampo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaelin Noel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jahziel Duran",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaime A Beck ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaime Borbon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaime Cortes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaime Ortiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaime Raya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jairo Eliseo Ayala",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jalicia Williams",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Coletta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Mcduffie",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Phelps Jr ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Piper",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Rogers",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Sorg",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Stokes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Zuganelis",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "James Zwolinski ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jamie Morgan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jamie White ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jared Caughel ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jared Lesperance",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jario Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jarrin Anderson ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jasmin Espinoza-Arreguin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jasmine Hernandez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jasmine Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Ford",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Ford ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Lee Hitchcock",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Mooneyhan",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Moore",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Morales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Sanchez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jason Tucek",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier A. Urrea Salinas",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Acosta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Bueno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Eguia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Espinoza ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Herrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Loaiza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Moncivaiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Velo ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Javier Villa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jay Perez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jay Warren Bertsch ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jaylen Alexander",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jean C Hernandez Ramos ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeferson Vallecillo Sarmiento",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeffrey Gayton",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeffrey Moyer",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeldriel Capote",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jennifer Becerra",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jennifer Quinton",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jennifer Rendon Noriega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jennifer Wong Bequer",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jereal Bell",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremiah Montoya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremiah Neumann",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremiah Sawyer",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremy Aros",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremy Jestes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jeremy Valle",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jerry Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jerry Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jerry Mojica",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesie Joe Torrez Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Burnett",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Gastelo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Morales",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse R Loy",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Romero",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesse Sleeper",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jessi Prieto",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jessica Gastelum",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Abraham Sanchez Medina ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Aguilar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Aguilar Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Alfredo Flores",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Alvarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Alvarez Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Andrade",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Antonio Niebla",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Armando Valencia ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Armenta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Avalos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Avelar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Camacho",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Ceja",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Curiel",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus D Ramirez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Daniel Andrade",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus De La Cruz Moreno",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Diaz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Dominguez Luna",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus E Mendoza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Esparza",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Fernando Ramos",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Figueroa",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus G Ontiveros ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Garcia",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Guevara",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Gutierrez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Gutierrez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Gutierrez Zazueta",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Herald",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Herrera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Lagunes Gomez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Lopez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Lopez ",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Lopez (Tuc)",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus M Canez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus M Salazar",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus M. Suarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Machado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Maldonado",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Manuel Dean Jr",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Miranda",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Muniz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Nevarez",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Padilla",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Rendon",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Reyes",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Rivera",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Ruiz",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Sandoval",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Sayo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Solis",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Soto Castillo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Tadeo",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jesus Vega",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jhojan Palacios",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jim Lajines",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jim Scott-Bucio",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jimmy Marroquin",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jimmy T. Mcelroy",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        "Jimmy Tafoya",
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}

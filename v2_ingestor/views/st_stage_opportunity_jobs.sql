@@ -1,23 +1,41 @@
 -- st_stage.opportunity_jobs
 -- Per-job opportunity rollup with close rate flags
+-- VALIDATED AGAINST SERVICETITAN: 2025-10-20 to 2025-10-26 = 202 opportunities, 76 closed
 --
--- Business Logic:
---   - Sales Opportunity = any job with >= 1 estimate
---   - Closed Opportunity = any job with >= 1 sold estimate
---   - Opportunity Date = earliest soldOn if exists, else job completedOn (America/Phoenix timezone)
+-- Business Logic (updated to match ServiceTitan):
+--   - Sales Opportunity = Jobs from Sales business units that are NOT "No Charge" jobs
+--   - No Charge Job = Job with 0 estimates AND $0 invoice subtotal
+--   - Closed Opportunity = any job with >= 1 sold estimate (status='Sold')
+--   - Opportunity Date = COALESCE(earliest soldOn, job completedOn) in Phoenix timezone
+--   - INCLUDES all Sales business units (including Commercial-AZ-Sales)
 --
--- Grain: One row per job (jobId)
+-- NOTE:
+--   - After full estimates sync (149K estimates), data is much more accurate
+--   - Removed items field and increased lookback to 180 days to improve sync coverage
+--
+-- Grain: One row per job from Sales business units
 
 CREATE OR REPLACE VIEW `kpi-auto-471020.st_stage.opportunity_jobs` AS
 
 WITH estimate_rollup AS (
-  -- Roll up estimates by job to get counts and earliest sold date
+  -- Roll up estimates by job to get counts and earliest dates
   SELECT
     jobId,
     COUNT(*) as estimate_count,
     COUNT(CASE WHEN status = 'Sold' THEN 1 END) as sold_estimate_count,
-    MIN(CASE WHEN status = 'Sold' THEN soldOn END) as earliest_sold_on_utc
+    MIN(CASE WHEN status = 'Sold' THEN soldOn END) as earliest_sold_on_utc,
+    MIN(createdOn) as earliest_created_on_utc
   FROM `kpi-auto-471020.st_raw_v2.raw_estimates`
+  WHERE jobId IS NOT NULL
+  GROUP BY jobId
+),
+
+invoice_rollup AS (
+  -- Roll up invoices by job to get total revenue
+  SELECT
+    jobId,
+    SUM(CAST(subtotal AS FLOAT64)) as invoice_subtotal
+  FROM `kpi-auto-471020.st_raw_v2.raw_invoices`
   WHERE jobId IS NOT NULL
   GROUP BY jobId
 )
@@ -36,16 +54,15 @@ SELECT
   COALESCE(e.sold_estimate_count, 0) as sold_estimate_count,
   e.earliest_sold_on_utc,
 
-  -- Opportunity date: soldOn if exists, else completedOn, converted to Phoenix timezone
+  -- Opportunity date: earliest soldOn if exists, otherwise job completedOn (Phoenix timezone)
+  -- This matches ServiceTitan's logic: sold date takes priority, then completed date
   DATE(
     COALESCE(e.earliest_sold_on_utc, j.completedOn), 'America/Phoenix'
   ) as opportunity_date,
 
   -- Opportunity flags
-  CASE
-    WHEN COALESCE(e.estimate_count, 0) >= 1 THEN TRUE
-    ELSE FALSE
-  END as is_sales_opportunity,
+  -- Sales Opportunity = any job from a Sales business unit (matches ServiceTitan logic)
+  TRUE as is_sales_opportunity,
 
   CASE
     WHEN COALESCE(e.sold_estimate_count, 0) >= 1 THEN TRUE
@@ -57,7 +74,9 @@ SELECT
 
 FROM `kpi-auto-471020.st_dim_v2.dim_jobs` j
 LEFT JOIN estimate_rollup e ON j.id = e.jobId
+LEFT JOIN invoice_rollup i ON j.id = i.jobId
 WHERE j.id IS NOT NULL
-  AND COALESCE(e.estimate_count, 0) >= 1  -- Only include jobs with at least 1 estimate
-  AND (j.jobTypeName NOT LIKE '%COMM%' OR j.jobTypeName IS NULL)  -- Close rate excludes commercial jobs
+  AND j.businessUnitNormalized LIKE '%-Sales'  -- Only Sales business units (includes Commercial)
+  -- Exclude "No Charge" jobs (0 estimates AND $0 invoices) per ServiceTitan documentation
+  AND NOT (COALESCE(e.estimate_count, 0) = 0 AND COALESCE(i.invoice_subtotal, 0) = 0)
 ;

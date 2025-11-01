@@ -1,0 +1,818 @@
+{
+  "sales": [],
+  "operations": [
+    {
+      "id": 41478401,
+      "name": "**Job Costing Per Crew - Exclude Warranty**",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 129864480,
+      "name": "*Customers Owing Deposits*",
+      "description": "Use future dates only for this report.  Filter by job start date.  Select business units.  Include adjustment invoices."
+    },
+    {
+      "id": 26293351,
+      "name": "*FOREMAN Job Cost - FULL PROJECT*",
+      "description": "Job cost report on a project basis.  Will need to manually calculate your %'s"
+    },
+    {
+      "id": 27771890,
+      "name": "*FOREMAN Job Cost - THIS WEEK ONLY*",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 389438975,
+      "name": "*FOREMAN Job Cost - THIS WEEK ONLY* - API",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 94040270,
+      "name": "*PM Inspections Daily Report*",
+      "description": "List of PM inspections completed each day.\n\nFilter by \"Job Completion Date\""
+    },
+    {
+      "id": 169,
+      "name": "*Production Numbers*",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"invoice date\" and business unit."
+    },
+    {
+      "id": 40748308,
+      "name": "*Sales GPM*",
+      "description": "Shows the sales persons GPM on a date range basis."
+    },
+    {
+      "id": 40273980,
+      "name": "*Warranty/Tup Costs*",
+      "description": "Warranty costs for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 133963674,
+      "name": "*Weekly Batch*",
+      "description": "Filter by start date, select all business units, use prior week dates (Monday-Sunday)"
+    },
+    {
+      "id": 144837455,
+      "name": "Albert Weekly Tracker",
+      "description": "Weekly Job Costing Report"
+    },
+    {
+      "id": 363297805,
+      "name": "Alfred Weekly Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 105945018,
+      "name": "Andy's Sales Tax DO NOT USE, USE TAX ZONE RPT",
+      "description": "Filter by Start Date, 1st to 31st, include adjustment invoices."
+    },
+    {
+      "id": 40796483,
+      "name": "Appointments",
+      "description": "Run reports on job appointments to get details on assigned technicians, appointment times and statuses, number of appointments on each job, and more."
+    },
+    {
+      "id": 150198000,
+      "name": "Booking Worksheet",
+      "description": null
+    },
+    {
+      "id": 362159455,
+      "name": "Budget Vs. Actual",
+      "description": null
+    },
+    {
+      "id": 25724745,
+      "name": "Call Center Performance by CSR",
+      "description": "Upgraded version of the legacy Call Center Performance by CSR Report. Use this report to measure the performance of your CSR's and their ability to convert calls into revenue. This report includes metrics on calls taken, calls booked, jobs converted from calls booked, and cancellations from bookings. "
+    },
+    {
+      "id": 53248920,
+      "name": "Call Center Performance Summary",
+      "description": "Upgrade to legacy Call Center Performance Summary Report. Use it to assess company performance across business units, like completed jobs, recalls, conversion rate, and percentage of jobs canceled before and after dispatch."
+    },
+    {
+      "id": 90214441,
+      "name": "Calls About Employment - East-Commercial",
+      "description": "Call detail for each campaign, includes caller info, duration and option to listen to calls"
+    },
+    {
+      "id": 90224538,
+      "name": "Calls About Employment - Nevada",
+      "description": "Call detail for each campaign, includes caller info, duration and option to listen to calls"
+    },
+    {
+      "id": 90222876,
+      "name": "Calls About Employment - Tucson",
+      "description": "Call detail for each campaign, includes caller info, duration and option to listen to calls"
+    },
+    {
+      "id": 90215204,
+      "name": "Calls About Employment - West",
+      "description": "Call detail for each campaign, includes caller info, duration and option to listen to calls"
+    },
+    {
+      "id": 26023626,
+      "name": "Campaign Call Detail",
+      "description": "Call detail for each campaign, includes caller info, duration and option to listen to calls"
+    },
+    {
+      "id": 28249362,
+      "name": "Completed Forms",
+      "description": "Search for completed forms"
+    },
+    {
+      "id": 386629457,
+      "name": "Copy of Budget Vs. Actual",
+      "description": null
+    },
+    {
+      "id": 132065462,
+      "name": "CP - Office Audit",
+      "description": null
+    },
+    {
+      "id": 363752916,
+      "name": "CP BVAP",
+      "description": null
+    },
+    {
+      "id": 129491833,
+      "name": "Crocs Painting Invoice-Commission Report",
+      "description": "Commission Report for Crocs Painting"
+    },
+    {
+      "id": 104454488,
+      "name": "Current Job addresses",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 25724682,
+      "name": "Daily Huddle Report",
+      "description": "Upgraded version of the legacy Daily Huddle Report. Use it to assess performance across business units such as completed jobs, canceled jobs, conversion rates, revenue, pace and recalls."
+    },
+    {
+      "id": 147139077,
+      "name": "Derek Weekly Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 339531707,
+      "name": "Dispatch Pro Ratio Report",
+      "description": "Dispatch Pro Ratio Report"
+    },
+    {
+      "id": 65795066,
+      "name": "Emergency Outage Dispatch Report",
+      "description": "This is a version of the \"Jobs with Upcoming Appointments\" report specifically filtered to be used to dispatch technicians in an emergency where you do not have access to ServiceTitan. Schedule this report to be emailed to you at least once daily (but no more than hourly). The more frequently you have it sent, the more up-to-date data you'll have in an outage scenario. When scheduling, choose \"flexible report\", set the \"filter by\" field to \"Jobs with Next Appt Start Date\" and set the date range to \"Today\". Other fields are up to your discretion.  We recommend creating a filter in your email client to keep these from cluttering your inbox."
+    },
+    {
+      "id": 132071676,
+      "name": "Emp. Cancelled",
+      "description": null
+    },
+    {
+      "id": 7750299,
+      "name": "Empty Invoices",
+      "description": "This report shows a list of all invoices that do not have services, materials, discounts, fees or purchase orders. This report is made available as part of the COVID-19 Product Pack."
+    },
+    {
+      "id": 56231698,
+      "name": "Estimates Sold By Report for Joe",
+      "description": "Made by Kirstie (ST)"
+    },
+    {
+      "id": 53248982,
+      "name": "Failed Transactions",
+      "description": "Upgrade to the legacy Failed Transaction Report.  Use this report to find payments with a 'failed' memo."
+    },
+    {
+      "id": 115132635,
+      "name": "FOREMAN Job Cost - Caleb/Sam",
+      "description": "special test thing"
+    },
+    {
+      "id": 147142353,
+      "name": "Gael Painting Job Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 131719539,
+      "name": "GPM BY CREW REPORT - SAM",
+      "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit."
+    },
+    {
+      "id": 145035135,
+      "name": "Hansel Weekly Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 71198616,
+      "name": "Incorrect Deferred Revenue Billing Templates",
+      "description": "This report will show a list of customer membership records that incorrectly have a task that sells or renews a membership on a billing template which will prevent users from passing a TitanAdvisor checkpoint. If a customer membership record appears on this report, that means that the task has a workflow action that either sells or renews a membership and needs to be changed to a task that does not have these workflow actions."
+    },
+    {
+      "id": 78030690,
+      "name": "Incorrect GL Setup for Recurring Services",
+      "description": "This report will return a list of recurring service invoice template items that are are not tied to the correct GL account type for membership types that are set up for deferred revenue which will prevent users from passing a TitanAdvisor checkpoint. For deferred revenue setup, the negative item on the template should be tied to a liability GL account type and the positive item should be tied to an income GL account type. These 2 items should be equal in value, where one is positive and one is negative. If a recurring service template invoice item is on this report, the GL account should be changed to reflect the correct setup."
+    },
+    {
+      "id": 71198537,
+      "name": "Incorrect Location Recurring Services Marked as First Visit Complete",
+      "description": "This report will return a list of location recurring services where \"First Visit Complete\" checkbox is checked on memberships that are setup for deferred revenue which will prevent users from passing a TitanAdvisor checkpoint. The \"First Visit Complete\" checkbox should not be checked on location recurring services if using deferred revenue because it will cause reporting to be incorrect. Location Recurring Services that appear on this report need to have that checkbox unchecked."
+    },
+    {
+      "id": 148072704,
+      "name": "Isaac Weekly Tracker ",
+      "description": "Weekly Job Costing Report"
+    },
+    {
+      "id": 363287236,
+      "name": "Jacob 5/19/25 Weekly Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 147139293,
+      "name": "Jacob Weekly Tracker",
+      "description": "PM Weekly Job Costing Template"
+    },
+    {
+      "id": 175,
+      "name": "Job Completed Detail Report",
+      "description": "Upgrade to legacy Job Completed Detail Report. Use it to audit invoices details like payment types, taxes and totals on all jobs completed daily."
+    },
+    {
+      "id": 73986554,
+      "name": "Job Costing Summary Report",
+      "description": "This report will return information on job cost."
+    },
+    {
+      "id": 75880571,
+      "name": "Job Costing Summary Report",
+      "description": "This report will return information on job cost."
+    }
+  ],
+  "accounting": [
+    {
+      "id": 235,
+      "name": "*AR Report*",
+      "description": "AR Transactions Summarized By Location"
+    },
+    {
+      "id": 26117979,
+      "name": "*Collections*",
+      "description": "Daily or weekly collections"
+    },
+    {
+      "id": 26516938,
+      "name": "All Payments",
+      "description": "All Payments"
+    },
+    {
+      "id": 77409533,
+      "name": "am",
+      "description": null
+    },
+    {
+      "id": 337866688,
+      "name": "AR Balance Reconciliation",
+      "description": "AR Balance Recon Report (Supporting JE Exporting)"
+    },
+    {
+      "id": 31214838,
+      "name": "AR Reconciliation",
+      "description": "Accounts Receivable Report used to tie out with your Accounting System.\n\nNote:\n- Any transactions entered into your accounting system directly will not display on this report\n- Be sure to use the same date when comparing to your accounting system\n- Use Status \"Exported\" to reconcile with your accounting system"
+    },
+    {
+      "id": 229,
+      "name": "AR Transactions",
+      "description": "AR Transactions"
+    },
+    {
+      "id": 232,
+      "name": "AR Transactions By Customer",
+      "description": "AR Transactions Summarized By Customer"
+    },
+    {
+      "id": 238,
+      "name": "AR Transactions By Job",
+      "description": "AR Transactions Summarized By Job"
+    },
+    {
+      "id": 1156,
+      "name": "Deferred Revenue",
+      "description": "Deferred Revenue Report for Customer Memberships"
+    },
+    {
+      "id": 25724664,
+      "name": "Deposit Detail",
+      "description": "Upgraded version of the legacy Deposit Detail Report. Use it to view payments applied to invoices (saved or charged) within each payment type. Select the Paid On date filter to match the legacy report."
+    },
+    {
+      "id": 85672317,
+      "name": "GreenSky Applications",
+      "description": "All GreenSky applications within a specific date range"
+    },
+    {
+      "id": 172,
+      "name": "Invoice Detail by Date",
+      "description": null
+    },
+    {
+      "id": 53248903,
+      "name": "Invoice Detail by Date",
+      "description": "Upgrade to legacy Invoice Detail by Date Report. Use it to audit individual invoices by invoice date. Shows customer information, subtotals, taxes and job type."
+    },
+    {
+      "id": 53244995,
+      "name": "Invoice Item Detail with Pricebook Information",
+      "description": "This report will produce a list of invoice items and include additional information such as the original pricebook price and if discounts are allowed. Among other uses, this can be used to get insight into how your technicians are pricing versus how the pricing was set up in the pricebook."
+    },
+    {
+      "id": 25724646,
+      "name": "Invoice Summary by Business Unit",
+      "description": "Upgrade to legacy Invoice Summary by Business Unit Report. Use it to audit individual invoices across business units. Shows subtotals, discounts and fees, taxes, and totals."
+    },
+    {
+      "id": 40089386,
+      "name": "Invoices Not Sent",
+      "description": "Use this report to find invoices that have not yet been emailed to the customer."
+    },
+    {
+      "id": 40089387,
+      "name": "Invoices Sent",
+      "description": "Use this report to find invoices that have been emailed to the customer."
+    },
+    {
+      "id": 42372246,
+      "name": "Item Task Report",
+      "description": null
+    },
+    {
+      "id": 134611750,
+      "name": "Manager Discount Report",
+      "description": null
+    },
+    {
+      "id": 178,
+      "name": "Master Pay File",
+      "description": "Do not use the upper filters, if you want to filter by business unit or employee you should use the filters in the report section. This is because if an employee is terminated and you use the upper filters they will not show in the report."
+    },
+    {
+      "id": 7927534,
+      "name": "Master Pay File By Pay Period",
+      "description": "Do not use the upper filters, if you want to filter by business unit or employee you should use the filters in the report section.  This is because if an employee is terminated and you use the upper filters they will not show in the report."
+    },
+    {
+      "id": 28986255,
+      "name": "Master Pay File Live Data",
+      "description": null
+    },
+    {
+      "id": 53244978,
+      "name": "Payment Authorization Report",
+      "description": "This report will return a list of payments with authorization information."
+    },
+    {
+      "id": 53244859,
+      "name": "Payment Report with Customer Details",
+      "description": "This report will return a list of payments with customer information."
+    },
+    {
+      "id": 53244944,
+      "name": "Payment Report with Technician Details",
+      "description": "This report will return a list of payments with technician details."
+    },
+    {
+      "id": 25573044,
+      "name": "ProfitStars Settlement (Checks & ACH)",
+      "description": "The ProfitStars Settlement report will show your deposits from ProfitStars for ACH transactions and Mobile Check Deposits Transactions."
+    },
+    {
+      "id": 53245012,
+      "name": "Project Invoice Detail Report",
+      "description": "This report will return projects and have details around the invoices associated with any given project."
+    },
+    {
+      "id": 25724655,
+      "name": "Revenue by Account",
+      "description": "Upgrade to legacy Revenue by Account Report.  Use it to view revenue accrued in each General Ledger Account. To match the legacy version of this report, use the Invoice Date filter."
+    },
+    {
+      "id": 25724691,
+      "name": "Revenue by Job Type",
+      "description": "Upgrade to legacy Revenue by Job Type Report. Use it to view revenue accrued in each job type. Includes customer name, invoice date, and invoice number."
+    },
+    {
+      "id": 181,
+      "name": "Revenue By Job Type",
+      "description": null
+    },
+    {
+      "id": 25724709,
+      "name": "Revenue by Job Type by Campaign",
+      "description": "Upgrade to the legacy Revenue by Job Type by Campaign report. Use it to assess the performance of various job type and campaign combinations. "
+    },
+    {
+      "id": 25724736,
+      "name": "Revenue by Job Type by Zip",
+      "description": "Upgrade to the legacy Revenue by Job Type by Zip report. By default this report is filtered to only include revenue from converted jobs; clear the column filter to expand your results."
+    },
+    {
+      "id": 25572021,
+      "name": "TSYS Settlement (Credit Cards)",
+      "description": "The TSYS Settlement Report provides a list of all of the deposits from TSYS for credit card transactions, and includes details of each transaction within a deposit."
+    },
+    {
+      "id": 25571645,
+      "name": "TUCSON Daily Income Report",
+      "description": null
+    },
+    {
+      "id": 241,
+      "name": "Upcoming Payroll Costs",
+      "description": null
+    },
+    {
+      "id": 25572143,
+      "name": "West Phx Daily Income Report",
+      "description": null
+    },
+    {
+      "id": 131838313,
+      "name": "Work In Progress [WIP] - Percentage of Completion Method",
+      "description": "Work In Progress [WIP] Report utilizing the Percentage of Completion revenue recognition method."
+    }
+  ],
+  "service": [],
+  "marketing": [
+    {
+      "id": 145586563,
+      "name": " *Leads* - HPM ",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 132073290,
+      "name": "*BA Customers & Revenue*",
+      "description": "This report shows Brand Ambassadors total Jobs created new and existing customers, total Sales vs. Revenue, & close rate"
+    },
+    {
+      "id": 132065471,
+      "name": "*BA Leads*",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 76567168,
+      "name": "*Leads-Floor Coatings ONLY*",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 25706401,
+      "name": "*Leads*",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 389357017,
+      "name": "*Leads* - API",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 145657442,
+      "name": "*Leads* - Croc Painting",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 79662136,
+      "name": "*Leads* from Social Media",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 339550833,
+      "name": "*Leads* V2 - HPM",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and the correct business unit when you are searching this report."
+    },
+    {
+      "id": 25724700,
+      "name": "Active Memberships",
+      "description": "Upgraded version of the legacy Active Member Report. Use this report to audit your customers' memberships. This report includes information about the membership status, duration, billing cadence, the sold by technician, and customer contact information. "
+    },
+    {
+      "id": 74381210,
+      "name": "All Units – Proposals – for BMG",
+      "description": "All proposals for all markets (Tucson, PHX and Nevada) that includes their address and proposal amount. "
+    },
+    {
+      "id": 102830525,
+      "name": "Andy's Painting PC List",
+      "description": null
+    },
+    {
+      "id": 132073360,
+      "name": "BA Customer Check",
+      "description": null
+    },
+    {
+      "id": 26396477,
+      "name": "BMG - # of Esimates & Lead Source",
+      "description": "Date Type:  Parent Completion Date, sales business units."
+    },
+    {
+      "id": 40761142,
+      "name": "BMG - # of Sold Jobs, Amount, Lead Source",
+      "description": "Filter by Sold On date.  Use Sales business Units"
+    },
+    {
+      "id": 37491334,
+      "name": "BMG Leads Report",
+      "description": "List of the leads we got by date range and business unit.  Make sure to select \"creation date\" and only view Sales business units.  Will only show # of scheduled leads."
+    },
+    {
+      "id": 212979554,
+      "name": "Brad - Completed Comm Estimates",
+      "description": "Proposals by Job Type.  Run by \"Creation Date\" and filter by business units if you choose."
+    },
+    {
+      "id": 132233529,
+      "name": "Calls CP",
+      "description": null
+    },
+    {
+      "id": 133325403,
+      "name": "Campaign Detail",
+      "description": null
+    },
+    {
+      "id": 212028745,
+      "name": "Campaign Performance - HPM Looker",
+      "description": "Used in Looker Studio Report"
+    },
+    {
+      "id": 1154,
+      "name": "Campaign Summary Report",
+      "description": "This is an upgrade to the legacy Campaign Summary Report. Shows a summary of campaign performance including leads, revenue, % from new/existing, cost per lead and ROI. This data is based on job completed OR created on dates, depending on selected option."
+    },
+    {
+      "id": 53244785,
+      "name": "Campaign Tracking - Inbound Call Generation",
+      "description": "This report will return information about campaigns with details about incoming calls. "
+    },
+    {
+      "id": 53245029,
+      "name": "Campaign Tracking - Jobs Booked Performance",
+      "description": "This report will return campaign information with details about the jobs booked from that campaign."
+    },
+    {
+      "id": 53245044,
+      "name": "Campaign Tracking Details",
+      "description": "This return basic campaign information with details about the campaign. "
+    },
+    {
+      "id": 25724727,
+      "name": "Customer by Service",
+      "description": "Upgraded version of the legacy Customer by Service Report. Applying a column filter to the Item Name column will allow you to select a particular item in your pricebook and identify all customers who have been invoiced for that item. "
+    },
+    {
+      "id": 44381177,
+      "name": "Customer List",
+      "description": "Use this report to pull a list of all customers, including their contact information, last job completed date, lifetime revenue, and lifetime jobs completed."
+    },
+    {
+      "id": 89430138,
+      "name": "Email Delivery Status",
+      "description": "Use this report to see the delivery statuses (delivered, bounced, etc) of all your outbound ServiceTitan emails."
+    },
+    {
+      "id": 27742992,
+      "name": "Email List",
+      "description": null
+    },
+    {
+      "id": 25724718,
+      "name": "Expiring Memberships",
+      "description": "Upgrade to the legacy Expiring Membership report. Use this report to identify membership renewal or upgrade opportunities. "
+    },
+    {
+      "id": 366577492,
+      "name": "Guaranteed Painting - PinParrot Job Pulls - Bryan, TX",
+      "description": "for job pulls"
+    },
+    {
+      "id": 366577876,
+      "name": "Guaranteed Painting - PinParrot Job Pulls - The Woodlands, TX",
+      "description": "for job pulls"
+    },
+    {
+      "id": 147087178,
+      "name": "HardPart Report",
+      "description": "Calls & Conversions"
+    },
+    {
+      "id": 74696954,
+      "name": "Items Quoted on Estimate",
+      "description": "Report showing which items were quoted on a specific estimate.  To filter items you click the filter button on the \"Item Name\" column."
+    },
+    {
+      "id": 107930553,
+      "name": "Jobs Call Campaign",
+      "description": null
+    },
+    {
+      "id": 141716269,
+      "name": "Lead conversion",
+      "description": null
+    },
+    {
+      "id": 132227162,
+      "name": "Leads Follow up",
+      "description": null
+    },
+    {
+      "id": 150025748,
+      "name": "Marketing Campaign Performance - HPM",
+      "description": null
+    },
+    {
+      "id": 226,
+      "name": "Membership Summary Report",
+      "description": null
+    },
+    {
+      "id": 45095919,
+      "name": "New Customers",
+      "description": "Use this report to filter for customers created in a specific date range. Includes customer contact information, original campaign source, member status, and job and revenue history."
+    },
+    {
+      "id": 134496406,
+      "name": "Outbound PC Calls",
+      "description": null
+    },
+    {
+      "id": 5165941,
+      "name": "Profit By Lead Source",
+      "description": "Shows the total profit by lead source."
+    },
+    {
+      "id": 98435556,
+      "name": "Proposals",
+      "description": "All proposals for all markets (Tucson, PHX and Nevada) that includes their address and proposal amount. "
+    },
+    {
+      "id": 98432341,
+      "name": "Proposals by Job Type",
+      "description": "Proposals by Job Type.  Run by \"Creation Date\" and filter by business units if you choose."
+    },
+    {
+      "id": 73794691,
+      "name": "Sales Report - Caleb",
+      "description": "Calebs"
+    },
+    {
+      "id": 139770383,
+      "name": "SMS SENT",
+      "description": null
+    },
+    {
+      "id": 55545082,
+      "name": "test",
+      "description": null
+    },
+    {
+      "id": 163,
+      "name": "Thank You Report",
+      "description": null
+    },
+    {
+      "id": 44381162,
+      "name": "We Miss You",
+      "description": "Use this report to find customers you haven’t serviced in awhile.\nFilter the \"Last Job Completed\" report column to target your results."
+    },
+    {
+      "id": 72448762,
+      "name": "Web Booking Report",
+      "description": "Use this report to see a history of all web bookings created using the web scheduler tool within specified date range. Built by ST."
+    },
+    {
+      "id": 74710780,
+      "name": "Who Booked The Estimates?",
+      "description": "Calebs"
+    }
+  ],
+  "customers": [],
+  "technician": [
+    {
+      "id": 130700652,
+      "name": "*Daily WBR C/R*",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking"
+    },
+    {
+      "id": 397555674,
+      "name": "BU Sales - API",
+      "description": "Shows sales metrics for business units, such as Total Sales, Close Rate and Sales Opps. Metrics are based on estimate sales."
+    },
+    {
+      "id": 143403571,
+      "name": "Copy of *Daily WBR C/R*",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking"
+    },
+    {
+      "id": 387030469,
+      "name": "CP - BQ BU Sales",
+      "description": null
+    },
+    {
+      "id": 53248788,
+      "name": "Cross Sales Groups Report",
+      "description": "Update to the legacy Cross Sales Groups Report.  Use it to track which technicians are selling items from Cross Sales Groups, as well as which Cross Sales Groups are performing the best. Run this report by Invoice Date to match legacy."
+    },
+    {
+      "id": 387936790,
+      "name": "Daily WBR - Andy's-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387930556,
+      "name": "Daily WBR - COMMPHX-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387945629,
+      "name": "Daily WBR - GTX-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387945741,
+      "name": "Daily WBR - Nevada-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387935289,
+      "name": "Daily WBR - Phoenix-Res Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387951872,
+      "name": "Daily WBR - Tucson-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 387950018,
+      "name": "Daily WBR - West PHX-Sales (API)",
+      "description": "Shows, total completed Jobs, Sales opportunity, Sales dollar, Close Rate, Avg booking. This is created specifically for an API pull"
+    },
+    {
+      "id": 53203361,
+      "name": "Field Conversion Report",
+      "description": "This report should be used to evaluate technician performance around conversions. This report includes the SLM conversion rate, which is especially useful in evaluating a technician as it counts the job as converted if they set a lead, sell a membership or convert the job. If you are looking for a conversion rate that accounts for leads set, this is a great calculation. This report also includes other helpful KPIs such as options per opportunity, billable hours, and basic conversion metrics. "
+    },
+    {
+      "id": 53244548,
+      "name": "Field Quality Report",
+      "description": "This report should be used to get quick insight into the quality of work the technician is doing. This will include counts on many job classifications such as warranty and recall. The report also shows revenue before and after adjustment invoices. "
+    },
+    {
+      "id": 70123137,
+      "name": "GPM",
+      "description": null
+    },
+    {
+      "id": 53643447,
+      "name": "Sales Phone Calls",
+      "description": null
+    },
+    {
+      "id": 53244961,
+      "name": "Sales Report by Field Employee/Technician",
+      "description": "This report is used to focus on conversion of estimates. This report is best used to evaluate how effective your field employee is at converting an estimate, independent of whether or not work was performed that day. This would be a great report to use to evaluate performance if a field employee is focused on selling. "
+    },
+    {
+      "id": 53248935,
+      "name": "Sold By Sales Detail Report by Completion Date",
+      "description": "Upgrade to legacy Sold By Sales Detail Report by Completion Date. Displays invoice details of completed jobs, based on the Sold By technician. Use this to evaluate the work generated by your salesmen that has been completed."
+    },
+    {
+      "id": 25724673,
+      "name": "Technician Performance Board",
+      "description": "Upgrade to legacy Technician Performance Board Report. Use it to track your technicians' performance including completed revenue, conversion rate, job average, replacement lead conversion, and work in progress."
+    },
+    {
+      "id": 1153,
+      "name": "Technician Performance Board (M)",
+      "description": "Upgrade to the legacy Technician Performance Board (M) Report. Includes metrics on completed revenue, job average, and conversion rates."
+    },
+    {
+      "id": 53244726,
+      "name": "Technician Timesheet with Technician Information",
+      "description": "This report will give a breakdown by technician of paid time with additional information about the technician such as technician business unit and Payroll ID."
+    },
+    {
+      "id": 53244876,
+      "name": "Technician Timesheet With Time Details",
+      "description": "This report will give a breakdown by technician of working time and include related information such as clock in and clock out times. "
+    },
+    {
+      "id": 215576065,
+      "name": "Timesheet Audit Report",
+      "description": null
+    }
+  ]
+}

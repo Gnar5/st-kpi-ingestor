@@ -1,0 +1,151 @@
+{
+  "id": 389438975,
+  "name": "*FOREMAN Job Cost - THIS WEEK ONLY* - API",
+  "description": "Production totals for the painting crews.  Be sure to filter by \"start date\" and business unit.",
+  "modifiedOn": "2025-10-13T13:13:02.9368539-07:00",
+  "parameters": [
+    {
+      "name": "DateType",
+      "label": "Filter by",
+      "dataType": "Number",
+      "isArray": false,
+      "isRequired": true,
+      "acceptValues": {
+        "fields": [
+          {
+            "name": "Value",
+            "label": "Value"
+          },
+          {
+            "name": "Name",
+            "label": "Name"
+          }
+        ],
+        "dynamicSetId": "job-date-filter-type",
+        "values": null
+      }
+    },
+    {
+      "name": "From",
+      "label": "From",
+      "dataType": "Date",
+      "isArray": false,
+      "isRequired": true,
+      "acceptValues": null
+    },
+    {
+      "name": "To",
+      "label": "To",
+      "dataType": "Date",
+      "isArray": false,
+      "isRequired": true,
+      "acceptValues": null
+    },
+    {
+      "name": "BusinessUnitId",
+      "label": "Business Unit",
+      "dataType": "Number",
+      "isArray": true,
+      "isRequired": false,
+      "acceptValues": {
+        "fields": [
+          {
+            "name": "Value",
+            "label": "Value"
+          },
+          {
+            "name": "Name",
+            "label": "Name"
+          }
+        ],
+        "dynamicSetId": "business-units",
+        "values": null
+      }
+    },
+    {
+      "name": "IncludeAdjustmentInvoices",
+      "label": "Include Adjustment Invoices",
+      "dataType": "Boolean",
+      "isArray": false,
+      "isRequired": false,
+      "acceptValues": null
+    }
+  ],
+  "fields": [
+    {
+      "name": "ScheduledDate",
+      "label": "Scheduled Date",
+      "dataType": "Date"
+    },
+    {
+      "name": "JobBusinessUnit",
+      "label": "Business Unit",
+      "dataType": "String"
+    },
+    {
+      "name": "SoldBy",
+      "label": "Sold By",
+      "dataType": "String"
+    },
+    {
+      "name": "PrimaryTechnician",
+      "label": "Primary Technician",
+      "dataType": "String"
+    },
+    {
+      "name": "JobType",
+      "label": "Job Type",
+      "dataType": "String"
+    },
+    {
+      "name": "CustomerName",
+      "label": "Customer Name",
+      "dataType": "String"
+    },
+    {
+      "name": "JobNumber",
+      "label": "Job #",
+      "dataType": "String"
+    },
+    {
+      "name": "Subtotal",
+      "label": "Jobs Subtotal",
+      "dataType": "Number"
+    },
+    {
+      "name": "LaborPay",
+      "label": "Labor Pay",
+      "dataType": "Number"
+    },
+    {
+      "name": "PayrollAdjustments",
+      "label": "Payroll Adjustments",
+      "dataType": "Number"
+    },
+    {
+      "name": "MaterialEquipmentPurchaseOrderCosts",
+      "label": "Materials + Equip. + PO/Bill Costs",
+      "dataType": "Number"
+    },
+    {
+      "name": "ReturnCosts",
+      "label": "Returns",
+      "dataType": "Number"
+    },
+    {
+      "name": "TotalCosts",
+      "label": "Jobs Total Costs",
+      "dataType": "Number"
+    },
+    {
+      "name": "GrossMarginPercentage",
+      "label": "Jobs Gross Margin %",
+      "dataType": "Number"
+    },
+    {
+      "name": "JobStatus",
+      "label": "Status",
+      "dataType": "String"
+    }
+  ]
+}

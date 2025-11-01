@@ -1,0 +1,184 @@
+{
+  "metadata": {
+    "id": 397555674,
+    "name": "BU Sales - API",
+    "description": "Shows sales metrics for business units, such as Total Sales, Close Rate and Sales Opps. Metrics are based on estimate sales.",
+    "modifiedOn": "2025-10-17T11:12:23.4342166-07:00",
+    "parameters": [
+      {
+        "name": "From",
+        "label": "From",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "To",
+        "label": "To",
+        "dataType": "Date",
+        "isArray": false,
+        "isRequired": true,
+        "acceptValues": null
+      },
+      {
+        "name": "BusinessUnitIds",
+        "label": "Invoice Item Business Unit",
+        "dataType": "Number",
+        "isArray": true,
+        "isRequired": false,
+        "acceptValues": {
+          "fields": [
+            {
+              "name": "Value",
+              "label": "Value"
+            },
+            {
+              "name": "Name",
+              "label": "Name"
+            }
+          ],
+          "dynamicSetId": "business-units",
+          "values": null
+        }
+      },
+      {
+        "name": "IncludeInactive",
+        "label": "Include Inactive",
+        "dataType": "Boolean",
+        "isArray": false,
+        "isRequired": false,
+        "acceptValues": null
+      }
+    ],
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name",
+        "dataType": "String"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity",
+        "dataType": "Number"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities",
+        "dataType": "Number"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate",
+        "dataType": "Number"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs",
+        "dataType": "Number"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales",
+        "dataType": "Number"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale",
+        "dataType": "Number"
+      }
+    ]
+  },
+  "data": {
+    "fields": [
+      {
+        "name": "Name",
+        "label": "Name"
+      },
+      {
+        "name": "SalesOpportunity",
+        "label": "Sales Opportunity"
+      },
+      {
+        "name": "ClosedOpportunities",
+        "label": "Closed Opportunities"
+      },
+      {
+        "name": "CloseRate",
+        "label": "Close Rate"
+      },
+      {
+        "name": "CompletedJobs",
+        "label": "Completed Jobs"
+      },
+      {
+        "name": "TotalSales",
+        "label": "Total Sales"
+      },
+      {
+        "name": "ClosedAverageSale",
+        "label": "Closed Average Sale"
+      }
+    ],
+    "page": 1,
+    "pageSize": 1000,
+    "hasMore": false,
+    "totalCount": null,
+    "data": [
+      [
+        "Guaranteed Painting-Sales",
+        4,
+        1,
+        0.25,
+        5,
+        400,
+        400
+      ],
+      [
+        "Commercial-AZ-Sales",
+        12,
+        2,
+        0.16666666666666666,
+        11,
+        1300,
+        650
+      ],
+      [
+        "Nevada-Sales",
+        17,
+        7,
+        0.4117647058823529,
+        15,
+        24015,
+        3430.714285714286
+      ],
+      [
+        "Andy's Painting-Sales",
+        19,
+        8,
+        0.42105263157894735,
+        15,
+        33313.45,
+        3764.18125
+      ],
+      [
+        "Tucson-Sales",
+        44,
+        20,
+        0.45454545454545453,
+        38,
+        170141.51,
+        8438.915
+      ],
+      [
+        "Phoenix-Sales",
+        106,
+        38,
+        0.3584905660377358,
+        107,
+        199130.39,
+        5065.494473684211
+      ]
+    ]
+  }
+}
