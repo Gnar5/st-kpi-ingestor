@@ -524,7 +524,7 @@ app.get('/rebuild/dim_jobs', async (req, res) => {
 
     // Get row count
     const countQuery = 'SELECT COUNT(*) as count FROM `kpi-auto-471020.st_dim_v2.dim_jobs`';
-    const [countResult] = await bqClient.query(countQuery);
+    const countResult = await bqClient.query(countQuery);
     const rowCount = countResult[0].count;
 
     const duration = Date.now() - startTime;
