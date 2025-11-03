@@ -1,44 +1,203 @@
-,Scheduled Date,Business Unit,Sold By,Primary Technician,Job Type,Customer Name,Job #,Jobs Subtotal,Labor Pay,Payroll Adjustments,Materials + Equip. + PO/Bill Costs,Returns,Jobs Total Costs,Jobs Gross Margin %,Status
-Business Unit: Andy's Painting-Production,,,,,,,,,,,,,,,
-,10/20/2025,Andy's Painting-Production,,*Jose Ruiz - Perez,Production-COMM-EXT,Don Cobb,389324885,$2139.46,$0.00,$2000.00,$1611.33,$0.00,$3611.33,-68.80%,Completed
-,10/22/2025,Andy's Painting-Production,,Mario Cereceda ,Warranty,Laura Montoya,389438781,$0.00,$0.00,$100.00,$49.97,$0.00,$149.97,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Warranty,Joanna Clark,389618389,$0.00,$73.33,$0.00,$0.00,$0.00,$73.33,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-INT,Paul Beatty,389133384,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
-,10/20/2025,Andy's Painting-Production,Caleb Pena,,Production-COMM-EXT,Paul Beatty,389144857,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Canceled
-,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Vigil and Associates Architectural Group,397643260,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Elizabeth Brown,397657930,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Ajoy Moonka,397672609,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Felix Briones,397644081,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Michael Denman,397711456,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397715561,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Scheduled
-,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Don Cobb,397734996,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Joshua Bump,397820904,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397820255,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/23/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Marcus Carter,397769226,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/21/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Barbara Lepori,397706721,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Courtney Rausch,397768822,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Argi Taylor,397786853,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/22/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Alberto Aguayo-Rico,397767024,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/24/2025,Andy's Painting-Production,,Jose Rodriguez,PM Inspection,Carter Breckenridge,397878953,$0.00,$0.00,$0.00,$0.00,$0.00,$0.00,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,David Sparks ,397576600,$0.00,$0.00,$0.00,$167.45,$0.00,$167.45,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,,*Pedro Ortiz,Touchup,Barbara Lepori,397653981,$0.00,$0.00,$200.00,$0.00,$0.00,$200.00,0.00%,Completed
-,10/21/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Vigil and Associates Architectural Group,397692507,$0.00,$158.00,$0.00,$45.69,$0.00,$203.69,0.00%,Completed
-,10/24/2025,Andy's Painting-Production,,*Rafael Perla Castillo,Touchup,Felix Briones,397690946,$0.00,$0.00,$450.00,$0.00,$0.00,$450.00,0.00%,Completed
-,10/24/2025,Andy's Painting-Production,,*Hector Amaya,Touchup,Marcus Carter,397874133,$0.00,$0.00,$0.00,$26.75,$0.00,$26.75,0.00%,Completed
-,10/23/2025,Andy's Painting-Production,,*Juan Barraza ,Touchup,Jessica Sandoval,397827963,$0.00,$0.00,$150.00,$0.00,$0.00,$150.00,0.00%,Completed
-,10/22/2025,Andy's Painting-Production,,Pedro Aguilera Cordero,Touchup,Matt Sullivan,397655265,$0.00,$407.00,$0.00,$87.14,$0.00,$494.14,0.00%,Completed
-,10/22/2025,Andy's Painting-Production,,*Cesar Galeano,Touchup,Church's Chicken - Delia Cruz,397769180,$0.00,$0.00,$100.00,$0.00,$0.00,$100.00,0.00%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-RES-INT,Elizabeth Brown,388742795,$619.58,$85.00,$200.00,$269.63,$0.00,$554.63,16.88%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Ajoy Moonka,389126602,$1148.80,$0.00,$550.00,$362.28,$0.00,$912.28,20.59%,Completed
-,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Juan Barraza ,Production-RES-EXT,Alberto Aguayo-Rico,389182944,$1420.00,$0.00,$800.00,$183.19,$0.00,$983.19,30.76%,Completed
-,10/23/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-INT,Carter Breckenridge,389209474,$2820.00,$0.00,$1012.00,$593.41,$0.00,$1605.41,43.07%,In Progress
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-Cabinet,Jamison Brown ,389478663,$4496.00,$0.00,$1785.00,$603.45,$0.00,$2388.45,46.88%,Completed
-,10/21/2025,Andy's Painting-Production,Seth Fahnle,Richard Olguin,Production-Cabinet,Courtney Rausch,389126650,$2096.00,$200.33,$599.67,$224.55,$0.00,$1024.55,51.12%,Completed
-,10/22/2025,Andy's Painting-Production,Seth Fahnle,Mario Cereceda ,Production-COMM-INT,Paul Dunn,389284427,$2925.00,$0.00,$877.00,$478.50,$0.00,$1355.50,53.66%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Hector Amaya,Production-RES-EXT,Michael Denman,388899959,$5060.75,$0.00,$1253.00,$1069.33,$0.00,$2322.33,54.11%,Completed
-,10/22/2025,Andy's Painting-Production,Seth Fahnle,*Rafael Perla Castillo,Production-RES-INT,Cyndi-Marie M,389186404,$650.00,$0.00,$195.00,$95.37,$0.00,$290.37,55.33%,Completed
-,10/22/2025,Andy's Painting-Production,,*Hector Amaya,Production-RES-INT,Argi Taylor,389323999,$480.00,$0.00,$200.00,$0.50,$0.00,$200.50,58.23%,Completed
-,10/20/2025,Andy's Painting-Production,,Richard Olguin,Production-Cabinet,Jaimie Kennedy,397652196,$854.00,$141.67,$158.33,$49.80,$0.00,$349.80,59.04%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-RES-INT,Joshua Bump,388524852,$4030.76,$0.00,$1200.00,$450.38,-$66.00,$1584.38,60.69%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,*Pedro Ortiz,Production-Cabinet,Joshua Bump,388525076,$3000.00,$0.00,$900.00,$239.75,$0.00,$1139.75,62.01%,Completed
-,10/20/2025,Andy's Painting-Production,Seth Fahnle,Jose Rodriguez,Production-RES-EXT,Elizabeth Brown,388981346,$1533.66,$0.00,$50.00,$441.28,$0.00,$491.28,70.33%,Completed
+Job #,Lead Type,Total Estimates,Estimate #,Opportunity Date,Estimate Sold Date,Job’s Business Unit,Customer Name,Sold By,Estimate Subtotal,Sales Opportunity,Closed
+389272087,Marketing Lead,0,,10/20/2025,,Andy's Painting-Sales,Carter Breckenridge,,,True,False
+389102629,Marketing Lead,1,397555759,10/20/2025,10/20/2025,Andy's Painting-Sales,Denny Frost,Seth Fahnle,5596.0,True,True
+389482442,Marketing Lead,0,,10/21/2025,,Andy's Painting-Sales,Eric Knewitz,,,True,False
+389500258,Marketing Lead,1,397722454,10/21/2025,10/21/2025,Andy's Painting-Sales,Patrice Troy,Seth Fahnle,552.0,True,True
+397565367,Marketing Lead,0,,10/21/2025,,Andy's Painting-Sales,Jeff Sticha,,,True,False
+388788224,Marketing Lead,2,"389496861, 389506773",10/21/2025,"10/21/2025, 10/21/2025",Andy's Painting-Sales,Nathan Leach,"Seth Fahnle, Seth Fahnle",10626.4,True,True
+389477121,Marketing Lead,0,,10/21/2025,,Andy's Painting-Sales,Christine Garcia,,,True,False
+389543162,Marketing Lead,0,,10/22/2025,,Andy's Painting-Sales,Andrea Harris,,,True,False
+389199829,Marketing Lead,1,389585419,10/22/2025,10/22/2025,Andy's Painting-Sales,Rachel Giunta,Seth Fahnle,1320.0,True,True
+366956881,Marketing Lead,1,367436794,10/23/2025,10/23/2025,Andy's Painting-Sales,Steven Elwell,Seth Fahnle,3444.67,True,True
+389646497,Marketing Lead,0,,10/23/2025,,Andy's Painting-Sales,Eleanor Benavidez,,,True,False
+397553650,Marketing Lead,0,,10/23/2025,,Andy's Painting-Sales,Harry Genfler,,,True,False
+397672848,Marketing Lead,1,397851717,10/23/2025,10/23/2025,Andy's Painting-Sales,Melissa Baca,Gamaliel Guzman,511.93,True,True
+397848388,Marketing Lead,0,,10/24/2025,,Andy's Painting-Sales,Nancy O'brien,,,True,False
+397625684,Marketing Lead,0,,10/24/2025,,Andy's Painting-Sales,David Zamora,,,True,False
+389609750,Marketing Lead,0,,10/24/2025,,Andy's Painting-Sales,Nelson Wingerd,,,True,False
+389582755,Marketing Lead,0,,10/24/2025,,Andy's Painting-Sales,Chevron,,,True,False
+389569404,Marketing Lead,1,397821175,10/24/2025,10/24/2025,Andy's Painting-Sales,Phil Monteith,Seth Fahnle,3251.25,True,True
+388554484,Marketing Lead,1,389070880,10/25/2025,10/25/2025,Andy's Painting-Sales,Nikeya Gerber,Seth Fahnle,4811.2,True,True
+397653680,Marketing Lead,0,,10/20/2025,,Nevada-Sales,Colleen Govanovich,,,True,False
+397654304,Marketing Lead,1,397675372.0,10/20/2025,10/20/2025,Nevada-Sales,Davy Delug,Gibran Luna,1190.0,True,True
+397673340,Marketing Lead,0,,10/20/2025,,Nevada-Sales,Elite 1 Service,,,True,False
+397690632,Marketing Lead,0,,10/21/2025,,Nevada-Sales,Beverly & Rich Garland,,,True,False
+397610203,Marketing Lead,0,,10/21/2025,,Nevada-Sales,Gerald Norton,,,True,False
+388545799,Marketing Lead,1,388983359.0,10/21/2025,10/21/2025,Nevada-Sales,Noontide Services ,Gibran Luna,4300.0,True,True
+397681981,Marketing Lead,0,,10/21/2025,,Nevada-Sales,Tenille Rallis,,,True,False
+388429283,Marketing Lead,1,388780429.0,10/21/2025,10/21/2025,Nevada-Sales,Chun Napoli ,Gibran Luna,3280.0,True,True
+397674286,Marketing Lead,0,,10/22/2025,,Nevada-Sales,William Simons,,,True,False
+397723616,Marketing Lead,0,,10/22/2025,,Nevada-Sales,Scott Sowder,,,True,False
+397790202,Marketing Lead,0,,10/23/2025,,Nevada-Sales,The Suites Las Vegas ,,,True,False
+397836059,Marketing Lead,0,,10/24/2025,,Nevada-Sales,Debbie Leak ,,,True,False
+397830441,Marketing Lead,0,,10/24/2025,,Nevada-Sales,Marie Allison,,,True,False
+397845369,Marketing Lead,1,397893738.0,10/24/2025,10/24/2025,Nevada-Sales,Justin Remelin,Gibran Luna,4335.0,True,True
+397772076,Marketing Lead,1,397884058.0,10/24/2025,10/24/2025,Nevada-Sales,Tony Barboza ,Gibran Luna,1190.0,True,True
+389356386,Marketing Lead,1,389510788.0,10/24/2025,10/24/2025,Nevada-Sales,Rita Varney,Gibran Luna,4720.0,True,True
+397737075,Marketing Lead,1,397860642.0,10/24/2025,10/24/2025,Nevada-Sales,Baby University,Gibran Luna,5000.0,True,True
+388829605,Marketing Lead,2,"389089722, 389091705",10/20/2025,"10/21/2025, 10/20/2025",Phoenix-Sales,Annie Sciacca,"_Christopher Stevenson, _Christopher Stevenson",11293.2,True,True
+389583078,Marketing Lead,1,389585823,10/20/2025,10/20/2025,Phoenix-Sales,Robert Wolff,Kyle Rollins,3978.0,True,True
+388040532,Marketing Lead,1,388312230,10/20/2025,10/20/2025,Phoenix-Sales,Tyler Nolan,Keith Bryant,4885.8,True,True
+389492484,Marketing Lead,1,397668002,10/20/2025,10/20/2025,Phoenix-Sales,Rosie On The House-Joyce,_Christopher Stevenson,350.0,True,True
+389065503,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Mya and Scott Bohman,,,True,False
+389384660,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Mary Rincon,,,True,False
+389288276,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Robert Wiece,,,True,False
+389509340,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Maria Colling,,,True,False
+397644148,Marketing Lead,1,397679679,10/20/2025,10/20/2025,Phoenix-Sales,Chris Mares,Kyle Rollins,3612.5,True,True
+389394690,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Bonnie Moyer,,,True,False
+389583297,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Alyson Steffens,,,True,False
+389544096,Marketing Lead,1,389639421,10/20/2025,10/20/2025,Phoenix-Sales,Gary Griffith,Jose Alvarez,1850.0,True,True
+397683794,Marketing Lead,0,,10/20/2025,,Phoenix-Sales,Danielle Hamby,,,True,False
+211871686,Marketing Lead,1,211954797,10/21/2025,10/21/2025,Phoenix-Sales,Danielle Hamby,Keith Bryant,3685.6,True,True
+389418677,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Mike Aguirre,,,True,False
+389508895,Marketing Lead,1,397688299,10/21/2025,10/21/2025,Phoenix-Sales,Dick Cantwell ,Keith Bryant,4785.5,True,True
+389514507,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Brook Urban,,,True,False
+397606525,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Mary Chen,,,True,False
+397565314,Marketing Lead,1,397725531,10/21/2025,10/21/2025,Phoenix-Sales,Jo Abrams,_Christopher Stevenson,2209.49,True,True
+397569250,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Harry Shimizu,,,True,False
+397606497,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Slade Wylie,,,True,False
+389655030,Marketing Lead,1,397729223,10/21/2025,10/21/2025,Phoenix-Sales,Teresa Bell,_Christopher Stevenson,4012.13,True,True
+397678670,Marketing Lead,1,397696600,10/21/2025,10/21/2025,Phoenix-Sales,Greg Scott,Sean Zackery,8487.2,True,True
+389548258,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Chris Murray,,,True,False
+397607234,Marketing Lead,2,"397717061, 397719066",10/21/2025,"10/21/2025, 10/23/2025",Phoenix-Sales,Bill Shearer,"Sean Zackery, Sean Zackery",8646.4,True,True
+389576916,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Caroline Cutter,,,True,False
+389384302,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Wendy Bricel,,,True,False
+389648875,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Deborah Therrien,,,True,False
+397642597,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Charlie Varin,,,True,False
+389514038,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Jose Pizarro,,,True,False
+389634388,Marketing Lead,2,"397749609, 397751016",10/21/2025,"10/21/2025, 10/21/2025",Phoenix-Sales,Stacey Akhbari,"Kyle Rollins, Kyle Rollins",7524.4,True,True
+389480163,Marketing Lead,1,397687184,10/21/2025,10/21/2025,Phoenix-Sales,Jim Brown,Jose Alvarez,4520.0,True,True
+389658196,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Collin Schmitt,,,True,False
+389355697,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Joanne Pavick ,,,True,False
+389542164,Marketing Lead,1,397737357,10/21/2025,10/21/2025,Phoenix-Sales,Sherry Cahill,Jose Alvarez,3120.0,True,True
+389395028,Marketing Lead,0,,10/21/2025,,Phoenix-Sales,Carter Abbott,,,True,False
+389504099,Marketing Lead,1,397658166,10/21/2025,10/21/2025,Phoenix-Sales,Daniel Guzman,Keith Bryant,4385.15,True,True
+397734754,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Aaron Angel,,,True,False
+389440596,Marketing Lead,1,397600777,10/22/2025,10/22/2025,Phoenix-Sales,William Fechter,Keith Bryant,5500.35,True,True
+397599202,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Kyle Lambie,,,True,False
+397621555,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Crystal Ontiveros,,,True,False
+397708798,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Guillermo Ortega,,,True,False
+397608929,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Kristin Eberle,,,True,False
+397714905,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Craig Huntington,,,True,False
+397729523,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Jill Cole,,,True,False
+397658558,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Sean Smith,,,True,False
+337743718,Marketing Lead,1,337870910,10/22/2025,10/22/2025,Phoenix-Sales,William Kearns,Keith Bryant,5975.5,True,True
+388923085,Marketing Lead,1,389325688,10/22/2025,10/22/2025,Phoenix-Sales,Lo Charley,Sam Hettinger,5000.0,True,True
+389588308,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Eric Jefferson,,,True,False
+397623477,Marketing Lead,1,397800784,10/22/2025,10/22/2025,Phoenix-Sales,Iman Aljumailey,_Christopher Stevenson,2875.0,True,True
+397803489,Marketing Lead,1,397804784,10/22/2025,10/22/2025,Phoenix-Sales,Tracy Conboy,Keith Bryant,4985.25,True,True
+389594600,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Miroslawa Spas,,,True,False
+397653007,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Jim Long,,,True,False
+397621115,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Sarah Pitrone,,,True,False
+389399542,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Sadiq Manji,,,True,False
+362940804,Marketing Lead,1,363562584,10/22/2025,10/22/2025,Phoenix-Sales,Russ Goldstein,Jose Alvarez,1950.0,True,True
+389083604,Marketing Lead,0,,10/22/2025,,Phoenix-Sales,Carmel Aguilar,,,True,False
+389424973,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Russ Goldstein,,,True,False
+389473026,Marketing Lead,1,397798497,10/23/2025,10/23/2025,Phoenix-Sales,Debbie Vandekamp,Kyle Rollins,2904.97,True,True
+397707161,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Ross and Holly Renner,,,True,False
+389624454,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Brian Sherman,,,True,False
+389588997,Marketing Lead,2,"397836735, 397839401",10/23/2025,"10/23/2025, 10/23/2025",Phoenix-Sales,Maria Salas,"Kyle Rollins, Kyle Rollins",6328.0,True,True
+389638634,Marketing Lead,1,397838112,10/23/2025,10/23/2025,Phoenix-Sales,Anibal (Andy) Perez ,Keith Bryant,7885.45,True,True
+397596596,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Jona Pagano,,,True,False
+389422063,Marketing Lead,2,"397842705, 397842758",10/23/2025,"10/23/2025, 10/27/2025",Phoenix-Sales,Daniel Teachey,"Jose Alvarez, *Jose Alvarez",4550.0,True,True
+397625702,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Dawn Diaz Taylor,,,True,False
+397683733,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Jeff Travis,,,True,False
+389571664,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Craig Bryant,,,True,False
+397672047,Marketing Lead,1,397850431,10/23/2025,10/23/2025,Phoenix-Sales,Jaimie Carrasco,Kyle Rollins,500.0,True,True
+397778402,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Danielle Kraus,,,True,False
+397557419,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Joe Rogers,,,True,False
+397630164,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Timothy Grogan,,,True,False
+389384710,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Matt Schall,,,True,False
+397673751,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Terrell Wortham ,,,True,False
+389413460,Marketing Lead,1,397794785,10/23/2025,10/23/2025,Phoenix-Sales,Ashley Farrar,Jose Alvarez,8720.0,True,True
+389655276,Marketing Lead,1,397562647,10/23/2025,10/23/2025,Phoenix-Sales,McBride Services,Sean Zackery,13770.4,True,True
+397729757,Marketing Lead,0,,10/23/2025,,Phoenix-Sales,Kelly Cobb,,,True,False
+389564650,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Alan Hartsook,,,True,False
+397644783,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Sue Wenigman,,,True,False
+397669103,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Anna McCumbers,,,True,False
+397693175,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,John Killian,,,True,False
+389500271,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Tammy Orcutt,,,True,False
+397630217,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Jeremy Stein,,,True,False
+397747668,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Mike Akers,,,True,False
+389556592,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Anish Adhikari,,,True,False
+389523674,Marketing Lead,1,397756507,10/24/2025,10/24/2025,Phoenix-Sales,Colin Nickels,Jose Alvarez,3200.0,True,True
+397734835,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Danielle Shaw ,,,True,False
+397709181,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Tom Mozilo,,,True,False
+389357313,Marketing Lead,1,397584628,10/24/2025,10/24/2025,Phoenix-Sales,Tony Rogan,Keith Bryant,5985.7,True,True
+397689651,Marketing Lead,2,"397843759, 397847238",10/24/2025,"10/24/2025, 10/24/2025",Phoenix-Sales,Kris & Paul Flaven,"Kyle Rollins, Kyle Rollins",2516.0,True,True
+397730007,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Danny Lee,,,True,False
+397672092,Marketing Lead,1,397794281,10/24/2025,10/24/2025,Phoenix-Sales,Jerri Fletcher,Jose Alvarez,4350.0,True,True
+397555176,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Kitty Singh,,,True,False
+397729918,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Dayle-Ann Johnson,,,True,False
+397656874,Marketing Lead,1,397898291,10/24/2025,10/24/2025,Phoenix-Sales,Gail Schroeder,Sean Zackery,1184.8,True,True
+397625602,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Scott Bond,,,True,False
+397630258,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Destinee Cole,,,True,False
+397846100,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Kim Peterson,,,True,False
+389632609,Marketing Lead,0,,10/24/2025,,Phoenix-Sales,Louis and Stephanie Core,,,True,False
+386626392,Marketing Lead,1,386826872,10/24/2025,10/24/2025,Phoenix-Sales,Gary Blakeslee,_Christopher Stevenson,405.0,True,True
+389266772,Marketing Lead,1,397676785,10/24/2025,10/24/2025,Phoenix-Sales,Jose Mariscal,Keith Bryant,9685.75,True,True
+397733113,Marketing Lead,0,,10/25/2025,,Phoenix-Sales,David Nieto,,,True,False
+397804628,Marketing Lead,0,,10/25/2025,,Phoenix-Sales,Heather Carrozza,,,True,False
+388826514,Marketing Lead,1,389392094,10/25/2025,10/25/2025,Phoenix-Sales,Amy Arens,Keith Bryant,3985.65,True,True
+397741554,Marketing Lead,0,,10/25/2025,,Phoenix-Sales,Foffy Perez,,,True,False
+397867220,Marketing Lead,1,397916175,10/25/2025,10/25/2025,Phoenix-Sales,Jason Silvius,Keith Bryant,12885.6,True,True
+389452834,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Kevin Nuich,,,True,False
+389330709,Marketing Lead,3,"389657899, 389658967, 389659833",10/20/2025,"10/20/2025, 10/20/2025, 10/20/2025",Tucson-Sales,Susan Benz,"Gamaliel Guzman, Gamaliel Guzman, Gamaliel Guzman",3790.0,True,True
+389624404,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Chad Schulte,,,True,False
+389645841,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Moondance Patio Homes HOA,,,True,False
+389553018,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Quality Brand Group/Dunkin Donuts,,,True,False
+397630191,Marketing Lead,1,397682556,10/20/2025,10/20/2025,Tucson-Sales,Rachelle Felzien,Gamaliel Guzman,4630.82,True,True
+389549825,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Melissa Slippen,,,True,False
+388652898,Marketing Lead,1,388857171,10/20/2025,10/20/2025,Tucson-Sales,Mary Johnson,Gamaliel Guzman,1000.0,True,True
+389291233,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Fairwinds Desert Point,,,True,False
+389497162,Marketing Lead,1,397683899,10/20/2025,10/20/2025,Tucson-Sales,Lana White ,Gamaliel Guzman,4752.11,True,True
+389652822,Marketing Lead,0,,10/20/2025,,Tucson-Sales,Paul Ash Management,,,True,False
+389445426,Marketing Lead,0,,10/21/2025,,Tucson-Sales,Ray Sharp,,,True,False
+397674247,Marketing Lead,1,397719788,10/21/2025,10/21/2025,Tucson-Sales,Greg Matzuk  ,Ryan Riehl,3182.44,True,True
+388938964,Marketing Lead,1,389021709,10/21/2025,10/21/2025,Tucson-Sales,Orion Hudson ,Ryan Riehl,8057.79,True,True
+397556535,Marketing Lead,0,,10/21/2025,,Tucson-Sales,Robin Johnson ,,,True,False
+397735817,Marketing Lead,0,,10/21/2025,,Tucson-Sales,"Oro Valley 1521 APL MP, LLC",,,True,False
+397623449,Marketing Lead,0,,10/21/2025,,Tucson-Sales,Denee Hammonds,,,True,False
+389326223,Marketing Lead,1,389544621,10/21/2025,10/21/2025,Tucson-Sales,Teenu Agarwal-Hebbar,Ryan Riehl,629.73,True,True
+389019760,Marketing Lead,1,389088947,10/22/2025,10/22/2025,Tucson-Sales,Sarah Kaplan,Gamaliel Guzman,4376.91,True,True
+397706893,Marketing Lead,1,397779045,10/22/2025,10/22/2025,Tucson-Sales,Leslie Aills,Gamaliel Guzman,2009.63,True,True
+397629932,Marketing Lead,0,,10/22/2025,,Tucson-Sales,James Hay,,,True,False
+397556384,Marketing Lead,1,397786783,10/22/2025,10/22/2025,Tucson-Sales,Dana Wregglesworth,Gamaliel Guzman,6785.11,True,True
+397781230,Marketing Lead,0,,10/22/2025,,Tucson-Sales,Kyle Beasley,,,True,False
+386510877,Marketing Lead,1,386548896,10/22/2025,10/22/2025,Tucson-Sales,Associa Arizona,Albert Figueroa,4268.4,True,True
+397788672,Marketing Lead,0,,10/22/2025,,Tucson-Sales,Michael Rogers,,,True,False
+389029743,Marketing Lead,1,389475761,10/22/2025,10/22/2025,Tucson-Sales,Jody Johnson,Ryan Riehl,4551.81,True,True
+389326402,Marketing Lead,2,"397798569, 397799944",10/22/2025,"10/22/2025, 10/22/2025",Tucson-Sales,Robin Hunter,"Ryan Riehl, Ryan Riehl",5083.55,True,True
+397671876,Marketing Lead,1,397812870,10/23/2025,10/23/2025,Tucson-Sales,Kendra Drake,Ryan Riehl,3502.72,True,True
+397555735,Marketing Lead,0,,10/23/2025,,Tucson-Sales,Dave Combs,,,True,False
+389647734,Marketing Lead,0,,10/23/2025,,Tucson-Sales,Katherine Updegraff,,,True,False
+397693945,Marketing Lead,0,,10/23/2025,,Tucson-Sales,Brian Cook,,,True,False
+397621485,Marketing Lead,1,397845988,10/23/2025,10/23/2025,Tucson-Sales,Juniper Briggs,Albert Figueroa,1394.17,True,True
+397714926,Marketing Lead,0,,10/23/2025,,Tucson-Sales,David Wittenbach,,,True,False
+389426734,Marketing Lead,1,389633463,10/23/2025,10/23/2025,Tucson-Sales,Jane Hoffman,Gamaliel Guzman,6701.78,True,True
+397708350,Marketing Lead,1,397888007,10/24/2025,10/24/2025,Tucson-Sales,Ken Haner,Ryan Riehl,2772.34,True,True
+389592534,Marketing Lead,2,"397663186, 397664254",10/24/2025,"10/24/2025, 10/24/2025",Tucson-Sales,Lina Urbain,"Ryan Riehl, Ryan Riehl",3442.37,True,True
+389106715,Marketing Lead,1,397684963,10/24/2025,10/24/2025,Tucson-Sales,Moondance Patio Homes HOA,Albert Figueroa,95000.0,True,True
+397784886,Marketing Lead,0,,10/24/2025,,Tucson-Sales,Leslie Hunten,,,True,False
+397672073,Marketing Lead,0,,10/24/2025,,Tucson-Sales,Jeff Howell ,,,True,False
+397805605,Marketing Lead,0,,10/24/2025,,Tucson-Sales,CJ ,,,True,False
+387795170,Marketing Lead,1,388595390,10/25/2025,10/25/2025,Tucson-Sales,Elisa Ovhoa,Ryan Riehl,2846.62,True,True
+389611274,Marketing Lead,0,,10/26/2025,,Tucson-Sales,CBRE,,,True,False
+389616263,Marketing Lead,0,,10/26/2025,,Tucson-Sales,CBRE,,,True,False
+389614393,Marketing Lead,0,,10/26/2025,,Tucson-Sales,Jeff Mcelwain,,,True,False
+389666423,Marketing Lead,0,,10/20/2025,,Commercial-AZ-Sales,Promenade At Fulton Ranch,,,True,False
+389446307,Marketing Lead,1,389623467.0,10/20/2025,10/20/2025,Commercial-AZ-Sales,"The Paint Folks, Inc",Sean Zackery,700.0,True,True
+389203298,Marketing Lead,1,389546046.0,10/21/2025,10/21/2025,Commercial-AZ-Sales,Rick Ames,Sean Zackery,600.0,True,True
+389651089,Marketing Lead,0,,10/21/2025,,Commercial-AZ-Sales,Ken Goldmann,,,True,False
+389223767,Marketing Lead,0,,10/22/2025,,Commercial-AZ-Sales,Crystal Springs Apartments,,,True,False
+397772263,Marketing Lead,0,,10/22/2025,,Commercial-AZ-Sales,Wedgewood Weddings- Secret Garden,,,True,False
+397791942,Marketing Lead,0,,10/22/2025,,Commercial-AZ-Sales,Sun State Builders,,,True,False
+397653954,Marketing Lead,0,,10/22/2025,,Commercial-AZ-Sales,Near-Cal Corp,,,True,False
+397822429,Marketing Lead,0,,10/23/2025,,Commercial-AZ-Sales,FCL Builders,,,True,False
+397688412,Marketing Lead,0,,10/23/2025,,Commercial-AZ-Sales,"The Paint Folks, Inc",,,True,False
+397822466,Marketing Lead,0,,10/23/2025,,Commercial-AZ-Sales,Scottsdale Park Suites,,,True,False
+397841602,Marketing Lead,0,,10/23/2025,,Commercial-AZ-Sales,Storage Solutions,,,True,False
+389508858,Marketing Lead,0,,10/20/2025,,Guaranteed Painting-Sales,V&O inc,,,True,False
+397556343,Marketing Lead,0,,10/22/2025,,Guaranteed Painting-Sales,Amazon,,,True,False
+397652917,Marketing Lead,1,397838013.0,10/23/2025,10/23/2025,Guaranteed Painting-Sales,Alyssa Shaw,Hansel Contreras,400.0,True,True
+397678707,Marketing Lead,0,,10/24/2025,,Guaranteed Painting-Sales,Krista Cook ,,,True,False
