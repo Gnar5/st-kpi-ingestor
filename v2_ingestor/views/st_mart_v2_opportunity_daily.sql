@@ -26,6 +26,7 @@ WITH sales_opps AS (
 
 closed_opps AS (
   -- Count closed opportunities by first_sale_date (EARLIEST soldOn logic)
+  -- A job counts as "closed" on the date it FIRST sold
   SELECT
     first_sale_date as kpi_date,
     business_unit,
@@ -34,7 +35,6 @@ closed_opps AS (
   FROM `kpi-auto-471020.st_stage.opportunity_jobs`
   WHERE first_sale_date IS NOT NULL
     AND business_unit IS NOT NULL
-    AND is_closed_opportunity = TRUE
   GROUP BY first_sale_date, business_unit
 )
 

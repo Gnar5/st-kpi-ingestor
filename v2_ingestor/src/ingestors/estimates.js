@@ -24,21 +24,49 @@ export class EstimatesIngestor extends BaseIngestor {
     }
 
     // Incremental sync with lookback window
-    // API filters by BOTH createdOnOrAfter AND modifiedOnOrAfter
-    // This catches estimates created or modified recently, but misses estimates
-    // that were sold recently but haven't been modified (e.g., old estimate gets sold)
     const lastSync = await this.bqClient.getLastSyncTime(this.entityType);
-    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 4320; // 180 days default (increased from 7)
+    const lookbackHours = parseInt(process.env.INCREMENTAL_LOOKBACK_HOURS) || 4320; // 180 days default
     const lookbackDate = new Date(new Date(lastSync).getTime() - (lookbackHours * 60 * 60 * 1000));
+
+    // Sold lookback - shorter window to catch recently sold estimates from old jobs
+    const soldLookbackDays = parseInt(process.env.SOLD_LOOKBACK_DAYS) || 30;
+    const soldLookbackDate = new Date(Date.now() - (soldLookbackDays * 24 * 60 * 60 * 1000));
 
     this.log.info('Performing incremental sync with lookback', {
       lastSync,
       lookbackDate: lookbackDate.toISOString(),
       lookbackHours,
-      lookbackDays: Math.round(lookbackHours / 24)
+      lookbackDays: Math.round(lookbackHours / 24),
+      soldLookbackDate: soldLookbackDate.toISOString(),
+      soldLookbackDays
     });
 
-    return await this.stClient.getEstimatesIncremental(lookbackDate.toISOString());
+    // Fetch 1: Estimates modified recently (standard incremental)
+    const modifiedEstimates = await this.stClient.getEstimatesIncremental(lookbackDate.toISOString());
+
+    // Fetch 2: Estimates SOLD recently (catches old estimates that got sold)
+    // This covers sync gaps where old jobs have estimates sold recently
+    const soldEstimates = await this.stClient.getEstimatesBySoldDate(soldLookbackDate.toISOString());
+
+    // Merge and dedupe by ID
+    const allEstimates = [...modifiedEstimates];
+    const seenIds = new Set(modifiedEstimates.map(e => e.id));
+
+    for (const estimate of soldEstimates) {
+      if (!seenIds.has(estimate.id)) {
+        allEstimates.push(estimate);
+        seenIds.add(estimate.id);
+      }
+    }
+
+    this.log.info('Merged estimate results', {
+      modifiedCount: modifiedEstimates.length,
+      soldCount: soldEstimates.length,
+      totalAfterDedupe: allEstimates.length,
+      newFromSold: allEstimates.length - modifiedEstimates.length
+    });
+
+    return allEstimates;
   }
 
   async transform(data) {

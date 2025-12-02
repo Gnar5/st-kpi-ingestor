@@ -307,6 +307,25 @@ export class ServiceTitanClient {
   }
 
   /**
+   * Fetch estimates by soldOn date
+   * Catches old estimates that were recently sold (covers sync gaps)
+   */
+  async getEstimatesBySoldDate(soldAfter) {
+    this.log.info('Fetching estimates by sold date', { soldAfter });
+
+    const items = await this.fetchAll('sales/v2/tenant/{tenant}/estimates', {
+      soldAfter: soldAfter
+    });
+
+    this.log.info('Sold estimates fetch complete', {
+      soldAfter,
+      itemsFetched: items.length
+    });
+
+    return items;
+  }
+
+  /**
    * Payments API
    */
   async getPayments(params = {}) {
