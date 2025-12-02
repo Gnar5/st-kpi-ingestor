@@ -7,8 +7,8 @@
 --   - No Charge Job = Job with 0 estimates AND $0 invoice subtotal
 --   - Closed Opportunity = any job with >= 1 sold estimate (status='Sold')
 --   - Opportunity Date priority (Phoenix timezone):
---       1. EARLIEST soldOn date (opportunity closes on first sale)
---       2. Earliest appointment scheduledStart (when job was worked)
+--       1. LATEST soldOn date (most recent sale date)
+--       2. Earliest appointment scheduledStart (fallback for open opportunities)
 --       3. Job completedOn (when job was completed)
 --       4. Earliest estimate createdOn (when first estimate was created)
 --   - INCLUDES all Sales business units (including Commercial-AZ-Sales)
@@ -23,12 +23,12 @@ CREATE OR REPLACE VIEW `kpi-auto-471020.st_stage.opportunity_jobs` AS
 
 WITH estimate_rollup AS (
   -- Roll up estimates by job to get counts and dates
-  -- Use EARLIEST soldOn to match ServiceTitan's logic (opportunity closes on first sale)
+  -- Use LATEST soldOn - this gave best match for total opportunities
   SELECT
     jobId,
     COUNT(*) as estimate_count,
     COUNT(CASE WHEN status = 'Sold' THEN 1 END) as sold_estimate_count,
-    MIN(CASE WHEN status = 'Sold' THEN soldOn END) as earliest_sold_on_utc,
+    MAX(CASE WHEN status = 'Sold' THEN soldOn END) as latest_sold_on_utc,
     MIN(createdOn) as earliest_created_on_utc
   FROM `kpi-auto-471020.st_raw_v2.raw_estimates`
   WHERE jobId IS NOT NULL
@@ -67,16 +67,16 @@ SELECT
   -- Estimate rollup fields
   COALESCE(e.estimate_count, 0) as estimate_count,
   COALESCE(e.sold_estimate_count, 0) as sold_estimate_count,
-  e.earliest_sold_on_utc,
+  e.latest_sold_on_utc,
 
   -- Appointment rollup field
   a.earliest_scheduled_start_utc,
 
   -- Opportunity date: soldOn > appointment > completedOn > estimate createdOn (Phoenix timezone)
-  -- Uses EARLIEST soldOn - opportunity closes on first sale (matches ST logic)
+  -- Uses LATEST soldOn - gives best match for total opportunities count
   DATE(
     COALESCE(
-      e.earliest_sold_on_utc,
+      e.latest_sold_on_utc,
       a.earliest_scheduled_start_utc,
       j.completedOn,
       e.earliest_created_on_utc
