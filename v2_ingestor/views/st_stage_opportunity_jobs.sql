@@ -6,11 +6,11 @@
 --   - Sales Opportunity = Jobs from Sales business units that are NOT "No Charge" jobs
 --   - No Charge Job = Job with 0 estimates AND $0 invoice subtotal
 --   - Closed Opportunity = any job with >= 1 sold estimate (status='Sold')
---   - Opportunity Date priority (Phoenix timezone):
---       1. LATEST soldOn date (most recent sale date)
---       2. Earliest appointment scheduledStart (fallback for open opportunities)
---       3. Job completedOn (when job was completed)
---       4. Earliest estimate createdOn (when first estimate was created)
+--   - TWO DATE FIELDS for accurate counting:
+--       * opportunity_date = LATEST soldOn > appointment > completedOn > estimateCreated
+--         (Used for counting TOTAL opportunities - when job had activity)
+--       * first_sale_date = EARLIEST soldOn
+--         (Used for counting CLOSED opportunities - when job FIRST closed)
 --   - INCLUDES all Sales business units (including Commercial-AZ-Sales)
 --
 -- NOTE:
@@ -23,11 +23,12 @@ CREATE OR REPLACE VIEW `kpi-auto-471020.st_stage.opportunity_jobs` AS
 
 WITH estimate_rollup AS (
   -- Roll up estimates by job to get counts and dates
-  -- Use LATEST soldOn - this gave best match for total opportunities
+  -- Track both EARLIEST and LATEST soldOn for different use cases
   SELECT
     jobId,
     COUNT(*) as estimate_count,
     COUNT(CASE WHEN status = 'Sold' THEN 1 END) as sold_estimate_count,
+    MIN(CASE WHEN status = 'Sold' THEN soldOn END) as earliest_sold_on_utc,
     MAX(CASE WHEN status = 'Sold' THEN soldOn END) as latest_sold_on_utc,
     MIN(createdOn) as earliest_created_on_utc
   FROM `kpi-auto-471020.st_raw_v2.raw_estimates`
@@ -67,6 +68,7 @@ SELECT
   -- Estimate rollup fields
   COALESCE(e.estimate_count, 0) as estimate_count,
   COALESCE(e.sold_estimate_count, 0) as sold_estimate_count,
+  e.earliest_sold_on_utc,
   e.latest_sold_on_utc,
 
   -- Appointment rollup field
@@ -82,6 +84,9 @@ SELECT
       e.earliest_created_on_utc
     ), 'America/Phoenix'
   ) as opportunity_date,
+
+  -- First sale date: when the opportunity FIRST closed (for closed opportunity counting)
+  DATE(e.earliest_sold_on_utc, 'America/Phoenix') as first_sale_date,
 
   -- Opportunity flags
   -- Sales Opportunity = any job from a Sales business unit (matches ServiceTitan logic)
