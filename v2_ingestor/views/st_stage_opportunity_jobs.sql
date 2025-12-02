@@ -7,7 +7,7 @@
 --   - No Charge Job = Job with 0 estimates AND $0 invoice subtotal
 --   - Closed Opportunity = any job with >= 1 sold estimate (status='Sold')
 --   - Opportunity Date priority (Phoenix timezone):
---       1. LATEST soldOn date (when most recent estimate was sold)
+--       1. EARLIEST soldOn date (opportunity closes on first sale)
 --       2. Earliest appointment scheduledStart (when job was worked)
 --       3. Job completedOn (when job was completed)
 --       4. Earliest estimate createdOn (when first estimate was created)
@@ -23,12 +23,12 @@ CREATE OR REPLACE VIEW `kpi-auto-471020.st_stage.opportunity_jobs` AS
 
 WITH estimate_rollup AS (
   -- Roll up estimates by job to get counts and dates
-  -- Use LATEST soldOn to match ServiceTitan's logic (show job in most recent sale week)
+  -- Use EARLIEST soldOn to match ServiceTitan's logic (opportunity closes on first sale)
   SELECT
     jobId,
     COUNT(*) as estimate_count,
     COUNT(CASE WHEN status = 'Sold' THEN 1 END) as sold_estimate_count,
-    MAX(CASE WHEN status = 'Sold' THEN soldOn END) as latest_sold_on_utc,
+    MIN(CASE WHEN status = 'Sold' THEN soldOn END) as earliest_sold_on_utc,
     MIN(createdOn) as earliest_created_on_utc
   FROM `kpi-auto-471020.st_raw_v2.raw_estimates`
   WHERE jobId IS NOT NULL
@@ -67,16 +67,16 @@ SELECT
   -- Estimate rollup fields
   COALESCE(e.estimate_count, 0) as estimate_count,
   COALESCE(e.sold_estimate_count, 0) as sold_estimate_count,
-  e.latest_sold_on_utc,
+  e.earliest_sold_on_utc,
 
   -- Appointment rollup field
   a.earliest_scheduled_start_utc,
 
   -- Opportunity date: soldOn > appointment > completedOn > estimate createdOn (Phoenix timezone)
-  -- Uses LATEST soldOn so jobs appear in the week of their most recent sale
+  -- Uses EARLIEST soldOn - opportunity closes on first sale (matches ST logic)
   DATE(
     COALESCE(
-      e.latest_sold_on_utc,
+      e.earliest_sold_on_utc,
       a.earliest_scheduled_start_utc,
       j.completedOn,
       e.earliest_created_on_utc
